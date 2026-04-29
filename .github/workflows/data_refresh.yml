@@ -1,0 +1,557 @@
+name: KSL Sales Tool
+
+on:
+  push:
+    branches: [main]
+    # When only the CSV changes, only update-reps fires (deploy job also runs
+    # but that's fine — it's fast and keeps CF in sync with latest index.html)
+  schedule:
+    # ── Token-only refresh: every 45 min, 04:00–22:00 UTC Mon–Sun ──────────
+    # Covers 07:00–01:00 Nairobi time (EAT = UTC+3), 7 days a week.
+    # Tokens expire at 60 min; 45-min cadence leaves a 15-min safety buffer.
+    - cron: "0,45 4-22 * * *"
+
+    # ── Stock watch: tiered to match actual business activity ───────────────
+    # Morning invoicing window: 08:00, 09:00, 10:00 EAT (05:00-07:00 UTC)
+    # Afternoon order/dispatch window: 15:00, 16:00, 17:00 EAT (12:00-14:00 UTC)
+    # 11:00-14:00 EAT (quiet period) intentionally skipped.
+    # Mon-Sat only (no Sunday stock movement).
+    - cron: "0 5 * * 1-6"    # 08:00 EAT — invoicing starts
+    - cron: "0 6 * * 1-6"    # 09:00 EAT
+    - cron: "0 7 * * 1-6"    # 10:00 EAT — end of invoicing window
+    - cron: "0 12 * * 1-6"   # 15:00 EAT — orders + pre-booking starts
+    - cron: "0 13 * * 1-6"   # 16:00 EAT
+    - cron: "0 14 * * 1-6"   # 17:00 EAT — end of business
+
+    # ── Nightly full build: Sunday 23:00 UTC (02:00 EAT Monday) ────────────
+    - cron: "0 23 * * 0"
+
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "Which job to run"
+        required: true
+        default: "deploy"
+        type: choice
+        options:
+          - deploy
+          - token-only
+          - stock-watch
+          - nightly-build
+          - update-reps
+          - both
+
+env:
+  PYTHON_VERSION: "3.11"
+  NODE_VERSION: "20"
+
+jobs:
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  DEPLOY — fires on every push to main
+# ─────────────────────────────────────────────────────────────────────────────
+  deploy:
+    name: Deploy to Cloudflare
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: >
+      github.event_name == 'push' ||
+      (github.event_name == 'workflow_dispatch' &&
+       github.event.inputs.job == 'deploy')
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.DEPLOY_TOKEN }}
+
+      - name: Pull cached data from cf-deploy branch
+        run: |
+          mkdir -p cf-dist/data/app
+          git fetch origin cf-deploy 2>/dev/null || true
+          git checkout origin/cf-deploy -- cf-dist/data/app/ 2>/dev/null || true
+
+      - name: Download vendor JS libraries
+        run: |
+          mkdir -p cf-dist/vendor
+          curl -fsSL https://unpkg.com/react@18.2.0/umd/react.production.min.js -o cf-dist/vendor/react.min.js
+          curl -fsSL https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js -o cf-dist/vendor/react-dom.min.js
+          curl -fsSL https://unpkg.com/xlsx@0.18.5/dist/xlsx.full.min.js -o cf-dist/vendor/xlsx.min.js
+          echo "Vendor sizes:"
+          ls -lh cf-dist/vendor/
+
+      - name: Set up Python (token refresh on deploy)
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Refresh token on deploy
+        env:
+          ZOHO_CLIENT_ID:     ${{ secrets.ZOHO_CLIENT_ID }}
+          ZOHO_CLIENT_SECRET: ${{ secrets.ZOHO_CLIENT_SECRET }}
+          ZOHO_REFRESH_TOKEN: ${{ secrets.ZOHO_REFRESH_TOKEN }}
+          ZOHO_ORG_ID:        ${{ secrets.ZOHO_ORG_ID }}
+        run: python -m pipeline.token_refresh
+
+      - name: Assemble deploy directory
+        run: |
+          mkdir -p cf-dist/data/app
+          cp app/index.html cf-dist/index.html
+          cp app/manifest.json cf-dist/manifest.json 2>/dev/null || true
+          cp data/app/token.json cf-dist/data/app/token.json
+          [ -f "data/app/pricelists.json" ] && cp data/app/pricelists.json cf-dist/data/app/pricelists.json || true
+          logo=$(ls data/config/*.png 2>/dev/null | head -1)
+          if [ -n "$logo" ]; then
+            cp "$logo" cf-dist/data/app/logo.png
+            for icon in icon-192 icon-512; do
+              [ -f "data/app/${icon}.png" ] && cp "data/app/${icon}.png" "cf-dist/data/app/${icon}.png" || cp "$logo" "cf-dist/data/app/${icon}.png"
+            done
+          fi
+          echo "=== cf-dist contents ==="
+          find cf-dist -type f
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Deploy to Cloudflare Workers
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: npx wrangler@latest deploy --assets cf-dist
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  TOKEN-ONLY — lightweight, runs every 45 min around the clock
+#  Refreshes the Zoho token and redeploys just that file to Cloudflare.
+#  No stock watcher, no data pipelines — completes in ~2 minutes.
+# ─────────────────────────────────────────────────────────────────────────────
+  token-only:
+    name: Token refresh (lightweight)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: >
+      (github.event_name == 'schedule' &&
+       github.event.schedule == '0,45 4-22 * * *') ||
+      (github.event_name == 'workflow_dispatch' &&
+       github.event.inputs.job == 'token-only')
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.DEPLOY_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Refresh token
+        env:
+          ZOHO_CLIENT_ID:     ${{ secrets.ZOHO_CLIENT_ID }}
+          ZOHO_CLIENT_SECRET: ${{ secrets.ZOHO_CLIENT_SECRET }}
+          ZOHO_REFRESH_TOKEN: ${{ secrets.ZOHO_REFRESH_TOKEN }}
+          ZOHO_ORG_ID:        ${{ secrets.ZOHO_ORG_ID }}
+        run: python -m pipeline.token_refresh
+
+      - name: Pull cached data and assemble
+        run: |
+          mkdir -p cf-dist/data/app
+          git fetch origin cf-deploy 2>/dev/null || true
+          git checkout origin/cf-deploy -- cf-dist/data/app/ 2>/dev/null || true
+          cp app/index.html cf-dist/index.html
+          cp app/manifest.json cf-dist/manifest.json 2>/dev/null || true
+          cp data/app/token.json cf-dist/data/app/token.json
+          logo=$(ls data/config/*.png 2>/dev/null | head -1)
+          if [ -n "$logo" ]; then
+            cp "$logo" cf-dist/data/app/logo.png
+            for icon in icon-192 icon-512; do
+              [ -f "data/app/${icon}.png" ] && cp "data/app/${icon}.png" "cf-dist/data/app/${icon}.png" || cp "$logo" "cf-dist/data/app/${icon}.png"
+            done
+          fi
+
+      - name: Download vendor JS libraries
+        run: |
+          mkdir -p cf-dist/vendor
+          curl -fsSL https://unpkg.com/react@18.2.0/umd/react.production.min.js -o cf-dist/vendor/react.min.js
+          curl -fsSL https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js -o cf-dist/vendor/react-dom.min.js
+          curl -fsSL https://unpkg.com/xlsx@0.18.5/dist/xlsx.full.min.js -o cf-dist/vendor/xlsx.min.js
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Deploy fresh token to Cloudflare
+        env:
+          CLOUDFLARE_API_TOKEN:  ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: npx wrangler@latest deploy --assets cf-dist
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  STOCK WATCH — tiered schedule matching actual business activity
+#  Morning invoicing: 08:00, 09:00, 10:00 EAT
+#  Afternoon dispatch: 15:00, 16:00, 17:00 EAT
+#  Quiet midday (11:00-14:00 EAT) intentionally skipped.
+# ─────────────────────────────────────────────────────────────────────────────
+  stock-watch:
+    name: Stock watch and token refresh
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: >
+      (github.event_name == 'schedule' && (
+        github.event.schedule == '0 5 * * 1-6'  ||
+        github.event.schedule == '0 6 * * 1-6'  ||
+        github.event.schedule == '0 7 * * 1-6'  ||
+        github.event.schedule == '0 12 * * 1-6' ||
+        github.event.schedule == '0 13 * * 1-6' ||
+        github.event.schedule == '0 14 * * 1-6'
+      )) ||
+      (github.event_name == 'workflow_dispatch' &&
+        (github.event.inputs.job == 'stock-watch' ||
+         github.event.inputs.job == 'both'))
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.DEPLOY_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run token refresh
+        env:
+          ZOHO_CLIENT_ID:     ${{ secrets.ZOHO_CLIENT_ID }}
+          ZOHO_CLIENT_SECRET: ${{ secrets.ZOHO_CLIENT_SECRET }}
+          ZOHO_REFRESH_TOKEN: ${{ secrets.ZOHO_REFRESH_TOKEN }}
+          ZOHO_ORG_ID:        ${{ secrets.ZOHO_ORG_ID }}
+        run: python -m pipeline.token_refresh
+
+      - name: Run stock watcher
+        env:
+          ZOHO_CLIENT_ID:     ${{ secrets.ZOHO_CLIENT_ID }}
+          ZOHO_CLIENT_SECRET: ${{ secrets.ZOHO_CLIENT_SECRET }}
+          ZOHO_REFRESH_TOKEN: ${{ secrets.ZOHO_REFRESH_TOKEN }}
+          ZOHO_ORG_ID:        ${{ secrets.ZOHO_ORG_ID }}
+          ZOHO_MAIN_WH1:      ${{ secrets.ZOHO_MAIN_WH1 }}
+          ZOHO_MAIN_WH2:      ${{ secrets.ZOHO_MAIN_WH2 }}
+        run: python -m pipeline.stock_watcher
+
+      - name: Download vendor JS libraries
+        run: |
+          mkdir -p cf-dist/vendor
+          curl -fsSL https://unpkg.com/react@18.2.0/umd/react.production.min.js -o cf-dist/vendor/react.min.js
+          curl -fsSL https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js -o cf-dist/vendor/react-dom.min.js
+          curl -fsSL https://unpkg.com/xlsx@0.18.5/dist/xlsx.full.min.js -o cf-dist/vendor/xlsx.min.js
+
+      - name: Pull cached data and assemble
+        run: |
+          mkdir -p cf-dist/data/app
+          git fetch origin cf-deploy 2>/dev/null || true
+          git checkout origin/cf-deploy -- cf-dist/data/app/ 2>/dev/null || true
+          cp app/index.html cf-dist/index.html
+          cp app/manifest.json cf-dist/manifest.json 2>/dev/null || true
+          cp data/app/stock.json  cf-dist/data/app/stock.json
+          cp data/app/token.json  cf-dist/data/app/token.json
+          logo=$(ls data/config/*.png 2>/dev/null | head -1)
+          if [ -n "$logo" ]; then
+            cp "$logo" cf-dist/data/app/logo.png
+            for icon in icon-192 icon-512; do
+              [ -f "data/app/${icon}.png" ] && cp "data/app/${icon}.png" "cf-dist/data/app/${icon}.png" || cp "$logo" "cf-dist/data/app/${icon}.png"
+            done
+          fi
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Deploy to Cloudflare Workers
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: npx wrangler@latest deploy --assets cf-dist
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  NIGHTLY BUILD — Sunday 23:00 UTC (Monday 02:00 EAT)
+#  Full catalogue, prices, velocity, and stock rebuild.
+#  Caches results to cf-deploy branch for fast incremental deploys.
+# ─────────────────────────────────────────────────────────────────────────────
+  nightly-build:
+    name: Nightly full data build
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    if: >
+      (github.event_name == 'schedule' &&
+       github.event.schedule == '0 23 * * 0') ||
+      (github.event_name == 'workflow_dispatch' &&
+        (github.event.inputs.job == 'nightly-build' ||
+         github.event.inputs.job == 'both'))
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.DEPLOY_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: python -m pytest tests/ -v
+
+      - name: Refresh token
+        env:
+          ZOHO_CLIENT_ID:     ${{ secrets.ZOHO_CLIENT_ID }}
+          ZOHO_CLIENT_SECRET: ${{ secrets.ZOHO_CLIENT_SECRET }}
+          ZOHO_REFRESH_TOKEN: ${{ secrets.ZOHO_REFRESH_TOKEN }}
+          ZOHO_ORG_ID:        ${{ secrets.ZOHO_ORG_ID }}
+        run: python -m pipeline.token_refresh
+
+      - name: Build catalogue
+        env:
+          ZOHO_CLIENT_ID:     ${{ secrets.ZOHO_CLIENT_ID }}
+          ZOHO_CLIENT_SECRET: ${{ secrets.ZOHO_CLIENT_SECRET }}
+          ZOHO_REFRESH_TOKEN: ${{ secrets.ZOHO_REFRESH_TOKEN }}
+          ZOHO_ORG_ID:        ${{ secrets.ZOHO_ORG_ID }}
+        run: python -m pipeline.build_catalogue
+
+      - name: Build price lists
+        env:
+          ZOHO_CLIENT_ID:     ${{ secrets.ZOHO_CLIENT_ID }}
+          ZOHO_CLIENT_SECRET: ${{ secrets.ZOHO_CLIENT_SECRET }}
+          ZOHO_REFRESH_TOKEN: ${{ secrets.ZOHO_REFRESH_TOKEN }}
+          ZOHO_ORG_ID:        ${{ secrets.ZOHO_ORG_ID }}
+        run: python -m pipeline.build_pricelists
+
+      - name: Build velocity and ABC classes
+        env:
+          ZOHO_CLIENT_ID:     ${{ secrets.ZOHO_CLIENT_ID }}
+          ZOHO_CLIENT_SECRET: ${{ secrets.ZOHO_CLIENT_SECRET }}
+          ZOHO_REFRESH_TOKEN: ${{ secrets.ZOHO_REFRESH_TOKEN }}
+          ZOHO_ORG_ID:        ${{ secrets.ZOHO_ORG_ID }}
+        run: python -m pipeline.build_velocity
+
+      - name: Full stock refresh (with committed stock)
+        env:
+          ZOHO_CLIENT_ID:     ${{ secrets.ZOHO_CLIENT_ID }}
+          ZOHO_CLIENT_SECRET: ${{ secrets.ZOHO_CLIENT_SECRET }}
+          ZOHO_REFRESH_TOKEN: ${{ secrets.ZOHO_REFRESH_TOKEN }}
+          ZOHO_ORG_ID:        ${{ secrets.ZOHO_ORG_ID }}
+          ZOHO_MAIN_WH1:      ${{ secrets.ZOHO_MAIN_WH1 }}
+          ZOHO_MAIN_WH2:      ${{ secrets.ZOHO_MAIN_WH2 }}
+        run: python -m pipeline.stock_watcher --full
+
+      - name: Build reps
+        run: python -m pipeline.build_reps
+
+      - name: Download vendor JS libraries
+        run: |
+          mkdir -p cf-dist/vendor
+          curl -fsSL https://unpkg.com/react@18.2.0/umd/react.production.min.js -o cf-dist/vendor/react.min.js
+          curl -fsSL https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js -o cf-dist/vendor/react-dom.min.js
+          curl -fsSL https://unpkg.com/xlsx@0.18.5/dist/xlsx.full.min.js -o cf-dist/vendor/xlsx.min.js
+
+      - name: Assemble deploy directory
+        run: |
+          mkdir -p cf-dist/data/app
+          cp app/index.html cf-dist/index.html
+          cp app/manifest.json cf-dist/manifest.json 2>/dev/null || true
+          for f in catalogue.json stock.json velocity.json reps.json token.json pricelists.json; do
+            [ -f "data/app/$f" ] && cp "data/app/$f" "cf-dist/data/app/$f" && echo "Copied $f"
+          done
+          logo=$(ls data/config/*.png 2>/dev/null | head -1)
+          if [ -n "$logo" ]; then cp "$logo" cf-dist/data/app/logo.png && echo "Copied logo"; fi
+          for icon in icon-192 icon-512; do
+            if [ -f "data/app/${icon}.png" ]; then
+              cp "data/app/${icon}.png" "cf-dist/data/app/${icon}.png" && echo "Copied ${icon}.png"
+            elif [ -n "$logo" ]; then
+              cp "$logo" "cf-dist/data/app/${icon}.png" && echo "Fallback: copied logo as ${icon}.png"
+            fi
+          done
+
+      - name: Cache data to cf-deploy branch
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin cf-deploy 2>/dev/null || true
+
+          if git ls-remote --exit-code origin cf-deploy > /dev/null 2>&1; then
+            git worktree add /tmp/cf-deploy origin/cf-deploy
+          else
+            mkdir -p /tmp/cf-deploy
+            cd /tmp/cf-deploy
+            git init
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git remote add origin https://x-access-token:${{ secrets.DEPLOY_TOKEN }}@github.com/${{ github.repository }}.git
+            git checkout --orphan cf-deploy
+            cd -
+          fi
+
+          mkdir -p /tmp/cf-deploy/data/app
+          for f in catalogue.json velocity.json reps.json pricelists.json stock.json token.json; do
+            [ -f "cf-dist/data/app/$f" ] && cp "cf-dist/data/app/$f" "/tmp/cf-deploy/data/app/$f"
+          done
+
+          cd /tmp/cf-deploy
+          git add data/app/
+          if git diff --cached --quiet; then
+            echo "No changes to cache."
+          else
+            git commit -m "cache: nightly data $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push origin HEAD:cf-deploy
+          fi
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Deploy to Cloudflare Workers
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: npx wrangler@latest deploy --assets cf-dist
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  UPDATE REPS — fires automatically when reps_customers.csv is pushed,
+#  or manually via workflow_dispatch. No Zoho calls needed — pure CSV→JSON.
+#  Completes in under 30 seconds.
+# ─────────────────────────────────────────────────────────────────────────────
+  update-reps:
+    name: Update reps from CSV
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: >
+      (github.event_name == 'push' &&
+       contains(toJson(github.event.commits.*.modified), 'data/config/reps_customers.csv')) ||
+      (github.event_name == 'workflow_dispatch' &&
+       github.event.inputs.job == 'update-reps')
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.DEPLOY_TOKEN }}
+
+      - name: Pull cached data from cf-deploy branch
+        run: |
+          mkdir -p cf-dist/data/app
+          git fetch origin cf-deploy 2>/dev/null || true
+          git checkout origin/cf-deploy -- cf-dist/data/app/ 2>/dev/null || true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Build reps.json from CSV
+        run: python -m pipeline.build_reps
+
+      - name: Download vendor JS libraries
+        run: |
+          mkdir -p cf-dist/vendor
+          curl -fsSL https://unpkg.com/react@18.2.0/umd/react.production.min.js -o cf-dist/vendor/react.min.js
+          curl -fsSL https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js -o cf-dist/vendor/react-dom.min.js
+          curl -fsSL https://unpkg.com/xlsx@0.18.5/dist/xlsx.full.min.js -o cf-dist/vendor/xlsx.min.js
+
+      - name: Assemble deploy directory
+        run: |
+          mkdir -p cf-dist/data/app
+          cp app/index.html cf-dist/index.html
+          cp app/manifest.json cf-dist/manifest.json 2>/dev/null || true
+          cp data/app/reps.json cf-dist/data/app/reps.json
+          logo=$(ls data/config/*.png 2>/dev/null | head -1)
+          if [ -n "$logo" ]; then
+            cp "$logo" cf-dist/data/app/logo.png
+            for icon in icon-192 icon-512; do
+              [ -f "data/app/${icon}.png" ] && cp "data/app/${icon}.png" "cf-dist/data/app/${icon}.png" || cp "$logo" "cf-dist/data/app/${icon}.png"
+            done
+          fi
+
+      - name: Update cf-deploy cache with new reps.json
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin cf-deploy 2>/dev/null || true
+
+          if git ls-remote --exit-code origin cf-deploy > /dev/null 2>&1; then
+            git worktree add /tmp/cf-deploy origin/cf-deploy
+          else
+            mkdir -p /tmp/cf-deploy
+            cd /tmp/cf-deploy
+            git init
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git remote add origin https://x-access-token:${{ secrets.DEPLOY_TOKEN }}@github.com/${{ github.repository }}.git
+            git checkout --orphan cf-deploy
+            cd -
+          fi
+
+          mkdir -p /tmp/cf-deploy/data/app
+          cp cf-dist/data/app/reps.json /tmp/cf-deploy/data/app/reps.json
+
+          cd /tmp/cf-deploy
+          git add data/app/reps.json
+          if git diff --cached --quiet; then
+            echo "No changes to reps.json."
+          else
+            git commit -m "cache: reps update $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push origin HEAD:cf-deploy
+          fi
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Deploy to Cloudflare Workers
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: npx wrangler@latest deploy --assets cf-dist
