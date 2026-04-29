@@ -1,0 +1,1082 @@
+{
+  "_meta": {
+    "built_at": "2026-04-19T23:31:21.388702+00:00",
+    "total_reps": 14,
+    "total_assignments": 240,
+    "source": "data/config/reps_customers.csv"
+  },
+  "reps": [
+    {
+      "rep_id": "3778898000000362738",
+      "rep_name": "CHRISTINE WAYUA MUTUA",
+      "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "customer_count": 6,
+      "customers": [
+        {
+          "customer_id": "3778898000000299369",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (DIANI STORE)"
+        },
+        {
+          "customer_id": "3778898000039265481",
+          "customer_name": "NAIVAS LTD  (UKUNDA MOMBASA)"
+        },
+        {
+          "customer_id": "3778898000087238240",
+          "customer_name": "NAIVAS LTD (LIKONI)"
+        },
+        {
+          "customer_id": "3778898000043586421",
+          "customer_name": "QUICK MART LTD (BANDARI BRANCH)"
+        },
+        {
+          "customer_id": "3778898000123937001",
+          "customer_name": "QUICK MART LTD (LIKONI)"
+        },
+        {
+          "customer_id": "3778898000004282421",
+          "customer_name": "SHREE GREEN GROCER MINI MARKET"
+        }
+      ]
+    },
+    {
+      "rep_id": "3778898000038323087",
+      "rep_name": "DAISY GITAU",
+      "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "customer_count": 5,
+      "customers": [
+        {
+          "customer_id": "3778898000000641619",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (BUSINESS BAY EASTLEIGH)"
+        },
+        {
+          "customer_id": "3778898000000140129",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (COMET HOUSE)"
+        },
+        {
+          "customer_id": "3778898000000138959",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (SOUTHFIELD)"
+        },
+        {
+          "customer_id": "3778898000004720001",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (ST.ELLIES)"
+        },
+        {
+          "customer_id": "3778898000111660259",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (WARRIS MALL)"
+        }
+      ]
+    },
+    {
+      "rep_id": "3778898000114995486",
+      "rep_name": "JACKLINE WANJERU NJERU",
+      "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "customer_count": 4,
+      "customers": [
+        {
+          "customer_id": "3778898000000100692",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (GALLERIA)"
+        },
+        {
+          "customer_id": "3778898000060948989",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (MAASAI  MALL)"
+        },
+        {
+          "customer_id": "3778898000000100644",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (MEGA STORE)"
+        },
+        {
+          "customer_id": "3778898000000137003",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (NEXTGEN MALL)"
+        }
+      ]
+    },
+    {
+      "rep_id": "3778898000000212835",
+      "rep_name": "JANETINE WANIU MAKUMI",
+      "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "customer_count": 120,
+      "customers": [
+        {
+          "customer_id": "3778898000004753608",
+          "customer_name": "99MART LIMITED (CHAKA ROAD MALL )"
+        },
+        {
+          "customer_id": "3778898000120086103",
+          "customer_name": "ABDIKER WHOLESALERS LIMITED"
+        },
+        {
+          "customer_id": "3778898000124597798",
+          "customer_name": "AFUCE ENTERPRISES"
+        },
+        {
+          "customer_id": "3778898000121757047",
+          "customer_name": "AMOR BABY SHOP"
+        },
+        {
+          "customer_id": "3778898000001278001",
+          "customer_name": "ANKAA SUPERMARKET HOMABAY"
+        },
+        {
+          "customer_id": "3778898000000213561",
+          "customer_name": "AUR0RA SCENT KENYA LTD"
+        },
+        {
+          "customer_id": "3778898000024559400",
+          "customer_name": "Art Caffe"
+        },
+        {
+          "customer_id": "3778898000099262809",
+          "customer_name": "BABY WOW WOW"
+        },
+        {
+          "customer_id": "3778898000000212823",
+          "customer_name": "BEAUTY EMPORIUM"
+        },
+        {
+          "customer_id": "3778898000000566247",
+          "customer_name": "BEAUTY ESSENCE LIMITED"
+        },
+        {
+          "customer_id": "3778898000124514035",
+          "customer_name": "BESCO IMPORT & EXPORT TRADING COMPANY LTD(GALLERIA PANDAMART)"
+        },
+        {
+          "customer_id": "3778898000000138330",
+          "customer_name": "BUILDERS WAREHOUSE(KENYA) LTD"
+        },
+        {
+          "customer_id": "3778898000122292092",
+          "customer_name": "BUNDLES AND SNUGGLES LIMITED"
+        },
+        {
+          "customer_id": "3778898000006722500",
+          "customer_name": "BUSINESS EASLEIGH"
+        },
+        {
+          "customer_id": "3778898000124782879",
+          "customer_name": "CECILEE SHOP"
+        },
+        {
+          "customer_id": "3778898000123900305",
+          "customer_name": "CHINA VILLAGE LIMITED"
+        },
+        {
+          "customer_id": "3778898000099407454",
+          "customer_name": "CLASSY MOPPET"
+        },
+        {
+          "customer_id": "3778898000118336596",
+          "customer_name": "CUTE CRADLES BABY SHOP"
+        },
+        {
+          "customer_id": "3778898000118388871",
+          "customer_name": "DAACAD WHOLESALERS LTD"
+        },
+        {
+          "customer_id": "3778898000125840394",
+          "customer_name": "DILMART GAS AND DIAPERS SHOP"
+        },
+        {
+          "customer_id": "3778898000124074396",
+          "customer_name": "DOUDOU MART COMPANY LIMITED"
+        },
+        {
+          "customer_id": "3778898000118915267",
+          "customer_name": "DURDUR WHOLESALERS LIMITED"
+        },
+        {
+          "customer_id": "3778898000120218292",
+          "customer_name": "Danab Kilimani Wholesalers Limited"
+        },
+        {
+          "customer_id": "3778898000019956959",
+          "customer_name": "EDKIP SYNERGY SOLUTIONS LIMITED"
+        },
+        {
+          "customer_id": "3778898000114498247",
+          "customer_name": "EL-EMET SHOP"
+        },
+        {
+          "customer_id": "3778898000122079154",
+          "customer_name": "ELVIMA COMUNICATIONS LIMITED"
+        },
+        {
+          "customer_id": "3778898000119359251",
+          "customer_name": "ELWAK MAT SHOP"
+        },
+        {
+          "customer_id": "3778898000118388843",
+          "customer_name": "FAHAN FOOD STUFF LIMITED"
+        },
+        {
+          "customer_id": "3778898000122883340",
+          "customer_name": "GILANI'S DISTRIBUTORS"
+        },
+        {
+          "customer_id": "3778898000117526902",
+          "customer_name": "GISTY TRADERS LTD"
+        },
+        {
+          "customer_id": "3778898000118388829",
+          "customer_name": "GOLDEN SAVE WHOLESALERS LIMITED"
+        },
+        {
+          "customer_id": "3778898000125367193",
+          "customer_name": "GRAB N GO LTD"
+        },
+        {
+          "customer_id": "3778898000028672226",
+          "customer_name": "GUARDMART SUPERMARKET LTD"
+        },
+        {
+          "customer_id": "3778898000120218268",
+          "customer_name": "H & A WHOLESALE LIMITED"
+        },
+        {
+          "customer_id": "3778898000000213221",
+          "customer_name": "HABIBI COSMETICS LTD"
+        },
+        {
+          "customer_id": "3778898000000213495",
+          "customer_name": "HADARI COSMETICS"
+        },
+        {
+          "customer_id": "3778898000118326983",
+          "customer_name": "HALI BABY SHOP LIMITED"
+        },
+        {
+          "customer_id": "3778898000000189785",
+          "customer_name": "HAPPY PAWS PETS STORE LTD"
+        },
+        {
+          "customer_id": "3778898000119359275",
+          "customer_name": "HILAAC FOODSTUFFS LIMITED"
+        },
+        {
+          "customer_id": "3778898000000168265",
+          "customer_name": "HOMECARE&HARDWARE LTD"
+        },
+        {
+          "customer_id": "3778898000005003001",
+          "customer_name": "HOMEQUIPS LTD (MOMBASA)"
+        },
+        {
+          "customer_id": "3778898000042604897",
+          "customer_name": "INFINITE ASSOCIATES LIMITED"
+        },
+        {
+          "customer_id": "3778898000124924644",
+          "customer_name": "JAZIEL BABY SHOP"
+        },
+        {
+          "customer_id": "3778898000000526512",
+          "customer_name": "JUMIA"
+        },
+        {
+          "customer_id": "3778898000000247885",
+          "customer_name": "KAC PHARMACEUTICALS"
+        },
+        {
+          "customer_id": "3778898000121680551",
+          "customer_name": "KADDIES WHOLESALES"
+        },
+        {
+          "customer_id": "3778898000000487503",
+          "customer_name": "KAKI FAMILY WEAR LIMITED"
+        },
+        {
+          "customer_id": "3778898000000100561",
+          "customer_name": "KAMINDI SELFRIDGES LIMITED"
+        },
+        {
+          "customer_id": "3778898000125445001",
+          "customer_name": "KAREN PETER'S DIAPERS SHOP"
+        },
+        {
+          "customer_id": "3778898000000137926",
+          "customer_name": "KAREN PROVISION STORES (HARDY BRANCH)"
+        },
+        {
+          "customer_id": "3778898000000138042",
+          "customer_name": "KAREN PROVISION STORES (KAREN BRANCH)"
+        },
+        {
+          "customer_id": "3778898000000338739",
+          "customer_name": "KASSMATT SUPERMARKETS LTD(GITHURAI)"
+        },
+        {
+          "customer_id": "3778898000000338609",
+          "customer_name": "KASSMATT SUPERMARKETS LTD(JUMBO)"
+        },
+        {
+          "customer_id": "3778898000000338641",
+          "customer_name": "KASSMATT SUPERMARKETS LTD(KASARANI)"
+        },
+        {
+          "customer_id": "3778898000000338713",
+          "customer_name": "KASSMATT SUPERMARKETS LTD(MWIKI)"
+        },
+        {
+          "customer_id": "3778898000000338679",
+          "customer_name": "KASSMATT SUPERMARKETS LTD(THIKA)"
+        },
+        {
+          "customer_id": "3778898000000213641",
+          "customer_name": "KAVSI LIMITED"
+        },
+        {
+          "customer_id": "3778898000000566193",
+          "customer_name": "KENNRICA VENTURES LIMITED"
+        },
+        {
+          "customer_id": "3778898000123204467",
+          "customer_name": "KESS BABY SHOP LTD"
+        },
+        {
+          "customer_id": "3778898000111112115",
+          "customer_name": "KID'S DEN LIMITED"
+        },
+        {
+          "customer_id": "3778898000108259142",
+          "customer_name": "KIDS ZONE"
+        },
+        {
+          "customer_id": "3778898000000169644",
+          "customer_name": "KULAL INTERNATINAL LTD(GARDEN CITY)"
+        },
+        {
+          "customer_id": "3778898000000169544",
+          "customer_name": "KULAL INTERNATINAL LTD(LAVINGTON)"
+        },
+        {
+          "customer_id": "3778898000121542349",
+          "customer_name": "KULMIYE LTD"
+        },
+        {
+          "customer_id": "3778898000001278021",
+          "customer_name": "LAASI SUPERMARKET HOMABAY"
+        },
+        {
+          "customer_id": "3778898000000167943",
+          "customer_name": "LAPET HOME"
+        },
+        {
+          "customer_id": "3778898000125544679",
+          "customer_name": "LEONEL KIDS SHOP"
+        },
+        {
+          "customer_id": "3778898000117641669",
+          "customer_name": "LITTLE TRENDS ENTERPRISES"
+        },
+        {
+          "customer_id": "3778898000008613513",
+          "customer_name": "LOKI VENTURES LIMITED"
+        },
+        {
+          "customer_id": "3778898000118931249",
+          "customer_name": "MOMASA ENTERPRISES LIMITED"
+        },
+        {
+          "customer_id": "3778898000124558608",
+          "customer_name": "MONICAH BABY ESSENTIALS"
+        },
+        {
+          "customer_id": "3778898000122036983",
+          "customer_name": "MTOTO BABY SHOP VENTURES LIMITED"
+        },
+        {
+          "customer_id": "3778898000118388885",
+          "customer_name": "NADIIF MINIMART LIMITED"
+        },
+        {
+          "customer_id": "3778898000000459687",
+          "customer_name": "NAIROBI SMALL &COMPANION ANIMAL HOSPITAL"
+        },
+        {
+          "customer_id": "3778898000111448202",
+          "customer_name": "NAVALIA BABY WORLD"
+        },
+        {
+          "customer_id": "3778898000118931279",
+          "customer_name": "NDOTI INVESTMENT COMPANY LIMITED"
+        },
+        {
+          "customer_id": "3778898000118875001",
+          "customer_name": "NEW YAKO SUPERMARKET LIMITED"
+        },
+        {
+          "customer_id": "3778898000123195006",
+          "customer_name": "NOVA FASHIONS TEXTILE& FABRICS HERITAGE"
+        },
+        {
+          "customer_id": "3778898000001278011",
+          "customer_name": "NUSRA SUPERMARKET (HOMABAY)"
+        },
+        {
+          "customer_id": "3778898000019601165",
+          "customer_name": "PANDA MART"
+        },
+        {
+          "customer_id": "3778898000000169195",
+          "customer_name": "PAW PACK LIMITED"
+        },
+        {
+          "customer_id": "3778898000089852084",
+          "customer_name": "PAWS AND WHISKEAS PET STORE"
+        },
+        {
+          "customer_id": "3778898000039185031",
+          "customer_name": "PET FARE"
+        },
+        {
+          "customer_id": "3778898000120081001",
+          "customer_name": "PET PANTRY"
+        },
+        {
+          "customer_id": "3778898000008613491",
+          "customer_name": "PET PARADISE & AQUARIUMS"
+        },
+        {
+          "customer_id": "3778898000000138094",
+          "customer_name": "PETWORD ENTERPRISES LTD"
+        },
+        {
+          "customer_id": "3778898000121492173",
+          "customer_name": "PHARMPLUS LIMITED"
+        },
+        {
+          "customer_id": "3778898000125628545",
+          "customer_name": "PIRMA BABY SHOP"
+        },
+        {
+          "customer_id": "3778898000000212913",
+          "customer_name": "PORTAL PHARMACY"
+        },
+        {
+          "customer_id": "3778898000125794907",
+          "customer_name": "PRETTY BABY SHOP"
+        },
+        {
+          "customer_id": "3778898000118388857",
+          "customer_name": "RAAGE MART CO. LIMITED"
+        },
+        {
+          "customer_id": "3778898000125230585",
+          "customer_name": "REAPMART SUPERMARKET LTD"
+        },
+        {
+          "customer_id": "3778898000118740549",
+          "customer_name": "REFRONTIER XANA PHARMACY LIMITED"
+        },
+        {
+          "customer_id": "3778898000118994206",
+          "customer_name": "ROCKS CASH & CARRY LIMITED"
+        },
+        {
+          "customer_id": "3778898000027683001",
+          "customer_name": "ROOPAM LIMITED"
+        },
+        {
+          "customer_id": "3778898000000247853",
+          "customer_name": "ROYAL CREST VETERINARY CLINIC"
+        },
+        {
+          "customer_id": "3778898000032783256",
+          "customer_name": "SANERGY LIMITED"
+        },
+        {
+          "customer_id": "3778898000117701034",
+          "customer_name": "SAVING HOME NAIROBI LIMITED"
+        },
+        {
+          "customer_id": "3778898000117349001",
+          "customer_name": "SOOYAAL WHOLESALERS LIMITED"
+        },
+        {
+          "customer_id": "3778898000000101303",
+          "customer_name": "STAR CHOICE COSMETICS"
+        },
+        {
+          "customer_id": "3778898000000248427",
+          "customer_name": "STAR CHOICE COSMETICS(KIAMBU)"
+        },
+        {
+          "customer_id": "3778898000000248483",
+          "customer_name": "STAR CHOICE COSMETICS(THINDIGUA)"
+        },
+        {
+          "customer_id": "3778898000000100781",
+          "customer_name": "SU-PAW STAR PETS"
+        },
+        {
+          "customer_id": "3778898000123275262",
+          "customer_name": "SUMMER OUTLETS LIMITED"
+        },
+        {
+          "customer_id": "3778898000000140025",
+          "customer_name": "SUPER DUPER COSMETICS LTD"
+        },
+        {
+          "customer_id": "3778898000123204431",
+          "customer_name": "TAQWA SHOP"
+        },
+        {
+          "customer_id": "3778898000000248199",
+          "customer_name": "THE PETS MANSION"
+        },
+        {
+          "customer_id": "3778898000111064221",
+          "customer_name": "TOTOS 'R' US (NAKURU) LIMITED"
+        },
+        {
+          "customer_id": "3778898000121870919",
+          "customer_name": "TRANS-MATTRESSES LTD"
+        },
+        {
+          "customer_id": "3778898000100107041",
+          "customer_name": "TUCHA TRADING LIMITED"
+        },
+        {
+          "customer_id": "3778898000108105211",
+          "customer_name": "TUSHOP"
+        },
+        {
+          "customer_id": "3778898000004811242",
+          "customer_name": "UGAVI"
+        },
+        {
+          "customer_id": "3778898000000170789",
+          "customer_name": "UNIPRO LIMITED"
+        },
+        {
+          "customer_id": "3778898000001278031",
+          "customer_name": "VIDEYA DISCOUNT STORE (HOMABAY)"
+        },
+        {
+          "customer_id": "3778898000000138865",
+          "customer_name": "VINAS MINI MART LTD"
+        },
+        {
+          "customer_id": "3778898000121639205",
+          "customer_name": "WILAD WHOLESALERS"
+        },
+        {
+          "customer_id": "3778898000120945909",
+          "customer_name": "WISKA TRADERS"
+        },
+        {
+          "customer_id": "3778898000122146987",
+          "customer_name": "WONDER KIDS KENYA LIMITED"
+        },
+        {
+          "customer_id": "3778898000043532399",
+          "customer_name": "WOOLMATT (NAKURU)"
+        },
+        {
+          "customer_id": "3778898000024559272",
+          "customer_name": "Zucchini Green Growers"
+        }
+      ]
+    },
+    {
+      "rep_id": "3778898000117903715",
+      "rep_name": "JOSEPH KARIUKI",
+      "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "customer_count": 5,
+      "customers": [
+        {
+          "customer_id": "3778898000121492571",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (BEACON)"
+        },
+        {
+          "customer_id": "3778898000000138399",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (JUNCTION MALL)"
+        },
+        {
+          "customer_id": "3778898000000131201",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (KAREN HUB)"
+        },
+        {
+          "customer_id": "3778898000008592162",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (KILIMANI)"
+        },
+        {
+          "customer_id": "3778898000061857724",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (VALLY ARCADE )"
+        }
+      ]
+    },
+    {
+      "rep_id": "3778898000121727377",
+      "rep_name": "JOSEPHINE NYAPIEDHO",
+      "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "customer_count": 25,
+      "customers": [
+        {
+          "customer_id": "3778898000039382496",
+          "customer_name": "NAIVAS LTD  (CAPITAL CENTER)"
+        },
+        {
+          "customer_id": "3778898000039405082",
+          "customer_name": "NAIVAS LTD  (CIATA MALL KIAMBU ROAD)"
+        },
+        {
+          "customer_id": "3778898000039405130",
+          "customer_name": "NAIVAS LTD  (EMBAKASI NYAYO)"
+        },
+        {
+          "customer_id": "3778898000039147635",
+          "customer_name": "NAIVAS LTD  (GATEWAY MALL SYOKIMAU)"
+        },
+        {
+          "customer_id": "3778898000039382508",
+          "customer_name": "NAIVAS LTD  (GREENSPAN MALL)"
+        },
+        {
+          "customer_id": "3778898000039310118",
+          "customer_name": "NAIVAS LTD  (JUJA CITY)"
+        },
+        {
+          "customer_id": "3778898000039405070",
+          "customer_name": "NAIVAS LTD  (KATANI ROAD)"
+        },
+        {
+          "customer_id": "3778898000039263435",
+          "customer_name": "NAIVAS LTD  (KINGARA ROAD)"
+        },
+        {
+          "customer_id": "3778898000117902044",
+          "customer_name": "NAIVAS LTD  (MAGADI ROAD)"
+        },
+        {
+          "customer_id": "3778898000039310162",
+          "customer_name": "NAIVAS LTD  (MAIYAN MALL RONGAI)"
+        },
+        {
+          "customer_id": "3778898000039147613",
+          "customer_name": "NAIVAS LTD  (MOUNTAIN MALL)"
+        },
+        {
+          "customer_id": "3778898000039229269",
+          "customer_name": "NAIVAS LTD  (MWANZI ROAD )"
+        },
+        {
+          "customer_id": "3778898000105250539",
+          "customer_name": "NAIVAS LTD  (OJIJO ROAD)"
+        },
+        {
+          "customer_id": "3778898000039333187",
+          "customer_name": "NAIVAS LTD  (ONE STOP KAREN)"
+        },
+        {
+          "customer_id": "3778898000039310140",
+          "customer_name": "NAIVAS LTD  (PRESTIGE)"
+        },
+        {
+          "customer_id": "3778898000039265453",
+          "customer_name": "NAIVAS LTD  (SOUTH C)"
+        },
+        {
+          "customer_id": "3778898000039405094",
+          "customer_name": "NAIVAS LTD  (THINDIGUA)"
+        },
+        {
+          "customer_id": "3778898000039136496",
+          "customer_name": "NAIVAS LTD  (TILISI)"
+        },
+        {
+          "customer_id": "3778898000039405118",
+          "customer_name": "NAIVAS LTD  (UTAWALA)"
+        },
+        {
+          "customer_id": "3778898000039219003",
+          "customer_name": "NAIVAS LTD  (WESTLANDS)"
+        },
+        {
+          "customer_id": "3778898000121639191",
+          "customer_name": "NAIVAS LTD (ATHI RIVER)"
+        },
+        {
+          "customer_id": "3778898000088731304",
+          "customer_name": "NAIVAS LTD (BURUBURU)"
+        },
+        {
+          "customer_id": "3778898000038886590",
+          "customer_name": "NAIVAS LTD (IMARA DAIMA)"
+        },
+        {
+          "customer_id": "3778898000121545540",
+          "customer_name": "NAIVAS LTD (TATU CITY)"
+        },
+        {
+          "customer_id": "3778898000039263457",
+          "customer_name": "NAIVAS LTD (WATERFRONT KAREN)"
+        }
+      ]
+    },
+    {
+      "rep_id": "3778898000108489062",
+      "rep_name": "JOSHUA KIVUTI",
+      "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "customer_count": 1,
+      "customers": [
+        {
+          "customer_id": "3778898000125524319",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (CENTRALE UNITED ARAB EMIRATES)"
+        }
+      ]
+    },
+    {
+      "rep_id": "3778898000028961316",
+      "rep_name": "LUCIA DARMII",
+      "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "customer_count": 5,
+      "customers": [
+        {
+          "customer_id": "3778898000030066430",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (GTC STORE)"
+        },
+        {
+          "customer_id": "3778898000050033534",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (RHAPTA PROMENADE)"
+        },
+        {
+          "customer_id": "3778898000000100838",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (SARIT CENTRE)"
+        },
+        {
+          "customer_id": "3778898000043245942",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (SPRING VALLEY)"
+        },
+        {
+          "customer_id": "3778898000000140161",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (WESTGATE )"
+        }
+      ]
+    },
+    {
+      "rep_id": "3778898000039186645",
+      "rep_name": "MARY AGNES",
+      "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "customer_count": 4,
+      "customers": [
+        {
+          "customer_id": "3778898000008498408",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (GARDEN CITY MALL)"
+        },
+        {
+          "customer_id": "3778898000048304448",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (RUBIS MAKUTANO)"
+        },
+        {
+          "customer_id": "3778898000035688874",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (RUIRU HYPER)"
+        },
+        {
+          "customer_id": "3778898000000101451",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (TRM)"
+        }
+      ]
+    },
+    {
+      "rep_id": "3778898000124099255",
+      "rep_name": "PHOEBE AUMA",
+      "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "customer_count": 7,
+      "customers": [
+        {
+          "customer_id": "3778898000088731340",
+          "customer_name": "NAIVAS LTD (KISII HYPER)"
+        },
+        {
+          "customer_id": "3778898000088731376",
+          "customer_name": "NAIVAS LTD (NAKURU WESTSIDE)"
+        },
+        {
+          "customer_id": "3778898000050185408",
+          "customer_name": "QUICK MART LTD (ELDOCENTER)"
+        },
+        {
+          "customer_id": "3778898000043586445",
+          "customer_name": "QUICK MART LTD (KISII BRANCH)"
+        },
+        {
+          "customer_id": "3778898000120945949",
+          "customer_name": "QUICK MART LTD (NAKURU STATE HOUSE)"
+        },
+        {
+          "customer_id": "3778898000043586433",
+          "customer_name": "QUICK MART LTD (NANYUKI BRANCH)"
+        },
+        {
+          "customer_id": "3778898000114372987",
+          "customer_name": "QUICK MART LTD (NAROK MORAN)"
+        }
+      ]
+    },
+    {
+      "rep_id": "3778898000000641765",
+      "rep_name": "RHODA MBINYA",
+      "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "customer_count": 11,
+      "customers": [
+        {
+          "customer_id": "3778898000000362802",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (NYALI CITY MALL)"
+        },
+        {
+          "customer_id": "3778898000121047137",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (RUBIS WATAMU )"
+        },
+        {
+          "customer_id": "3778898000098506001",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (SEA ANGEL)"
+        },
+        {
+          "customer_id": "3778898000009825001",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED.(MBS PROMENADE)"
+        },
+        {
+          "customer_id": "3778898000039147591",
+          "customer_name": "NAIVAS LTD  (MALINDI)"
+        },
+        {
+          "customer_id": "3778898000125699988",
+          "customer_name": "NAIVAS LTD  (MALINDI)"
+        },
+        {
+          "customer_id": "3778898000040113100",
+          "customer_name": "NAIVAS LTD (NYALI BAZAAR)"
+        },
+        {
+          "customer_id": "3778898000039780138",
+          "customer_name": "NAIVAS LTD (NYALI MOMBASA)"
+        },
+        {
+          "customer_id": "3778898000056865334",
+          "customer_name": "QUICK MART LTD (MTWAPA EXPRESS)"
+        },
+        {
+          "customer_id": "3778898000043586241",
+          "customer_name": "QUICK MART LTD (MTWAPA MALL BRANCH)"
+        },
+        {
+          "customer_id": "3778898000043586349",
+          "customer_name": "QUICK MART LTD (NYALI BRANCH)"
+        }
+      ]
+    },
+    {
+      "rep_id": "3778898000115032001",
+      "rep_name": "SHEILA ODERO",
+      "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "customer_count": 38,
+      "customers": [
+        {
+          "customer_id": "3778898000118666801",
+          "customer_name": "QUICK MART LTD (BANANA)"
+        },
+        {
+          "customer_id": "3778898000043586229",
+          "customer_name": "QUICK MART LTD (BURUBURU BRANCH)"
+        },
+        {
+          "customer_id": "3778898000049940061",
+          "customer_name": "QUICK MART LTD (CHANIA)"
+        },
+        {
+          "customer_id": "3778898000107872067",
+          "customer_name": "QUICK MART LTD (CIRCLE MALL BRANCH)"
+        },
+        {
+          "customer_id": "3778898000043586253",
+          "customer_name": "QUICK MART LTD (CROSS ROAD KAREN)"
+        },
+        {
+          "customer_id": "3778898000049886015",
+          "customer_name": "QUICK MART LTD (EASTERN BYPASS 1)"
+        },
+        {
+          "customer_id": "3778898000043586325",
+          "customer_name": "QUICK MART LTD (EASTERN BYPASS 2)"
+        },
+        {
+          "customer_id": "3778898000121730304",
+          "customer_name": "QUICK MART LTD (ECHIRO)"
+        },
+        {
+          "customer_id": "3778898000043586301",
+          "customer_name": "QUICK MART LTD (EMBAKASI BRANCH)"
+        },
+        {
+          "customer_id": "3778898000043586217",
+          "customer_name": "QUICK MART LTD (FEDHA BRANCH)"
+        },
+        {
+          "customer_id": "3778898000049886039",
+          "customer_name": "QUICK MART LTD (HIGHWAY MLOLONGO  BRANCH)"
+        },
+        {
+          "customer_id": "3778898000108113152",
+          "customer_name": "QUICK MART LTD (JOSKA)"
+        },
+        {
+          "customer_id": "3778898000055263001",
+          "customer_name": "QUICK MART LTD (KAHAWA SUKARI)"
+        },
+        {
+          "customer_id": "3778898000049940025",
+          "customer_name": "QUICK MART LTD (KAHAWA WEST)"
+        },
+        {
+          "customer_id": "3778898000049940049",
+          "customer_name": "QUICK MART LTD (KIAMBU ROAD)"
+        },
+        {
+          "customer_id": "3778898000108156816",
+          "customer_name": "QUICK MART LTD (KIKUYU ROAD)"
+        },
+        {
+          "customer_id": "3778898000043586397",
+          "customer_name": "QUICK MART LTD (KILELESHWA BRANCH)"
+        },
+        {
+          "customer_id": "3778898000043586409",
+          "customer_name": "QUICK MART LTD (KILIMANI BRANCH)"
+        },
+        {
+          "customer_id": "3778898000111899001",
+          "customer_name": "QUICK MART LTD (KISERIAN)"
+        },
+        {
+          "customer_id": "3778898000043586277",
+          "customer_name": "QUICK MART LTD (KITENGELA OBC MALL )"
+        },
+        {
+          "customer_id": "3778898000123028007",
+          "customer_name": "QUICK MART LTD (KITENGELA TOWN )"
+        },
+        {
+          "customer_id": "3778898000043586265",
+          "customer_name": "QUICK MART LTD (LAVINGTON BRANCH)"
+        },
+        {
+          "customer_id": "3778898000119355132",
+          "customer_name": "QUICK MART LTD (MILELE NGONG BRANCH)"
+        },
+        {
+          "customer_id": "3778898000043586337",
+          "customer_name": "QUICK MART LTD (OUTERING2 BRANCH)"
+        },
+        {
+          "customer_id": "3778898000049940085",
+          "customer_name": "QUICK MART LTD (PIONEER BRANCH)"
+        },
+        {
+          "customer_id": "3778898000049940001",
+          "customer_name": "QUICK MART LTD (RONGAI BRANCH)"
+        },
+        {
+          "customer_id": "3778898000107872085",
+          "customer_name": "QUICK MART LTD (RONGAI EXPRESS)"
+        },
+        {
+          "customer_id": "3778898000049940097",
+          "customer_name": "QUICK MART LTD (ROYSAMBU BRANCH)"
+        },
+        {
+          "customer_id": "3778898000049940013",
+          "customer_name": "QUICK MART LTD (RUAI BRANCH)"
+        },
+        {
+          "customer_id": "3778898000043586361",
+          "customer_name": "QUICK MART LTD (RUAKA BRANCH)"
+        },
+        {
+          "customer_id": "3778898000049957987",
+          "customer_name": "QUICK MART LTD (RUIRU BRANCH)"
+        },
+        {
+          "customer_id": "3778898000049886003",
+          "customer_name": "QUICK MART LTD (T-MALL)"
+        },
+        {
+          "customer_id": "3778898000043586373",
+          "customer_name": "QUICK MART LTD (THOME BRANCH)"
+        },
+        {
+          "customer_id": "3778898000043586313",
+          "customer_name": "QUICK MART LTD (TOM MBOYA BRANCH)"
+        },
+        {
+          "customer_id": "3778898000049886027",
+          "customer_name": "QUICK MART LTD (UTAWALA EXPRESS BRANCH)"
+        },
+        {
+          "customer_id": "3778898000108113132",
+          "customer_name": "QUICK MART LTD (UTAWALA MAIN)"
+        },
+        {
+          "customer_id": "3778898000049940073",
+          "customer_name": "QUICK MART LTD (WAIYAKI WAY BRANCH)"
+        },
+        {
+          "customer_id": "3778898000043586385",
+          "customer_name": "QUICK MART LTD (WESTLANDS BRANCH)"
+        }
+      ]
+    },
+    {
+      "rep_id": "3778898000124225720",
+      "rep_name": "STEVE",
+      "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "customer_count": 3,
+      "customers": [
+        {
+          "customer_id": "3778898000000270319",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (KISUMU MEGA PLAZA)"
+        },
+        {
+          "customer_id": "3778898000000270367",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (KISUMU UNITED MALL)"
+        },
+        {
+          "customer_id": "3778898000088731352",
+          "customer_name": "NAIVAS LTD (KISUMU MEGA- CITY)"
+        }
+      ]
+    },
+    {
+      "rep_id": "3778898000038301241",
+      "rep_name": "VIRGINIA NJERI",
+      "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "customer_count": 6,
+      "customers": [
+        {
+          "customer_id": "3778898000119379917",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (NGARA)"
+        },
+        {
+          "customer_id": "3778898000115632082",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (PARKLANDS)"
+        },
+        {
+          "customer_id": "3778898000121545186",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (PARKLANDS)"
+        },
+        {
+          "customer_id": "3778898000036487022",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (RUNDA SUPER)"
+        },
+        {
+          "customer_id": "3778898000000100718",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (TWO RIVERS)"
+        },
+        {
+          "customer_id": "3778898000000100481",
+          "customer_name": "MAJID AL FUTTAIM HYPERMARKETS KENYA LIMITED. (VILLAGE MARKET)"
+        }
+      ]
+    }
+  ]
+}

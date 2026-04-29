@@ -1,0 +1,4069 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>KSL Field Sales</title>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./data/app/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --black: #0a0a0a;
+        --black-2: #111111;
+        --black-3: #1a1a1a;
+        --black-4: #222222;
+        --gold: #c9a84c;
+        --gold-2: #e8c96a;
+        --gold-3: #8a6f30;
+        --gold-bg: rgba(201, 168, 76, 0.08);
+        --white: #ffffff;
+        --off: #f5f2eb;
+        --g1: #a8a8a8;
+        --g2: #6a6a6a;
+        --g3: #333333;
+        --g4: #1e1e1e;
+        --red: #e05252;
+        --red-bg: rgba(224, 82, 82, 0.1);
+        --green: #52c47a;
+        --green-bg: rgba(82, 196, 122, 0.1);
+        --amber: #e8a838;
+        --amber-bg: rgba(232, 168, 56, 0.1);
+        --rad: 12px;
+        --rad-sm: 8px;
+        --rad-lg: 18px;
+        --shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        --serif: "DM Serif Display", Georgia, serif;
+        --sans: "DM Sans", -apple-system, sans-serif;
+        --gold-grad: linear-gradient(135deg, #c9a84c, #e8c96a 50%, #c9a84c);
+      }
+      html,
+      body {
+        height: 100%;
+        background: var(--black);
+        color: var(--white);
+        font-family: var(--sans);
+        font-size: 15px;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        overscroll-behavior: none;
+      }
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Topbar */
+      .tb {
+        background: var(--black);
+        border-bottom: 1px solid var(--g3);
+        padding: 0 16px;
+        height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        gap: 12px;
+      }
+      .tb-logo {
+        height: 30px;
+        object-fit: contain;
+      }
+      .tb-logo-text {
+        font-family: var(--serif);
+        font-size: 17px;
+        color: var(--gold);
+        letter-spacing: 0.3px;
+      }
+      .tb-center {
+        flex: 1;
+        text-align: center;
+      }
+      .tb-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--white);
+        line-height: 1.2;
+      }
+      .tb-sub {
+        font-size: 11px;
+        color: var(--g1);
+        line-height: 1.2;
+      }
+      .btn-ghost {
+        background: none;
+        border: 1px solid var(--g3);
+        color: var(--g1);
+        cursor: pointer;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-family: var(--sans);
+        transition: all 0.15s;
+        white-space: nowrap;
+      }
+      .btn-ghost:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+
+      /* Layout */
+      .page {
+        flex: 1;
+        padding: 14px;
+        max-width: 600px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      /* Cards */
+      .card {
+        background: var(--black-2);
+        border: 1px solid var(--g3);
+        border-radius: var(--rad);
+        padding: 16px;
+        margin-bottom: 12px;
+      }
+      .card-gold {
+        border-color: var(--gold-3);
+      }
+      .card-title {
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: var(--gold);
+        margin-bottom: 12px;
+      }
+
+      /* Forms */
+      label {
+        display: block;
+        font-size: 10px;
+        color: var(--g1);
+        margin-bottom: 3px;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+      }
+      select,
+      input[type="text"],
+      input[type="number"],
+      textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid var(--g3);
+        border-radius: var(--rad-sm);
+        font-size: 15px;
+        background: var(--black-3);
+        color: var(--white);
+        appearance: none;
+        -webkit-appearance: none;
+        font-family: var(--sans);
+        transition: border-color 0.15s;
+        -moz-appearance: textfield;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+      select:focus,
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--gold);
+      }
+      textarea {
+        min-height: 72px;
+        resize: vertical;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 11px 18px;
+        border-radius: var(--rad-sm);
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+        font-family: var(--sans);
+        transition: all 0.15s;
+        letter-spacing: 0.2px;
+        white-space: nowrap;
+      }
+      .btn:active {
+        transform: scale(0.96);
+      }
+      .btn:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+        transform: none;
+      }
+      .btn-gold {
+        background: var(--gold-grad);
+        color: var(--black);
+        font-weight: 700;
+      }
+      .btn-dark {
+        background: var(--g3);
+        color: var(--white);
+      }
+      .btn-outline {
+        background: transparent;
+        border: 1px solid var(--g3);
+        color: var(--g1);
+      }
+      .btn-outline:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .btn-danger {
+        background: var(--red-bg);
+        color: var(--red);
+        border: 1px solid var(--red);
+      }
+      .btn-full {
+        width: 100%;
+      }
+      .btn-row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 14px;
+      }
+
+      /* Badges */
+      .badge {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+      }
+      .abc-A {
+        background: var(--green-bg);
+        color: var(--green);
+        border: 1px solid rgba(82, 196, 122, 0.3);
+      }
+      .abc-B {
+        background: var(--amber-bg);
+        color: var(--amber);
+        border: 1px solid rgba(232, 168, 56, 0.3);
+      }
+      .abc-C {
+        background: var(--red-bg);
+        color: var(--red);
+        border: 1px solid rgba(224, 82, 82, 0.3);
+      }
+      .stk-ok {
+        background: var(--green-bg);
+        color: var(--green);
+        border: 1px solid rgba(82, 196, 122, 0.3);
+      }
+      .stk-low {
+        background: var(--amber-bg);
+        color: var(--amber);
+        border: 1px solid rgba(232, 168, 56, 0.3);
+      }
+      .stk-out {
+        background: var(--red-bg);
+        color: var(--red);
+        border: 1px solid rgba(224, 82, 82, 0.3);
+      }
+      .chip {
+        display: inline-block;
+        background: var(--black-3);
+        border: 1px solid var(--g3);
+        border-radius: 20px;
+        padding: 3px 10px;
+        font-size: 11px;
+        color: var(--g1);
+      }
+      .chip-gold {
+        border-color: var(--gold-3);
+        color: var(--gold);
+      }
+
+      /* Loading */
+      .loading-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 14px;
+        padding: 80px 20px;
+        min-height: 50vh;
+      }
+      .spinner {
+        width: 28px;
+        height: 28px;
+        border: 2px solid var(--g3);
+        border-top-color: var(--gold);
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .loading-msg {
+        font-size: 13px;
+        color: var(--g1);
+      }
+      .err-box {
+        background: var(--red-bg);
+        color: var(--red);
+        border: 1px solid rgba(224, 82, 82, 0.4);
+        padding: 14px;
+        border-radius: var(--rad-sm);
+        font-size: 13px;
+      }
+
+      /* Login */
+      .login-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 20px;
+        justify-content: center;
+        min-height: calc(100vh - 54px);
+      }
+      .login-logo {
+        height: 72px;
+        object-fit: contain;
+        margin-bottom: 16px;
+      }
+      .login-logo-text {
+        font-family: var(--serif);
+        font-size: 30px;
+        color: var(--gold);
+        margin-bottom: 4px;
+        text-align: center;
+      }
+      .login-tagline {
+        font-size: 12px;
+        color: var(--g1);
+        margin-bottom: 28px;
+      }
+      .login-card {
+        background: var(--black-2);
+        border: 1px solid var(--g3);
+        border-radius: var(--rad-lg);
+        padding: 24px;
+        width: 100%;
+        max-width: 340px;
+      }
+      .pin-dots {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        margin: 18px 0 6px;
+      }
+      .pin-dot {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: var(--g3);
+        border: 1px solid var(--g2);
+        transition: all 0.2s;
+      }
+      .pin-dot.on {
+        background: var(--gold);
+        border-color: var(--gold);
+        box-shadow: 0 0 10px rgba(201, 168, 76, 0.4);
+      }
+      .pin-err {
+        color: var(--red);
+        font-size: 12px;
+        text-align: center;
+        min-height: 18px;
+        margin-bottom: 12px;
+      }
+      .pin-pad {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+      .pin-key {
+        padding: 15px;
+        border-radius: var(--rad-sm);
+        font-size: 20px;
+        font-weight: 500;
+        border: 1px solid var(--g3);
+        background: var(--black-3);
+        color: var(--white);
+        cursor: pointer;
+        text-align: center;
+        font-family: var(--sans);
+        transition: all 0.12s;
+      }
+      .pin-key:active {
+        background: var(--gold-bg);
+        border-color: var(--gold);
+        color: var(--gold);
+        transform: scale(0.93);
+      }
+
+      /* Customer list */
+      .cust-card {
+        cursor: pointer;
+        padding: 14px 16px;
+        border-radius: var(--rad);
+        background: var(--black-2);
+        border: 1px solid var(--g3);
+        margin-bottom: 9px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: all 0.15s;
+      }
+      .cust-card:active {
+        border-color: var(--gold);
+        background: var(--black-3);
+      }
+      .cust-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--g3);
+        flex-shrink: 0;
+      }
+      .cust-dot.fresh {
+        background: var(--gold);
+      }
+      .cust-left {
+        flex: 1;
+        min-width: 0;
+      }
+      .cust-name {
+        font-weight: 500;
+        font-size: 14px;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+        line-height: 1.3;
+      }
+      .cust-meta {
+        font-size: 12px;
+        color: var(--g1);
+        margin-top: 2px;
+      }
+      .cust-arrow {
+        color: var(--gold);
+        font-size: 20px;
+        flex-shrink: 0;
+        opacity: 0.7;
+      }
+      .search-wrap {
+        position: relative;
+        margin-bottom: 12px;
+      }
+      .search-wrap input {
+        padding-left: 38px;
+        background: var(--black-2);
+      }
+      .search-icon {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--g2);
+        font-size: 16px;
+        pointer-events: none;
+      }
+      .list-meta {
+        font-size: 11px;
+        color: var(--g2);
+        margin-bottom: 10px;
+        padding: 0 2px;
+      }
+
+      /* Visit header */
+      .vh {
+        background: var(--black-2);
+        border: 1px solid var(--g3);
+        border-radius: var(--rad);
+        padding: 14px 16px;
+        margin-bottom: 12px;
+      }
+      .vh-name {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+      .vh-full {
+        font-size: 11px;
+        color: var(--g1);
+        margin-bottom: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .vh-chips {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+
+      /* Mode tabs */
+      .mode-tabs {
+        display: flex;
+        background: var(--black-2);
+        border: 1px solid var(--g3);
+        border-radius: var(--rad);
+        padding: 3px;
+        margin-bottom: 12px;
+      }
+      .mode-tab {
+        flex: 1;
+        padding: 9px;
+        text-align: center;
+        border-radius: 9px;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        color: var(--g1);
+        transition: all 0.15s;
+        font-family: var(--sans);
+      }
+      .mode-tab.on {
+        background: var(--gold-grad);
+        color: var(--black);
+        font-weight: 700;
+      }
+
+      /* SKU row */
+      .sku-row {
+        background: var(--black-2);
+        border: 1px solid var(--g3);
+        border-radius: var(--rad);
+        padding: 14px;
+        margin-bottom: 8px;
+      }
+      .sku-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 6px;
+      }
+      .sku-name {
+        font-weight: 500;
+        font-size: 14px;
+        flex: 1;
+        line-height: 1.3;
+      }
+      .sku-code {
+        font-size: 11px;
+        color: var(--g2);
+        margin-top: 2px;
+      }
+      .sku-chips {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+      .sku-inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .rec-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid var(--g3);
+      }
+      .rec-lbl {
+        font-size: 11px;
+        color: var(--g1);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .rec-num {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--gold);
+        line-height: 1;
+      }
+
+      /* Swipe */
+      .swipe-outer {
+        position: relative;
+        touch-action: pan-y;
+      }
+      .swipe-wrap {
+        position: relative;
+        min-height: 430px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+      }
+      .swipe-card {
+        width: 100%;
+        max-width: 360px;
+        background: var(--black-2);
+        border: 1px solid var(--g3);
+        border-radius: 20px;
+        padding: 22px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition:
+          transform 0.3s cubic-bezier(0.34, 1.2, 0.64, 1),
+          opacity 0.3s;
+        user-select: none;
+        cursor: grab;
+        position: relative;
+        overflow: hidden;
+      }
+      .swipe-card:active {
+        cursor: grabbing;
+      }
+      .swipe-card.fly-r {
+        transform: translateX(150%) rotate(15deg) !important;
+        opacity: 0 !important;
+        transition:
+          transform 0.28s ease-in,
+          opacity 0.28s ease-in;
+      }
+      .swipe-card.fly-l {
+        transform: translateX(-150%) rotate(-15deg) !important;
+        opacity: 0 !important;
+        transition:
+          transform 0.28s ease-in,
+          opacity 0.28s ease-in;
+      }
+      .hint-keep {
+        position: absolute;
+        top: 18px;
+        left: 16px;
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--green);
+        border: 3px solid var(--green);
+        border-radius: 6px;
+        padding: 2px 10px;
+        letter-spacing: 2px;
+        transition: opacity 0.12s;
+        pointer-events: none;
+      }
+      .hint-skip {
+        position: absolute;
+        top: 18px;
+        right: 16px;
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--red);
+        border: 3px solid var(--red);
+        border-radius: 6px;
+        padding: 2px 10px;
+        letter-spacing: 2px;
+        transition: opacity 0.12s;
+        pointer-events: none;
+      }
+      .swipe-img-wrap {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 14px;
+        border-radius: 12px;
+        background: var(--black-3);
+        border: 1px solid var(--g3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .swipe-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .swipe-ph {
+        font-size: 44px;
+      }
+      .swipe-sku {
+        font-size: 11px;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+      }
+      .swipe-name {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 14px;
+        line-height: 1.3;
+      }
+      .swipe-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+      .swipe-stat {
+        background: var(--black-3);
+        border-radius: 8px;
+        padding: 9px 6px;
+      }
+      .sv {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--gold);
+      }
+      .sl {
+        font-size: 10px;
+        color: var(--g1);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-top: 1px;
+      }
+      .swipe-btns {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        align-items: center;
+      }
+      .sw-btn {
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+        border: 2px solid;
+        font-size: 22px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.15s;
+        background: transparent;
+        font-family: var(--sans);
+      }
+      .sw-btn:active {
+        transform: scale(0.86);
+      }
+      .sw-btn-skip {
+        border-color: var(--red);
+        color: var(--red);
+      }
+      .sw-btn-skip:active {
+        background: var(--red-bg);
+      }
+      .sw-btn-add {
+        border-color: var(--green);
+        color: var(--green);
+        width: 70px;
+        height: 70px;
+        font-size: 26px;
+      }
+      .sw-btn-add:active {
+        background: var(--green-bg);
+      }
+      .prog-bar {
+        height: 2px;
+        background: var(--g3);
+        border-radius: 2px;
+        margin-bottom: 8px;
+        overflow: hidden;
+      }
+      .prog-fill {
+        height: 100%;
+        background: var(--gold-grad);
+        border-radius: 2px;
+        transition: width 0.4s;
+      }
+      .prog-txt {
+        font-size: 11px;
+        color: var(--g1);
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .swipe-done-sticky {
+        position: sticky;
+        top: 58px;
+        z-index: 10;
+        margin-bottom: 8px;
+      }
+
+      /* Modal */
+      .modal-ov {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.75);
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        z-index: 200;
+        padding: 12px;
+      }
+      .modal-box {
+        background: var(--black-2);
+        border: 1px solid var(--g3);
+        border-radius: 20px 20px 14px 14px;
+        padding: 22px;
+        width: 100%;
+        max-width: 480px;
+      }
+      .modal-handle {
+        width: 36px;
+        height: 4px;
+        background: var(--g3);
+        border-radius: 2px;
+        margin: 0 auto 18px;
+      }
+      .modal-ttl {
+        font-weight: 600;
+        font-size: 15px;
+        margin-bottom: 14px;
+      }
+
+      /* Pitch review */
+      .pitch-item {
+        display: flex;
+        align-items: center;
+        padding: 11px 0;
+        border-bottom: 1px solid var(--g3);
+        gap: 10px;
+      }
+      .pitch-item:last-child {
+        border-bottom: none;
+      }
+      .pi-left {
+        flex: 1;
+        min-width: 0;
+      }
+      .pi-name {
+        font-weight: 500;
+        font-size: 14px;
+      }
+      .pi-sku {
+        font-size: 11px;
+        color: var(--g1);
+        margin-top: 1px;
+      }
+      .pi-right {
+        text-align: right;
+        flex-shrink: 0;
+      }
+      .pi-rank {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--gold);
+      }
+      .pi-vel {
+        font-size: 11px;
+        color: var(--g1);
+      }
+
+      /* Print */
+      @media print {
+        * {
+          color: #000 !important;
+          background: #fff !important;
+          border-color: #ccc !important;
+        }
+        .no-print,
+        .topbar,
+        .mode-tabs,
+        .btn-row,
+        .btn-ghost,
+        .swipe-outer,
+        .swipe-done-sticky {
+          display: none !important;
+        }
+        .page {
+          padding: 0;
+          max-width: 100%;
+        }
+        .sku-row,
+        .card {
+          box-shadow: none;
+          break-inside: avoid;
+          margin-bottom: 6px;
+          border: 1px solid #ddd !important;
+        }
+        body {
+          font-size: 11px;
+          font-family: Arial, sans-serif;
+        }
+        .print-header {
+          display: block !important;
+        }
+        .pt {
+          width: 100%;
+          border-collapse: collapse;
+          font-size: 10px;
+        }
+        .pt th {
+          background: #111 !important;
+          color: #c9a84c !important;
+          padding: 6px;
+          text-align: left;
+          border: 1px solid #ccc;
+        }
+        .pt td {
+          padding: 5px 6px;
+          border: 1px solid #ddd;
+        }
+        .pt tr:nth-child(even) td {
+          background: #f5f5f5 !important;
+        }
+        .rec-num {
+          font-size: 14px !important;
+        }
+        .sku-inputs {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      /* SO History Cards */
+      .so-history-card {
+        cursor: pointer;
+        transition: background 0.12s;
+        margin-bottom: 8px;
+      }
+      .so-history-card:active { background: var(--gold-bg); }
+      .so-history-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .so-history-left { flex: 1; min-width: 0; }
+      .so-history-sonum {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--gold);
+      }
+      .so-history-date {
+        font-size: 11px;
+        color: var(--g1);
+        margin-top: 2px;
+      }
+      .so-history-right {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        flex-shrink: 0;
+      }
+      .so-history-value {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--white);
+      }
+      .so-history-chevron {
+        font-size: 20px;
+        color: var(--g2);
+        transition: transform 0.2s;
+        line-height: 1;
+        display: inline-block;
+      }
+      .so-history-detail {
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid var(--g3);
+        overflow-x: auto;
+      }
+      .chip-green {
+        background: rgba(55,86,35,0.25);
+        color: #7ecf5a;
+        border: 1px solid rgba(55,86,35,0.5);
+      }
+      .chip-grey {
+        background: rgba(120,120,120,0.2);
+        color: #aaa;
+        border: 1px solid rgba(120,120,120,0.4);
+      }
+      /* Install banner */
+      .install-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        background: var(--black-2);
+        border-top: 2px solid var(--gold);
+        padding: 14px 18px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+      }
+      .install-banner-text { flex: 1; }
+      .install-banner-title {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--gold);
+      }
+      .install-banner-sub {
+        font-size: 11px;
+        color: var(--g1);
+        margin-top: 2px;
+      }
+      .install-banner-btns { display: flex; gap: 8px; flex-shrink: 0; }
+
+      /* Stale draft warning */
+      .so-draft-warning {
+        background: rgba(255, 160, 0, 0.12);
+        border: 1px solid rgba(255, 160, 0, 0.4);
+        border-radius: var(--rad-sm);
+        padding: 9px 12px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 12px;
+        color: var(--gold);
+      }
+      .so-draft-warning-text { flex: 1; line-height: 1.4; }
+      .so-draft-discard {
+        background: none;
+        border: 1px solid rgba(255,160,0,0.5);
+        color: var(--gold);
+        border-radius: 4px;
+        padding: 4px 10px;
+        font-size: 11px;
+        cursor: pointer;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      /* Sales Order — sticky search header */
+      .so-sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 120;
+        background: var(--black-1);
+        padding: 8px 0 4px;
+        margin-bottom: 0;
+      }
+      .so-sticky-header .card {
+        margin-bottom: 0;
+      }
+      /* Compact the order-detail inputs so search gets max width */
+      .so-meta-row {
+        display: grid;
+        grid-template-columns: 130px 1fr auto;
+        gap: 6px;
+        align-items: end;
+      }
+      .so-meta-row input[type="date"],
+      .so-meta-row input[type="text"] {
+        font-size: 12px;
+        padding: 5px 7px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      /* Autosave badge */
+      .so-autosave-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 11px;
+        color: var(--g2);
+        padding: 3px 8px;
+        background: var(--black-3);
+        border: 1px solid var(--g3);
+        border-radius: 20px;
+        margin-left: 8px;
+        vertical-align: middle;
+        transition: color 0.3s;
+      }
+      .so-autosave-badge.saved { color: #4caf50; border-color: rgba(76,175,80,0.4); }
+      .so-autosave-dot {
+        width: 6px; height: 6px;
+        border-radius: 50%;
+        background: currentColor;
+        flex-shrink: 0;
+      }
+      /* Basket — no internal scroll, just flows naturally in the page */
+      .so-basket-scroll {
+        overflow: visible;
+      }
+      /* Basket item card */
+      .so-basket-card {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 10px;
+        border-bottom: 1px solid var(--g3);
+        background: var(--black-2);
+        border-radius: 6px;
+        margin-bottom: 5px;
+      }
+      .so-basket-card:last-child { margin-bottom: 0; border-bottom: none; }
+      .so-basket-card-info { min-width: 0; }
+      .so-basket-card-name {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--white);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 2px;
+      }
+      .so-basket-card-meta {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+        font-size: 11px;
+        color: var(--g1);
+      }
+      .so-basket-card-sku {
+        font-family: monospace;
+        font-size: 11px;
+        color: var(--g2);
+      }
+      .so-basket-card-line {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--gold);
+        white-space: nowrap;
+        text-align: right;
+        min-width: 80px;
+      }
+      .so-basket-card-line-sub {
+        font-size: 10px;
+        color: var(--g2);
+        text-align: right;
+        margin-top: 1px;
+      }
+      .so-basket-qty-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+      }
+      .so-basket-qty-label {
+        font-size: 9px;
+        color: var(--g2);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      /* Draft resume banner on history screen */
+      .so-draft-banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(201,168,76,0.12);
+        border: 1px solid rgba(201,168,76,0.4);
+        border-radius: 8px;
+        padding: 12px 14px;
+        margin-bottom: 10px;
+        gap: 10px;
+      }
+      .so-draft-banner-left { flex: 1; min-width: 0; }
+      .so-draft-banner-title {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--gold);
+        margin-bottom: 2px;
+      }
+      .so-draft-banner-sub {
+        font-size: 11px;
+        color: var(--g1);
+      }
+      .so-draft-banner-actions {
+        display: flex;
+        gap: 6px;
+        flex-shrink: 0;
+      }
+
+      /* Sales Order module */
+      .so-search-results {
+        background: var(--black-3);
+        border: 1px solid var(--g3);
+        border-radius: var(--rad-sm);
+        margin-top: 4px;
+        max-height: 260px;
+        overflow-y: auto;
+      }
+      .so-result-row {
+        padding: 11px 14px;
+        border-bottom: 1px solid var(--g3);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        transition: background 0.12s;
+      }
+      .so-result-row:last-child {
+        border-bottom: none;
+      }
+      .so-result-row:active {
+        background: var(--gold-bg);
+      }
+      .so-res-left {
+        flex: 1;
+        min-width: 0;
+      }
+      .so-res-name {
+        font-size: 13px;
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .so-res-sku {
+        font-size: 11px;
+        color: var(--g2);
+        margin-top: 1px;
+      }
+      .so-res-right {
+        display: flex;
+        gap: 5px;
+        flex-shrink: 0;
+        align-items: center;
+      }
+      .so-basket {
+        margin-top: 14px;
+      }
+      .so-basket-row {
+        background: var(--black-2);
+        border: 1px solid var(--g3);
+        border-radius: var(--rad-sm);
+        padding: 10px 12px;
+        margin-bottom: 7px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .so-basket-info {
+        flex: 1;
+        min-width: 0;
+      }
+      .so-basket-name {
+        font-size: 13px;
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .so-basket-sku {
+        font-size: 10px;
+        color: var(--g2);
+        margin-top: 1px;
+      }
+      .so-basket-qty {
+        width: 64px;
+        flex-shrink: 0;
+      }
+      .so-basket-remove {
+        background: none;
+        border: none;
+        color: var(--red);
+        font-size: 18px;
+        cursor: pointer;
+        padding: 0 4px;
+        line-height: 1;
+        flex-shrink: 0;
+      }
+      .so-stamp {
+        background: var(--black-3);
+        border: 1px solid var(--gold-3);
+        border-radius: var(--rad-sm);
+        padding: 10px 14px;
+        font-size: 12px;
+        color: var(--gold);
+        margin-top: 14px;
+        font-style: italic;
+      }
+      .so-success {
+        text-align: center;
+        padding: 40px 20px;
+      }
+      .so-success-icon {
+        font-size: 44px;
+        margin-bottom: 10px;
+      }
+      .so-success-title {
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--gold);
+        margin-bottom: 6px;
+      }
+      .so-success-sub {
+        font-size: 13px;
+        color: var(--g1);
+        margin-bottom: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="./vendor/xlsx.min.js"></script>
+    <script src="./vendor/react.min.js"></script>
+    <script src="./vendor/react-dom.min.js"></script>
+    <script>
+      if (!window.React || !window.ReactDOM) {
+        document.getElementById('root').innerHTML =
+          '<div style="padding:40px;color:#e05252;font-family:sans-serif;background:#0a0a0a;min-height:100vh">' +
+          '<div style="max-width:400px;margin:80px auto;border:1px solid #e05252;border-radius:12px;padding:24px">' +
+          '<div style="font-size:16px;font-weight:600;margin-bottom:8px">Failed to load</div>' +
+          '<div style="font-size:13px;opacity:0.8">Could not load React. Check your internet connection and reload.</div>' +
+          '<button onclick="location.reload()" style="margin-top:16px;background:#C9A84C;color:#000;border:none;padding:10px 20px;border-radius:6px;cursor:pointer;font-weight:600">Reload</button>' +
+          '</div></div>';
+      }
+    </script>
+    <script>
+      // ─────────────────────────────────────────────────────────────
+      //  CONFIG
+      //  Logo: put your PNG at  data/app/logo.png  - auto-detected
+      // ─────────────────────────────────────────────────────────────
+      const CFG = {
+        COMPANY: "Kingdom Sourcing Limited",
+        LOGO: "./data/app/logo.png", // deploy logo to data/app/logo.png via nightly workflow
+        VISIT_KEY: "ksl_visit_v2",
+        DEF_CYCLE: 7,
+        ABC_BUF: { A: 1.0, B: 0.75, C: 0.5 },
+        DROP_REASONS: [
+          "Pricing too high",
+          "Sources elsewhere",
+          "Not relevant",
+          "Customer not interested",
+          "No shelf space",
+          "Other",
+        ],
+        PITCH_TO: "orders@kingdom.limited",
+        RESET_EMAIL: "orders@kingdom.limited",
+        SO_TO:  "orders@kingdom.limited",   // fixed TO — never changes
+        SO_CC1: "gylian@kingdom.limited",   // fixed CC1 — never changes
+      };
+      const INV_BASE = "https://www.zohoapis.com/inventory/v1";
+      const MAIL_BASE = "https://mail.zoho.com/api";
+      const PROXY = "https://ksl-zoho-proxy.russelosiemo.workers.dev";
+      function prx(u) {
+        return `${PROXY}?url=${encodeURIComponent(u)}`;
+      }
+
+      // Price list cache — loaded once per session from data/app/pricelists.json
+      const PriceCache = (() => {
+        let _data = null; // { priceLists: {pl_id: {name, prices: {item_id: rate}}}, customerPL: {cust_id: pl_id}, defaultPLId: "..." }
+        async function load() {
+          if (_data) return _data;
+          try {
+            const r = await fetch(`./data/app/pricelists.json?_=${Date.now()}`);
+            if (r.ok) _data = await r.json();
+          } catch {}
+          if (!_data) _data = { priceLists: {}, customerPL: {} };
+          return _data;
+        }
+        // 1. Customer's assigned pricelist
+        function rateFor(customerId, itemId) {
+          if (!_data) return 0;
+          const plId = _data.customerPL?.[String(customerId)];
+          if (!plId) return 0;
+          return _data.priceLists?.[plId]?.prices?.[String(itemId)] || 0;
+        }
+        // 2. Default/fallback pricelist (first pricelist marked default, or first overall)
+        function defaultRate(itemId) {
+          if (!_data) return 0;
+          const pls = _data.priceLists || {};
+          // Prefer a pricelist whose name contains "default" or "standard" (case-insensitive)
+          let fallbackId = _data.defaultPLId || "";
+          if (!fallbackId) {
+            const found = Object.entries(pls).find(([, pl]) =>
+              /default|standard|selling/i.test(pl.name || "")
+            );
+            fallbackId = found ? found[0] : Object.keys(pls)[0] || "";
+          }
+          if (!fallbackId) return 0;
+          return pls[fallbackId]?.prices?.[String(itemId)] || 0;
+        }
+        return { load, rateFor, defaultRate };
+      })();
+
+      // ─────────────────────────────────────────────────────────────
+      //  CACHE
+      // ─────────────────────────────────────────────────────────────
+      const Cache = (() => {
+        let C = null,
+          S = null,
+          V = null,
+          R = null,
+          T = null;
+        async function f(p) {
+          const r = await fetch(`./data/app/${p}?_=${Date.now()}`);
+          if (!r.ok) throw new Error(`Cannot load ${p}`);
+          return r.json();
+        }
+        async function loadAll() {
+          [C, S, V, R, T] = await Promise.all([
+            f("catalogue.json"),
+            f("stock.json"),
+            f("velocity.json"),
+            f("reps.json"),
+            f("token.json"),
+          ]);
+          return {
+            token: T.access_token,
+            orgId: T.org_id,
+            refreshedAt: T.refreshed_at || null,
+            mailAccountId: T.mail_account_id || "",
+          };
+        }
+        function items() {
+          return C?.items || [];
+        }
+        function stk(sku) {
+          const entry = S?.stock?.[sku];
+          if (!entry) return null;
+          // Clamp all stock values to 0 — negatives mean warehouse discrepancy,
+          // not orderable quantity. Users should never see or act on negatives.
+          return {
+            ...entry,
+            wh1:        Math.max(0, entry.wh1 ?? 0),
+            wh2:        Math.max(0, entry.wh2 ?? 0),
+            combined:   Math.max(0, entry.combined ?? 0),
+            free_stock: Math.max(0, entry.free_stock ?? entry.combined ?? 0),
+            committed:  Math.max(0, entry.committed ?? 0),
+          };
+        }
+        function velMap() {
+          const m = {};
+          for (const v of V?.velocity || []) m[v.sku] = v;
+          return m;
+        }
+        function reps() {
+          return R?.reps || [];
+        }
+        return { loadAll, items, stk, velMap, reps };
+      })();
+
+      // ─────────────────────────────────────────────────────────────
+      //  ZOHO
+      // ─────────────────────────────────────────────────────────────
+      const Zoho = (() => {
+        let _t = "",
+          _o = "",
+          _mailAccId = ""; // populated from token.json
+        let _refreshedAt = 0; // ms timestamp when token was last refreshed
+        const TOKEN_MAX_AGE = 55 * 60 * 1000; // treat token as stale after 55 minutes
+
+        function init(t, o, refreshedAt, mailAccId) {
+          _t = t;
+          _o = o;
+          _refreshedAt = refreshedAt ? new Date(refreshedAt).getTime() : 0;
+          if (mailAccId) _mailAccId = String(mailAccId);
+          _refreshToken();
+        }
+
+        // Token always comes from token.json written by GitHub Actions.
+        // No secrets are stored in the proxy worker or anywhere on Cloudflare.
+        async function _refreshToken() {
+          try {
+            const r = await fetch(`./data/app/token.json?_=${Date.now()}`);
+            if (!r.ok) return;
+            const d = await r.json();
+            if (d.access_token) {
+              _t = d.access_token;
+              _o = d.org_id || _o;
+              _refreshedAt = d.refreshed_at
+                ? new Date(d.refreshed_at).getTime()
+                : Date.now();
+              if (d.mail_account_id) _mailAccId = String(d.mail_account_id);
+            }
+          } catch {}
+        }
+
+        // Check age and refresh proactively if token is close to expiry
+        async function _ensureFreshToken() {
+          const age = Date.now() - _refreshedAt;
+          // Refresh if: never refreshed (age=0), or older than 50 minutes
+          if (_refreshedAt === 0 || age > 50 * 60 * 1000) {
+            await _refreshToken();
+          }
+        }
+
+        // Fetch a Zoho image URL with auth and return a blob object URL.
+        // Used instead of <img src=prx(url)> because browsers strip
+        // Authorization headers on plain img src requests.
+        async function fetchImage(imageUrl) {
+          await _ensureFreshToken();
+          const r = await fetch(prx(imageUrl), {
+            headers: { Authorization: `Zoho-oauthtoken ${_t}` },
+          });
+          if (!r.ok) throw new Error(`img ${r.status}`);
+          const blob = await r.blob();
+          return URL.createObjectURL(blob);
+        }
+
+        async function get(path, p = {}) {
+          // Proactively refresh if token is older than 55 minutes
+          await _ensureFreshToken();
+
+          const u = new URL(`${INV_BASE}${path}`);
+          u.searchParams.set("organization_id", _o);
+          for (const [k, v] of Object.entries(p)) u.searchParams.set(k, v);
+          let r = await fetch(prx(u.toString()), {
+            headers: { Authorization: `Zoho-oauthtoken ${_t}` },
+          });
+
+          // If still 401 after proactive refresh, force a fresh fetch and retry once
+          if (r.status === 401) {
+            await _refreshToken();
+            r = await fetch(prx(u.toString()), {
+              headers: { Authorization: `Zoho-oauthtoken ${_t}` },
+            });
+          }
+          if (!r.ok) throw new Error(`Zoho ${path} - ${r.status}`);
+          return r.json();
+        }
+        async function runRates(cid) {
+          const list = await get("/salesorders", {
+            customer_id: cid,
+            date_start: daysAgo(180),
+            per_page: 200,
+            sort_column: "date",
+            sort_order: "D",
+          });
+          const sos = list.salesorders || [];
+          if (!sos.length) return {};
+          const wks = {};
+          async function det(so) {
+            try {
+              const d = await get(`/salesorders/${so.salesorder_id}`, {});
+              return d.salesorder || null;
+            } catch {
+              return null;
+            }
+          }
+          for (let i = 0; i < sos.length; i += 5) {
+            const ds = await Promise.all(sos.slice(i, i + 5).map(det));
+            for (const d of ds) {
+              if (!d) continue;
+              const wk = isoWk(d.date);
+              for (const li of d.line_items || []) {
+                const sku = li.sku?.trim();
+                if (!sku) continue;
+                const q = parseFloat(li.quantity_invoiced) || 0;
+                if (q <= 0) continue;
+                if (!wks[sku]) wks[sku] = { weeks: {}, last: "" };
+                wks[sku].weeks[wk] = (wks[sku].weeks[wk] || 0) + q;
+                if ((d.date || "") >= wks[sku].last) wks[sku].last = d.date;
+              }
+            }
+          }
+          const res = {};
+          for (const [sku, d] of Object.entries(wks)) {
+            const vs = Object.values(d.weeks),
+              tot = vs.reduce((a, b) => a + b, 0);
+            res[sku] = {
+              weekly_avg: vs.length ? Math.round(tot / vs.length) : 0,
+              weeks_seen: vs.length,
+              last: d.last,
+            };
+          }
+          return res;
+        }
+        async function lastSO(cid) {
+          const d = await get("/salesorders", {
+            customer_id: cid,
+            per_page: 1,
+            sort_column: "date",
+            sort_order: "D",
+          });
+          return d.salesorders?.[0]?.date || null;
+        }
+        async function lastInv(cid) {
+          const d = await get("/invoices", {
+            customer_id: cid,
+            per_page: 1,
+            sort_column: "date",
+            sort_order: "D",
+          });
+          return d.invoices?.[0]?.date || null;
+        }
+        async function mail({ to, subject, html }) {
+          await _ensureFreshToken();
+          const accId = _mailAccId || "0";
+          const r = await fetch(prx(`${MAIL_BASE}/accounts/${accId}/messages`), {
+            method: "POST",
+            headers: {
+              Authorization: `Zoho-oauthtoken ${_t}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              fromAddress: "russel@kingdom.limited",
+              toAddress: to,
+              subject,
+              content: html,
+              mailFormat: "html",
+              priority: "high",
+            }),
+          });
+          if (!r.ok) throw new Error(`Mail ${r.status}`);
+          return r.json();
+        }
+        async function mailWithCC({ to, cc, subject, html }) {
+          await _ensureFreshToken();
+          const accId = _mailAccId || "0";
+          const r = await fetch(prx(`${MAIL_BASE}/accounts/${accId}/messages`), {
+            method: "POST",
+            headers: {
+              Authorization: `Zoho-oauthtoken ${_t}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              fromAddress: "russel@kingdom.limited",
+              toAddress: to,
+              ccAddress: cc || "",
+              subject,
+              content: html,
+              mailFormat: "html",
+              priority: "high",
+            }),
+          });
+          if (!r.ok) throw new Error(`Mail ${r.status}`);
+          return r.json();
+        }
+        async function sendResetRequest(repName) {
+          const recipients = SORecipients.get();
+          const to = CFG.RESET_EMAIL;
+          const subject = `[PIN RESET] ${repName} - KSL Field Sales`;
+          const html = `<div style="font-family:Arial;max-width:500px;padding:24px">
+<h2 style="color:#C9A84C;border-bottom:2px solid #C9A84C;padding-bottom:8px">PIN Reset Request</h2>
+<p style="font-size:14px;color:#333">Sales rep <strong>${repName}</strong> has requested a PIN reset.</p>
+<p style="font-size:13px;color:#666">Time: ${new Date().toUTCString()}</p>
+<p style="font-size:13px;color:#666">Please update their <code>pin_hash</code> in <code>data/config/reps_customers.csv</code> and redeploy.</p>
+<p style="font-size:11px;color:#aaa;margin-top:20px">Sent via KSL Field Sales Tool</p>
+</div>`;
+          await _ensureFreshToken();
+          const accId = _mailAccId || "0";
+          const r = await fetch(prx(`${MAIL_BASE}/accounts/${accId}/messages`), {
+            method: "POST",
+            headers: {
+              Authorization: `Zoho-oauthtoken ${_t}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ fromAddress: "russel@kingdom.limited", toAddress: to, subject, content: html, mailFormat: "html", priority: "high" }),
+          });
+          if (!r.ok) throw new Error(`Reset mail ${r.status}`);
+          return r.json();
+        }
+        async function createSO({
+          customerId,
+          customerName,
+          repName,
+          lineItems,
+          note,
+          refNum,
+          shipDate,
+          soNumber,
+        }) {
+          await _ensureFreshToken();
+          const body = {
+            customer_id: customerId,
+            reference_number: refNum,
+            date: today(),
+            notes: note,
+            status: "draft",
+            ...(shipDate ? { shipment_date: shipDate } : {}),
+            ...(soNumber ? { salesorder_number: soNumber } : {}),
+            line_items: lineItems.map((li) => ({
+              item_id: li.item_id,
+              name: li.name,
+              sku: li.sku,
+              quantity: li.qty,
+              rate: li.rate || 0,
+            })),
+          };
+          // If soNumber is provided, tell Zoho not to auto-generate the number
+          const u = new URL(`${INV_BASE}/salesorders`);
+          u.searchParams.set("organization_id", _o);
+          if (soNumber) u.searchParams.set("ignore_auto_number_generation", "true");
+          const r = await fetch(prx(u.toString()), {
+            method: "POST",
+            headers: {
+              Authorization: `Zoho-oauthtoken ${_t}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(body),
+          });
+          if (!r.ok) {
+            const t = await r.text();
+            throw new Error(`SO create ${r.status}: ${t.slice(0, 120)}`);
+          }
+          const d = await r.json();
+          return (
+            d.salesorder?.salesorder_number ||
+            d.salesorder?.salesorder_id ||
+            "(created)"
+          );
+        }
+        return {
+          init,
+          get,
+          runRates,
+          lastSO,
+          lastInv,
+          mail,
+          mailWithCC,
+          sendResetRequest,
+          createSO,
+          fetchImage,
+        };
+      })();
+
+      // ─────────────────────────────────────────────────────────────
+      //  VISIT LOG
+      // ─────────────────────────────────────────────────────────────
+      const VLog = {
+        get(id) {
+          try {
+            return (
+              JSON.parse(localStorage.getItem(CFG.VISIT_KEY) || "{}")[id] ||
+              null
+            );
+          } catch {
+            return null;
+          }
+        },
+        set(id, d) {
+          try {
+            const l = JSON.parse(localStorage.getItem(CFG.VISIT_KEY) || "{}");
+            l[id] = d;
+            localStorage.setItem(CFG.VISIT_KEY, JSON.stringify(l));
+          } catch {}
+        },
+      };
+
+      // ─────────────────────────────────────────────────────────────
+      //  HELPERS
+      // ─────────────────────────────────────────────────────────────
+      function daysAgo(n) {
+        const d = new Date();
+        d.setDate(d.getDate() - n);
+        return d.toISOString().slice(0, 10);
+      }
+      function today() {
+        return new Date().toISOString().slice(0, 10);
+      }
+      function fmt(s) {
+        if (!s) return "--";
+        const [y, m, d] = s.split("-");
+        return `${d}/${m}/${y}`;
+      }
+      function daysBetween(a, b) {
+        if (!a || !b) return null;
+        return Math.round((new Date(b) - new Date(a)) / 86400000);
+      }
+      function isoWk(s) {
+        if (!s) return "?";
+        const d = new Date(s),
+          j = new Date(d.getFullYear(), 0, 4),
+          sw = new Date(j);
+        sw.setDate(j.getDate() - j.getDay() + 1);
+        return `${d.getFullYear()}-W${String(Math.ceil(((d - sw) / 86400000 + 1) / 7)).padStart(2, "0")}`;
+      }
+      function rec(wkAvg, cycleDays, bufWks, shelf) {
+        return Math.max(
+          0,
+          Math.ceil(wkAvg * (cycleDays / 7) + wkAvg * bufWks - shelf),
+        );
+      }
+      async function sha256(s) {
+        return Array.from(
+          new Uint8Array(
+            await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)),
+          ),
+        )
+          .map((b) => b.toString(16).padStart(2, "0"))
+          .join("");
+      }
+      function shortName(n) {
+        const m = n.match(/\(([^)]+)\)/);
+        return m ? m[1] : n.split(" ").slice(0, 3).join(" ");
+      }
+      function xlsxExport(rows, headers, fname, title, subtitle) {
+        // Build worksheet data with styled header rows
+        const wsData = [];
+
+        // Row 1: company title
+        wsData.push([title || CFG.COMPANY]);
+        // Row 2: subtitle (customer name, date, rep)
+        wsData.push([subtitle || ""]);
+        // Row 3: blank spacer
+        wsData.push([]);
+        // Row 4: column headers
+        wsData.push(headers);
+        // Rows 5+: data
+        rows.forEach((r) =>
+          wsData.push(headers.map((h) => (r[h] !== undefined ? r[h] : ""))),
+        );
+
+        const ws = XLSX.utils.aoa_to_sheet(wsData);
+
+        // Column widths
+        const colWidths = headers.map((h) => ({
+          wch: Math.max(h.length + 4, 14),
+        }));
+        ws["!cols"] = colWidths;
+
+        // Style rows 1-2 as title (merge across columns)
+        const range = XLSX.utils.decode_range(ws["!ref"]);
+        ws["!merges"] = [
+          { s: { r: 0, c: 0 }, e: { r: 0, c: headers.length - 1 } },
+          { s: { r: 1, c: 0 }, e: { r: 1, c: headers.length - 1 } },
+        ];
+
+        // Apply cell styles (SheetJS supports styles via cell object)
+        // Title row: black bg, gold text, bold
+        const titleCell = XLSX.utils.encode_cell({ r: 0, c: 0 });
+        ws[titleCell].s = {
+          font: { bold: true, sz: 14, color: { rgb: "C9A84C" } },
+          fill: { fgColor: { rgb: "0A0A0A" } },
+          alignment: { horizontal: "left" },
+        };
+
+        // Subtitle row
+        const subCell = XLSX.utils.encode_cell({ r: 1, c: 0 });
+        if (ws[subCell])
+          ws[subCell].s = {
+            font: { sz: 11, color: { rgb: "A8A8A8" } },
+            fill: { fgColor: { rgb: "141414" } },
+          };
+
+        // Header row (row index 3)
+        headers.forEach((h, c) => {
+          const cell = XLSX.utils.encode_cell({ r: 3, c });
+          if (ws[cell])
+            ws[cell].s = {
+              font: { bold: true, color: { rgb: "C9A84C" }, sz: 10 },
+              fill: { fgColor: { rgb: "111111" } },
+              alignment: { horizontal: "center" },
+              border: { bottom: { style: "medium", color: { rgb: "C9A84C" } } },
+            };
+        });
+
+        // Data rows: alternate row shading
+        for (let r = 4; r <= range.e.r; r++) {
+          const even = (r - 4) % 2 === 0;
+          headers.forEach((_, c) => {
+            const cell = XLSX.utils.encode_cell({ r, c });
+            if (ws[cell])
+              ws[cell].s = {
+                fill: { fgColor: { rgb: even ? "111111" : "1A1A1A" } },
+                font: { color: { rgb: "FFFFFF" }, sz: 10 },
+                alignment: { horizontal: c === 0 ? "left" : "center" },
+                border: { bottom: { style: "thin", color: { rgb: "333333" } } },
+              };
+          });
+        }
+
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "Report");
+        XLSX.writeFile(wb, fname);
+      }
+
+      // ─────────────────────────────────────────────────────────────
+      //  REACT
+      // ─────────────────────────────────────────────────────────────
+      const { useState, useEffect, useRef } = React;
+      const h = React.createElement;
+
+      function Spin({ msg }) {
+        return h(
+          "div",
+          { className: "loading-wrap" },
+          h("div", { className: "spinner" }),
+          msg && h("div", { className: "loading-msg" }, msg),
+        );
+      }
+
+
+      // ─────────────────────────────────────────────────────────────
+      //  INSTALL BANNER (Android PWA "Add to Home Screen")
+      // ─────────────────────────────────────────────────────────────
+      let _deferredInstallPrompt = null;
+      window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        _deferredInstallPrompt = e;
+        window.dispatchEvent(new Event("ksl-install-available"));
+      });
+      window.addEventListener("appinstalled", () => {
+        _deferredInstallPrompt = null;
+        window.dispatchEvent(new Event("ksl-install-done"));
+      });
+
+      function InstallBanner() {
+        const [visible, setVisible] = useState(false);
+        const [dismissed, setDismissed] = useState(
+          () => !!sessionStorage.getItem("ksl_install_dismissed")
+        );
+        useEffect(() => {
+          const show = () => { if (!dismissed) setVisible(true); };
+          const hide = () => setVisible(false);
+          window.addEventListener("ksl-install-available", show);
+          window.addEventListener("ksl-install-done", hide);
+          if (_deferredInstallPrompt && !dismissed) setVisible(true);
+          return () => {
+            window.removeEventListener("ksl-install-available", show);
+            window.removeEventListener("ksl-install-done", hide);
+          };
+        }, [dismissed]);
+
+        if (!visible) return null;
+
+        async function install() {
+          if (!_deferredInstallPrompt) return;
+          _deferredInstallPrompt.prompt();
+          const { outcome } = await _deferredInstallPrompt.userChoice;
+          if (outcome === "accepted") {
+            _deferredInstallPrompt = null;
+            setVisible(false);
+          }
+        }
+        function dismiss() {
+          sessionStorage.setItem("ksl_install_dismissed", "1");
+          setDismissed(true);
+          setVisible(false);
+        }
+
+        return h("div", { className: "install-banner" },
+          h("div", { className: "install-banner-text" },
+            h("div", { className: "install-banner-title" }, "Add KSL Sales to your home screen"),
+            h("div", { className: "install-banner-sub" }, "Works offline and opens faster as an installed app"),
+          ),
+          h("div", { className: "install-banner-btns" },
+            h("button", { className: "btn btn-gold", style: { padding: "8px 14px", fontSize: 12 }, onClick: install }, "Install"),
+            h("button", { className: "btn btn-dark", style: { padding: "8px 10px", fontSize: 12 }, onClick: dismiss }, "Not now"),
+          ),
+        );
+      }
+
+      function LogoImg({ size = 32, style = {} }) {
+        const [ok, setOk] = useState(true);
+        if (!ok)
+          return h(
+            "span",
+            {
+              style: {
+                fontFamily: "var(--serif)",
+                fontSize: size * 0.65,
+                color: "var(--gold)",
+                ...style,
+              },
+            },
+            CFG.COMPANY,
+          );
+        return h("img", {
+          src: CFG.LOGO,
+          style: { height: size, objectFit: "contain", ...style },
+          alt: "Logo",
+          onError: () => setOk(false),
+        });
+      }
+
+      function VisitHeader({ customer, lastVisit, soDate }) {
+        const gap = lastVisit ? daysBetween(lastVisit, today()) : null;
+        return h(
+          "div",
+          { className: "vh" },
+          h("div", { className: "vh-name" }, customer.customer_name),
+          h(
+            "div",
+            { className: "vh-chips" },
+            h("span", { className: "chip" }, `Today: ${fmt(today())}`),
+            lastVisit
+              ? h(
+                  "span",
+                  { className: "chip" },
+                  `Last visit: ${fmt(lastVisit)}`,
+                )
+              : h("span", { className: "chip chip-gold" }, "First visit"),
+            gap !== null && h("span", { className: "chip" }, `${gap}d cycle`),
+            soDate &&
+              h(
+                "span",
+                { className: "chip chip-gold" },
+                `Last SO: ${fmt(soDate)}`,
+              ),
+          ),
+        );
+      }
+
+      function SKURow({ item, rr, stk, cycleDays, vals, onChange }) {
+        const vel = item._vel || {};
+        const abc = vel.abc_class || item.abc_class || "C";
+        const buf = CFG.ABC_BUF[abc] || 0.5;
+        const wkAvg = rr?.weekly_avg || vel.weekly_avg_qty || 0;
+        const shelf = parseInt(vals.shelf) || 0;
+        const R = rec(wkAvg, cycleDays, buf, shelf);
+        const fin = vals.order !== "" ? parseInt(vals.order) || 0 : R;
+        const comb = stk?.combined ?? null;
+        const sc =
+          comb === null
+            ? ""
+            : comb === 0
+              ? "stk-out"
+              : comb < wkAvg
+                ? "stk-low"
+                : "stk-ok";
+        return h(
+          "div",
+          { className: "sku-row" },
+          h(
+            "div",
+            { className: "sku-top" },
+            h(
+              "div",
+              null,
+              h("div", { className: "sku-name" }, item.name),
+              h("div", { className: "sku-code" }, item.sku),
+            ),
+            h("span", { className: `badge abc-${abc}` }, abc),
+          ),
+          h(
+            "div",
+            { className: "sku-chips" },
+            wkAvg > 0 &&
+              h("span", { className: "badge stk-ok" }, `${wkAvg} /wk`),
+            rr?.last &&
+              h("span", { className: "chip" }, `Last: ${fmt(rr.last)}`),
+            comb !== null &&
+              h(
+                "span",
+                { className: `badge ${sc}` },
+                comb === 0 ? "Out of stock" : `WH: ${comb}`,
+              ),
+          ),
+          h(
+            "div",
+            { className: "sku-inputs" },
+            h(
+              "div",
+              null,
+              h("label", null, "On shelf"),
+              h("input", {
+                type: "number",
+                min: "0",
+                placeholder: "0",
+                value: vals.shelf,
+                onChange: (e) => onChange("shelf", e.target.value),
+              }),
+            ),
+            h(
+              "div",
+              null,
+              h("label", null, "Rep order"),
+              h("input", {
+                type: "number",
+                min: "0",
+                placeholder: String(R),
+                value: vals.order,
+                onChange: (e) => onChange("order", e.target.value),
+              }),
+            ),
+          ),
+          h(
+            "div",
+            { className: "rec-bar" },
+            h(
+              "span",
+              { className: "rec-lbl" },
+              `Rec (${abc} | ${buf}wk buffer | ${cycleDays}d cycle)`,
+            ),
+            h("span", { className: "rec-num" }, R),
+          ),
+        );
+      }
+
+      // ── Swipe Card with touch ────────────────────────────────────
+      function SwipeCard({ item, onAdd, onDrop, idx, total }) {
+        const [fly, setFly] = useState(null);
+        const [showDrop, setSD] = useState(false);
+        const [reason, setReason] = useState("");
+        const [hint, setHint] = useState(null);
+        const [imgSrc, setImgSrc] = useState(null); // blob URL or null
+        const [imgErr, setImgErr] = useState(false);
+        const ref = useRef(null);
+        const sx = useRef(null);
+        const blobRef = useRef(null); // track blob URL for cleanup
+
+        // Guard: hooks must always run before any early return
+        const sku = item?.sku || "";
+        const stk = Cache.stk(sku);
+
+        // Load image via authenticated fetch → blob URL
+        useEffect(() => {
+          setImgSrc(null);
+          setImgErr(false);
+          if (!item?.image_url) return;
+          let cancelled = false;
+          (async () => {
+            try {
+              const url = await Zoho.fetchImage(item.image_url);
+              if (!cancelled) {
+                if (blobRef.current) URL.revokeObjectURL(blobRef.current);
+                blobRef.current = url;
+                setImgSrc(url);
+              } else {
+                URL.revokeObjectURL(url);
+              }
+            } catch {
+              if (!cancelled) setImgErr(true);
+            }
+          })();
+          return () => {
+            cancelled = true;
+            if (blobRef.current) {
+              URL.revokeObjectURL(blobRef.current);
+              blobRef.current = null;
+            }
+          };
+        }, [item?.image_url]);
+
+        function launch(dir) {
+          setFly(dir);
+          setTimeout(() => {
+            setFly(null);
+            dir === "r" ? onAdd(item) : setSD(true);
+          }, 320);
+        }
+        function ts(e) {
+          sx.current = e.touches[0].clientX;
+        }
+        function tm(e) {
+          if (sx.current === null) return;
+          const dx = e.touches[0].clientX - sx.current;
+          setHint(dx > 30 ? "r" : dx < -30 ? "l" : null);
+          if (ref.current)
+            ref.current.style.transform = `translateX(${dx * 0.35}px) rotate(${dx * 0.025}deg)`;
+        }
+        function te(e) {
+          if (sx.current === null) return;
+          const dx = e.changedTouches[0].clientX - sx.current;
+          if (ref.current) ref.current.style.transform = "";
+          setHint(null);
+          sx.current = null;
+          if (dx > 75) launch("r");
+          else if (dx < -75) launch("l");
+        }
+        function confirmDrop() {
+          setSD(false);
+          onDrop(item, reason);
+          setReason("");
+        }
+        const sc = !stk ? "" : stk.combined === 0 ? "stk-out" : "stk-ok";
+
+        // Safety: if item is not ready yet, render nothing
+        if (!item) return null;
+        const pct = Math.round((idx / total) * 100);
+        return h(
+          "div",
+          null,
+          h(
+            "div",
+            { className: "prog-bar" },
+            h("div", { className: "prog-fill", style: { width: `${pct}%` } }),
+          ),
+          h("div", { className: "prog-txt" }, `${idx + 1} of ${total}`),
+          h(
+            "div",
+            {
+              className: "swipe-outer",
+              onTouchStart: ts,
+              onTouchMove: tm,
+              onTouchEnd: te,
+            },
+            h(
+              "div",
+              { className: "swipe-wrap" },
+              h(
+                "div",
+                {
+                  className: `swipe-card${fly ? " fly-" + (fly === "r" ? "r" : "l") : ""}`,
+                  ref,
+                },
+                h(
+                  "div",
+                  {
+                    className: "hint-keep",
+                    style: { opacity: hint === "r" ? 1 : 0 },
+                  },
+                  "KEEP",
+                ),
+                h(
+                  "div",
+                  {
+                    className: "hint-skip",
+                    style: { opacity: hint === "l" ? 1 : 0 },
+                  },
+                  "SKIP",
+                ),
+                h(
+                  "div",
+                  { className: "swipe-img-wrap" },
+                  imgSrc && !imgErr
+                    ? h("img", {
+                        src: imgSrc,
+                        className: "swipe-img",
+                        alt: item.name,
+                        onError: () => setImgErr(true),
+                      })
+                    : imgErr || !item.image_url
+                      ? h("div", { className: "swipe-ph" }, "📦")
+                      : h(
+                          "div",
+                          {
+                            className: "swipe-ph",
+                            style: { fontSize: 12, color: "var(--g1)" },
+                          },
+                          "...",
+                        ),
+                ),
+                h("div", { className: "swipe-sku" }, item.sku),
+                h("div", { className: "swipe-name" }, item.name),
+                h(
+                  "div",
+                  { className: "swipe-stats" },
+                  h(
+                    "div",
+                    { className: "swipe-stat" },
+                    h(
+                      "div",
+                      { className: "sv" },
+                      `#${item._vel?.sales_rank || "?"}`,
+                    ),
+                    h("div", { className: "sl" }, "Rank"),
+                  ),
+                  h(
+                    "div",
+                    { className: "swipe-stat" },
+                    h(
+                      "div",
+                      { className: "sv" },
+                      item._vel?.weekly_avg_qty || 0,
+                    ),
+                    h("div", { className: "sl" }, "Units/wk"),
+                  ),
+                  h(
+                    "div",
+                    { className: "swipe-stat" },
+                    h("div", { className: "sv" }, item._vel?.outlet_count || 0),
+                    h("div", { className: "sl" }, "Outlets"),
+                  ),
+                ),
+                stk &&
+                  h(
+                    "span",
+                    {
+                      className: `badge ${sc}`,
+                      style: { marginBottom: 14, display: "inline-block" },
+                    },
+                    stk.combined === 0
+                      ? "Out of stock"
+                      : `${stk.combined} in warehouse`,
+                  ),
+                h(
+                  "div",
+                  { className: "swipe-btns" },
+                  h(
+                    "button",
+                    {
+                      className: "sw-btn sw-btn-skip",
+                      onClick: () => launch("l"),
+                    },
+                    "X",
+                  ),
+                  h(
+                    "button",
+                    {
+                      className: "sw-btn sw-btn-add",
+                      onClick: () => launch("r"),
+                    },
+                    "OK",
+                  ),
+                ),
+              ),
+            ),
+          ),
+          showDrop &&
+            h(
+              "div",
+              { className: "modal-ov" },
+              h(
+                "div",
+                { className: "modal-box" },
+                h("div", { className: "modal-handle" }),
+                h(
+                  "div",
+                  { className: "modal-ttl" },
+                  `Skip reason - ${item.name}`,
+                ),
+                h(
+                  "select",
+                  { value: reason, onChange: (e) => setReason(e.target.value) },
+                  h("option", { value: "" }, "Select reason..."),
+                  CFG.DROP_REASONS.map((r) =>
+                    h("option", { key: r, value: r }, r),
+                  ),
+                ),
+                h(
+                  "div",
+                  { className: "btn-row", style: { marginTop: 14 } },
+                  h(
+                    "button",
+                    {
+                      className: "btn btn-danger btn-full",
+                      disabled: !reason,
+                      onClick: confirmDrop,
+                    },
+                    "Confirm skip",
+                  ),
+                  h(
+                    "button",
+                    {
+                      className: "btn btn-outline",
+                      onClick: () => setSD(false),
+                    },
+                    "Cancel",
+                  ),
+                ),
+              ),
+            ),
+        );
+      }
+
+      // ─────────────────────────────────────────────────────────────
+      //  VIEWS
+      // ─────────────────────────────────────────────────────────────
+
+      function LoginView({ onLogin }) {
+        const rps = Cache.reps();
+        const [rid, setRid] = useState(rps[0]?.rep_id || "");
+        const [pin, setPin] = useState("");
+        const [err, setErr] = useState("");
+        const [busy, setBusy] = useState(false);
+        const [attempts, setAttempts] = useState(0);
+        const [locked, setLocked] = useState(false);
+        const [lockUntil, setLockUntil] = useState(0);
+        const [resetPhase, setResetPhase] = useState(""); // "" | "confirm" | "sent" | "err"
+        const [resetErr, setResetErr] = useState("");
+
+        // Unlock countdown
+        useEffect(() => {
+          if (!locked) return;
+          const t = setInterval(() => {
+            if (Date.now() >= lockUntil) { setLocked(false); setAttempts(0); clearInterval(t); }
+          }, 1000);
+          return () => clearInterval(t);
+        }, [locked, lockUntil]);
+
+        const secsLeft = locked ? Math.ceil((lockUntil - Date.now()) / 1000) : 0;
+
+        async function key(k) {
+          if (locked) return;
+          if (k === "DEL") { setPin((p) => p.slice(0, -1)); return; }
+          if (pin.length >= 6) return;
+          const next = pin + k;
+          setPin(next);
+          if (next.length === 6) {
+            setBusy(true);
+            setErr("");
+            const rep = rps.find((r) => r.rep_id === rid);
+            const hash = await sha256(next);
+            if (hash === rep?.pin_hash) {
+              setAttempts(0);
+              onLogin(rep);
+            } else {
+              const newAttempts = attempts + 1;
+              setAttempts(newAttempts);
+              if (newAttempts >= 5) {
+                const until = Date.now() + 5 * 60 * 1000; // 5 min lockout
+                setLockUntil(until);
+                setLocked(true);
+                setErr("Too many attempts. Locked for 5 minutes.");
+              } else {
+                setErr(`Incorrect PIN. ${5 - newAttempts} attempt${5 - newAttempts !== 1 ? "s" : ""} left.`);
+              }
+              setTimeout(() => { setPin(""); setBusy(false); }, 700);
+            }
+          }
+        }
+
+        async function doReset() {
+          setResetPhase("sending");
+          setResetErr("");
+          const rep = rps.find((r) => r.rep_id === rid);
+          try {
+            await Zoho.sendResetRequest(rep?.rep_name || rid);
+            setResetPhase("sent");
+          } catch(e) {
+            setResetErr(e.message);
+            setResetPhase("err");
+          }
+        }
+
+        const keys = ["1","2","3","4","5","6","7","8","9","⌫","0","GO"];
+
+        if (resetPhase === "confirm") return h("div", { className: "login-wrap" },
+          h(LogoImg, { size: 70, style: { marginBottom: 14 } }),
+          h("div", { className: "login-card" },
+            h("div", { className: "modal-ttl" }, "Request PIN Reset?"),
+            h("div", { style: { fontSize: 13, color: "var(--g1)", marginBottom: 16 } },
+              `An email will be sent to the admin requesting a PIN reset for ${rps.find(r=>r.rep_id===rid)?.rep_name || rid}.`),
+            h("div", { className: "btn-row" },
+              h("button", { className: "btn btn-gold btn-full", onClick: doReset }, "Send reset request"),
+              h("button", { className: "btn btn-outline", onClick: () => setResetPhase("") }, "Cancel"),
+            ),
+          ),
+        );
+
+        if (resetPhase === "sent") return h("div", { className: "login-wrap" },
+          h(LogoImg, { size: 70, style: { marginBottom: 14 } }),
+          h("div", { className: "login-card", style: { textAlign: "center" } },
+            h("div", { style: { fontSize: 28, marginBottom: 10 } }, "✓"),
+            h("div", { style: { fontWeight: 600, color: "var(--gold)", marginBottom: 8 } }, "Reset request sent"),
+            h("div", { style: { fontSize: 13, color: "var(--g1)", marginBottom: 20 } },
+              `The admin has been notified. Your PIN will be reset shortly.`),
+            h("button", { className: "btn btn-outline btn-full", onClick: () => setResetPhase("") }, "Back to login"),
+          ),
+        );
+
+        if (resetPhase === "err") return h("div", { className: "login-wrap" },
+          h(LogoImg, { size: 70, style: { marginBottom: 14 } }),
+          h("div", { className: "login-card" },
+            h("div", { className: "err-box", style: { marginBottom: 14 } }, resetErr),
+            h("button", { className: "btn btn-outline btn-full", onClick: () => setResetPhase("") }, "Back to login"),
+          ),
+        );
+
+        return h("div", { className: "login-wrap" },
+          h(LogoImg, { size: 70, style: { marginBottom: 14 } }),
+          h("div", { className: "login-tagline" }, "Field Sales Tool"),
+          h("div", { className: "login-card" },
+            h("label", null, "Your name"),
+            h("select", {
+              value: rid,
+              onChange: (e) => { setRid(e.target.value); setPin(""); setErr(""); setAttempts(0); setLocked(false); },
+            }, rps.map((r) => h("option", { key: r.rep_id, value: r.rep_id }, r.rep_name))),
+            h("div", { className: "pin-dots" },
+              [0,1,2,3,4,5].map((i) => h("div", { key: i, className: `pin-dot${i < pin.length ? " on" : ""}` })),
+            ),
+            locked
+              ? h("div", { className: "pin-err", style: { color: "var(--red)" } }, `Locked — wait ${secsLeft}s`)
+              : h("div", { className: "pin-err" }, err || "\u00a0"),
+            h("div", { className: "pin-pad" },
+              keys.map((k) => h("button", {
+                key: k,
+                className: "pin-key",
+                disabled: busy || locked,
+                onClick: () => key(k === "⌫" ? "DEL" : k === "GO" ? "" : k),
+              }, k)),
+            ),
+            h("div", { style: { textAlign: "center", marginTop: 14 } },
+              h("button", {
+                className: "btn-ghost",
+                style: { fontSize: 12, color: "var(--g2)" },
+                onClick: () => setResetPhase("confirm"),
+              }, "Forgot PIN? Request reset"),
+            ),
+          ),
+        );
+      }
+
+      function CustomerListView({ rep, velMap, onSelect }) {
+        const [q, setQ] = useState("");
+        const custs = rep.customers || [];
+        const total = Cache.items().length;
+        const sorted = custs
+          .map((c) => ({ ...c, lv: VLog.get(c.customer_id) }))
+          .sort((a, b) => {
+            if (!a.lv && b.lv) return -1;
+            if (a.lv && !b.lv) return 1;
+            if (a.lv && b.lv) return a.lv < b.lv ? -1 : 1;
+            return 0;
+          });
+        const filtered = sorted.filter((c) =>
+          c.customer_name.toLowerCase().includes(q.toLowerCase()),
+        );
+        return h(
+          "div",
+          { className: "page" },
+          h(
+            "div",
+            { className: "search-wrap" },
+            h("span", { className: "search-icon" }, "⌕"),
+            h("input", {
+              type: "text",
+              placeholder: "Search customers...",
+              value: q,
+              onChange: (e) => setQ(e.target.value),
+            }),
+          ),
+          h(
+            "div",
+            { className: "list-meta" },
+            `${filtered.length} of ${custs.length} customers  |  ${total} SKUs`,
+          ),
+          filtered.map((c) =>
+            h(
+              "div",
+              {
+                key: c.customer_id,
+                className: "cust-card",
+                onClick: () => onSelect(c),
+              },
+              h("div", { className: `cust-dot${!c.lv ? " fresh" : ""}` }),
+              h(
+                "div",
+                { className: "cust-left" },
+                h("div", { className: "cust-name" }, c.customer_name),
+                h(
+                  "div",
+                  { className: "cust-meta" },
+                  c.lv ? `Last visit: ${fmt(c.lv)}` : "Not yet visited",
+                ),
+              ),
+              h("span", { className: "cust-arrow" }, "›"),
+            ),
+          ),
+        );
+      }
+
+      function ReorderView({
+        rep,
+        customer,
+        velMap,
+        soDate,
+        onDone,
+        onRunRates,
+      }) {
+        const [loading, setLoading] = useState(true);
+        const [msg, setMsg] = useState("Fetching outlet data...");
+        const [error, setError] = useState("");
+        const [rr, setRR] = useState({});
+        const [entries, setEnt] = useState({});
+        const lastVisit = VLog.get(customer.customer_id);
+        const cycle = lastVisit
+          ? Math.max(1, daysBetween(lastVisit, today()))
+          : CFG.DEF_CYCLE;
+        const allItems = Cache.items();
+        const active = Object.keys(rr);
+        const items = allItems
+          .filter((it) => active.includes(it.sku))
+          .map((it) => ({ ...it, _vel: velMap[it.sku] || {} }))
+          .sort(
+            (a, b) =>
+              (rr[b.sku]?.weekly_avg || 0) - (rr[a.sku]?.weekly_avg || 0),
+          );
+
+        useEffect(() => {
+          (async () => {
+            try {
+              setMsg("Fetching orders (this may take a moment)...");
+              const rates = await Zoho.runRates(customer.customer_id);
+              setRR(rates);
+              if (onRunRates) onRunRates(rates); // lift to App so PitchView knows sold SKUs
+            } catch (e) {
+              setError(e.message);
+            } finally {
+              setLoading(false);
+            }
+          })();
+        }, [customer.customer_id]);
+
+        function chg(sku, f, v) {
+          setEnt((p) => ({ ...p, [sku]: { ...p[sku], [f]: v } }));
+        }
+        function get(sku) {
+          return entries[sku] || { shelf: "", order: "" };
+        }
+
+        function doExport() {
+          const rows = items.map((it) => {
+            const e = get(it.sku),
+              abc = it._vel?.abc_class || it.abc_class || "C";
+            const buf = CFG.ABC_BUF[abc] || 0.5;
+            const R = rec(
+              rr[it.sku]?.weekly_avg || 0,
+              cycle,
+              buf,
+              parseInt(e.shelf) || 0,
+            );
+            const fin = e.order !== "" ? parseInt(e.order) || 0 : R;
+            return {
+              SKU: it.sku,
+              Item: it.name,
+              ABC: abc,
+              "On Shelf": parseInt(e.shelf) || 0,
+              "Wk Avg": rr[it.sku]?.weekly_avg || 0,
+              "Last Sale": fmt(rr[it.sku]?.last),
+              "WH Stock": Cache.stk(it.sku)?.combined ?? "",
+              Recommended: R,
+              "Rep Order": fin,
+            };
+          });
+          xlsxExport(
+            rows,
+            [
+              "SKU",
+              "Item",
+              "ABC",
+              "On Shelf",
+              "Wk Avg",
+              "Last Sale",
+              "WH Stock",
+              "Recommended",
+              "Rep Order",
+            ],
+            `Reorder_${customer.customer_name.replace(/\s+/g, "_")}_${today()}.xlsx`,
+            CFG.COMPANY,
+            `Reorder Visit | ${customer.customer_name} | Rep: ${rep.rep_name} | ${fmt(today())} | Cycle: ${cycle}d`,
+          );
+        }
+
+        if (loading) return h(Spin, { msg });
+        if (error)
+          return h(
+            "div",
+            { className: "page" },
+            h("div", { className: "err-box" }, error),
+          );
+        return h(
+          "div",
+          null,
+          h(
+            "div",
+            { className: "page" },
+            h(
+              "div",
+              { className: "print-header" },
+              h(
+                "table",
+                { style: { width: "100%", marginBottom: 12 } },
+                h(
+                  "tbody",
+                  null,
+                  h(
+                    "tr",
+                    null,
+                    h(
+                      "td",
+                      null,
+                      h("img", {
+                        src: CFG.LOGO,
+                        style: { height: 44 },
+                        alt: "",
+                        onError: (e) => (e.target.style.display = "none"),
+                      }),
+                    ),
+                    h(
+                      "td",
+                      { style: { textAlign: "right", fontSize: 10 } },
+                      h(
+                        "div",
+                        { style: { fontWeight: "bold", fontSize: 12 } },
+                        CFG.COMPANY,
+                      ),
+                      `Visit Report | ${fmt(today())}`,
+                    ),
+                  ),
+                ),
+              ),
+              h(
+                "div",
+                {
+                  style: {
+                    borderBottom: "2px solid #C9A84C",
+                    paddingBottom: 8,
+                    marginBottom: 10,
+                    fontSize: 11,
+                  },
+                },
+                h("strong", null, customer.customer_name),
+                " | ",
+                `Rep: ${rep.rep_name} | Cycle: ${cycle}d`,
+              ),
+            ),
+            h(VisitHeader, { customer, lastVisit, soDate }),
+            h(
+              "div",
+              { className: "card card-gold no-print" },
+              h(
+                "div",
+                { className: "card-title" },
+                `Reorder - ${items.length} active SKUs`,
+              ),
+              h(
+                "div",
+                { style: { fontSize: 12, color: "var(--g1)" } },
+                `Visit cycle: ${cycle} days`,
+              ),
+            ),
+            items.length === 0
+              ? h(
+                  "div",
+                  { className: "card" },
+                  h(
+                    "div",
+                    {
+                      style: {
+                        color: "var(--g1)",
+                        textAlign: "center",
+                        padding: "24px 0",
+                      },
+                    },
+                    "No orders found in the last 6 months.",
+                  ),
+                )
+              : items.map((it) =>
+                  h(SKURow, {
+                    key: it.sku,
+                    item: it,
+                    rr: rr[it.sku],
+                    stk: Cache.stk(it.sku),
+                    cycleDays: cycle,
+                    vals: get(it.sku),
+                    onChange: (f, v) => chg(it.sku, f, v),
+                  }),
+                ),
+            h(
+              "div",
+              { className: "btn-row no-print" },
+              h(
+                "button",
+                { className: "btn btn-gold", onClick: doExport },
+                "Export Excel",
+              ),
+              h(
+                "button",
+                { className: "btn btn-dark", onClick: () => window.print() },
+                "Print PDF",
+              ),
+              h(
+                "button",
+                { className: "btn btn-outline", onClick: onDone },
+                "New Listings",
+              ),
+            ),
+          ),
+        );
+      }
+
+      function PitchView({ rep, customer, velMap, activeSKUs, onDone }) {
+        const [idx, setIdx] = useState(0);
+        const [added, setAdded] = useState([]);
+        const [dropped, setDropped] = useState([]);
+        const [notes, setNotes] = useState({});
+        const [phase, setPhase] = useState("swipe");
+        const [sending, setSend] = useState(false);
+        const [sendErr, setSendErr] = useState("");
+        const [skipConfirm, setSkipConfirm] = useState(false);
+
+        // Compute unlisted AFTER hooks to comply with React rules
+        const soldSkus = new Set(Array.isArray(activeSKUs) ? activeSKUs : []);
+        const unlisted = (() => {
+          try {
+            return (Cache.items() || [])
+              .filter((it) => {
+                if (!it || !it.sku || soldSkus.has(it.sku)) return false;
+                const stk = Cache.stk(it.sku);
+                return stk && stk.combined > 0;
+              })
+              .map((it) => ({ ...it, _vel: (velMap && velMap[it.sku]) || {} }))
+              .sort((a, b) => {
+                const ra = (a._vel && a._vel.sales_rank) || 9999;
+                const rb = (b._vel && b._vel.sales_rank) || 9999;
+                if (ra !== rb) return ra - rb;
+                return (
+                  (Cache.stk(b.sku)?.combined || 0) -
+                  (Cache.stk(a.sku)?.combined || 0)
+                );
+              });
+          } catch (e) {
+            console.error("[PITCH] unlisted compute error:", e);
+            return [];
+          }
+        })();
+
+        function onAdd(item) {
+          setAdded((p) => [...p, item]);
+          setIdx((i) => i + 1);
+        }
+        function onDrop(item, r) {
+          setDropped((p) => [...p, { ...item, reason: r }]);
+          setIdx((i) => i + 1);
+        }
+
+        async function doSend() {
+          setSend(true);
+          setSendErr("");
+          try {
+            const rows = added
+              .map(
+                (it) => `<tr>
+        <td>${it.sku}</td><td>${it.name}</td><td>#${it._vel?.sales_rank || "?"}</td>
+        <td>${it._vel?.weekly_avg_qty || 0}/wk | ${it._vel?.outlet_count || 0} outlets</td>
+        <td>${Cache.stk(it.sku)?.combined ?? "-"}</td>
+        <td>${notes[it.sku] || ""}</td></tr>`,
+              )
+              .join("");
+            await Zoho.mail({
+              to: CFG.PITCH_TO,
+              subject: `[PITCH] ${customer.customer_name} - ${rep.rep_name} - ${fmt(today())}`,
+              html: `<div style="font-family:Arial;max-width:680px">
+          <h2 style="color:#C9A84C;border-bottom:2px solid #C9A84C;padding-bottom:8px">Pitch List - ${customer.customer_name}</h2>
+          <p style="font-size:12px;color:#666">Rep: ${rep.rep_name} &nbsp;|&nbsp; Date: ${fmt(today())} &nbsp;|&nbsp; Items: ${added.length}</p>
+          <table border="1" cellpadding="7" style="border-collapse:collapse;font-size:12px;width:100%;margin-top:12px">
+            <thead style="background:#111"><tr style="color:#C9A84C">
+              <th>SKU</th><th>Item</th><th>Rank</th><th>Velocity</th><th>WH Stock</th><th>Notes</th>
+            </tr></thead><tbody>${rows}</tbody></table>
+          <p style="font-size:10px;color:#aaa;margin-top:12px">Sent via KSL Field Sales Tool</p></div>`,
+            });
+            setPhase("sent");
+          } catch (e) {
+            setSendErr(e.message);
+          } finally {
+            setSend(false);
+          }
+        }
+
+        function doExport() {
+          xlsxExport(
+            added.map((it) => ({
+              SKU: it.sku,
+              Item: it.name,
+              "Sales Rank": it._vel?.sales_rank || "",
+              "Units/wk": it._vel?.weekly_avg_qty || 0,
+              Outlets: it._vel?.outlet_count || 0,
+              "WH Stock": Cache.stk(it.sku)?.combined ?? "",
+              Notes: notes[it.sku] || "",
+            })),
+            [
+              "SKU",
+              "Item",
+              "Sales Rank",
+              "Units/wk",
+              "Outlets",
+              "WH Stock",
+              "Notes",
+            ],
+            `Pitch_${customer.customer_name.replace(/\s+/g, "_")}_${today()}.xlsx`,
+            CFG.COMPANY,
+            `New Listings Pitch | ${customer.customer_name} | Rep: ${rep.rep_name} | ${fmt(today())}`,
+          );
+        }
+
+        if (phase === "swipe") {
+          if (idx >= unlisted.length)
+            return h(
+              "div",
+              { className: "page" },
+              h(
+                "div",
+                {
+                  className: "card",
+                  style: { textAlign: "center", padding: "36px 20px" },
+                },
+                h(
+                  "div",
+                  { style: { fontSize: 16, fontWeight: 600, marginBottom: 6 } },
+                  "All SKUs reviewed",
+                ),
+                h(
+                  "div",
+                  { style: { color: "var(--g1)", marginBottom: 22 } },
+                  `${added.length} added | ${dropped.length} skipped`,
+                ),
+                h(
+                  "button",
+                  {
+                    className: "btn btn-gold btn-full",
+                    onClick: () => setPhase("review"),
+                  },
+                  added.length ? "Review pitch list" : "View summary",
+                ),
+              ),
+            );
+          return h(
+            "div",
+            { className: "page" },
+            h(
+              "div",
+              {
+                className: "swipe-done-sticky no-print",
+                style: { display: "flex", gap: 8 },
+              },
+              h(
+                "button",
+                {
+                  className: "btn btn-outline",
+                  style: { flex: 1 },
+                  onClick: () => setPhase("review"),
+                },
+                `Done | ${added.length} selected`,
+              ),
+              h(
+                "button",
+                {
+                  className: "btn btn-danger",
+                  style: { flexShrink: 0 },
+                  onClick: () => setSkipConfirm(true),
+                },
+                "Skip rest",
+              ),
+            ),
+            h(SwipeCard, {
+              item: unlisted[idx],
+              idx,
+              total: unlisted.length,
+              onAdd,
+              onDrop,
+            }),
+            skipConfirm &&
+              h(
+                "div",
+                { className: "modal-ov" },
+                h(
+                  "div",
+                  { className: "modal-box" },
+                  h("div", { className: "modal-handle" }),
+                  h("div", { className: "modal-ttl" }, "Skip remaining SKUs?"),
+                  h(
+                    "div",
+                    {
+                      style: {
+                        color: "var(--g1)",
+                        fontSize: 13,
+                        marginBottom: 16,
+                      },
+                    },
+                    `${unlisted.length - idx} SKUs remaining. You have ${added.length} selected so far.`,
+                  ),
+                  h(
+                    "div",
+                    { className: "btn-row" },
+                    h(
+                      "button",
+                      {
+                        className: "btn btn-danger btn-full",
+                        onClick: () => {
+                          setSkipConfirm(false);
+                          setPhase("review");
+                        },
+                      },
+                      `Skip ${unlisted.length - idx} remaining`,
+                    ),
+                    h(
+                      "button",
+                      {
+                        className: "btn btn-outline",
+                        onClick: () => setSkipConfirm(false),
+                      },
+                      "Continue reviewing",
+                    ),
+                  ),
+                ),
+              ),
+          );
+        }
+
+        if (phase === "review")
+          return h(
+            "div",
+            { className: "page" },
+            h(
+              "div",
+              { className: "card" },
+              h(
+                "div",
+                { className: "card-title" },
+                `Pitch list - ${added.length} items`,
+              ),
+              added.length === 0
+                ? h(
+                    "div",
+                    {
+                      style: {
+                        color: "var(--g1)",
+                        textAlign: "center",
+                        padding: "20px 0",
+                      },
+                    },
+                    "No items selected.",
+                  )
+                : added.map((it) =>
+                    h(
+                      "div",
+                      { key: it.sku, className: "pitch-item" },
+                      h(
+                        "div",
+                        { className: "pi-left" },
+                        h("div", { className: "pi-name" }, it.name),
+                        h("div", { className: "pi-sku" }, it.sku),
+                      ),
+                      h(
+                        "div",
+                        { className: "pi-right" },
+                        h(
+                          "div",
+                          { className: "pi-rank" },
+                          `#${it._vel?.sales_rank}`,
+                        ),
+                        h(
+                          "div",
+                          { className: "pi-vel" },
+                          `${it._vel?.weekly_avg_qty || 0}/wk`,
+                        ),
+                      ),
+                    ),
+                  ),
+              added.length > 0 &&
+                h(
+                  "div",
+                  { style: { marginTop: 14 } },
+                  h("label", null, "Rep notes"),
+                  h("textarea", {
+                    value: notes["__g"] || "",
+                    placeholder: "Notes for outlet manager...",
+                    onChange: (e) =>
+                      setNotes((n) => ({ ...n, __g: e.target.value })),
+                  }),
+                ),
+            ),
+            sendErr &&
+              h(
+                "div",
+                { className: "err-box", style: { marginBottom: 10 } },
+                sendErr,
+              ),
+            h(
+              "div",
+              { className: "btn-row" },
+              h(
+                "button",
+                { className: "btn btn-gold", onClick: doExport },
+                "Export Excel",
+              ),
+              h(
+                "button",
+                {
+                  className: "btn btn-dark",
+                  disabled: sending || added.length === 0,
+                  onClick: doSend,
+                },
+                sending ? "Sending..." : "Send priority",
+              ),
+              h(
+                "button",
+                { className: "btn btn-outline", onClick: onDone },
+                "Next customer",
+              ),
+            ),
+          );
+
+        return h(
+          "div",
+          { className: "page" },
+          h(
+            "div",
+            {
+              className: "card",
+              style: { textAlign: "center", padding: "40px 20px" },
+            },
+            h("div", { style: { fontSize: 40, marginBottom: 10 } }, "[sent]"),
+            h(
+              "div",
+              {
+                style: {
+                  fontSize: 16,
+                  fontWeight: 600,
+                  color: "var(--gold)",
+                  marginBottom: 6,
+                },
+              },
+              "Pitch sent",
+            ),
+            h(
+              "div",
+              { style: { color: "var(--g1)", marginBottom: 22 } },
+              `Sent to ${CFG.PITCH_TO}`,
+            ),
+            h(
+              "button",
+              { className: "btn btn-gold btn-full", onClick: onDone },
+              "Next customer",
+            ),
+          ),
+        );
+      }
+
+      // ─────────────────────────────────────────────────────────────
+      //  SALES ORDER VIEW  (mode C)
+      // ─────────────────────────────────────────────────────────────
+      function SalesOrderView({ rep, customer, onDone }) {
+        const [query, setQuery]           = useState("");
+        const [basket, setBasket]         = useState([]);
+        const [phase, setPhase]           = useState("history"); // history | build | submitting | done
+        const [soNum, setSoNum]           = useState("");
+        const [err, setErr]               = useState("");
+        const [shipDate, setShipDate]     = useState("");
+        const [soRef, setSoRef]           = useState("");
+        const [soCustomNum, setSoCustomNum] = useState(""); // editable SO number
+        const [useCustomNum, setUseCustomNum] = useState(false);
+        const [extraCc, setExtraCc]           = useState(""); // optional rep/customer CC
+        const [pricesReady, setPricesReady] = useState(false);
+        const [qtyDraft, setQtyDraft]     = useState({}); // sku -> string while user is typing
+        const [history, setHistory]       = useState(null); // null=loading, []|[...]=loaded
+        const [histErr, setHistErr]       = useState("");
+        const [expandedSO, setExpandedSO] = useState(null); // salesorder_id of expanded card
+        const [draftSaved, setDraftSaved]   = useState(false); // autosave indicator
+        const [draftAge, setDraftAge]       = useState(null);  // hours old when restored, null if fresh
+
+        const DRAFT_KEY    = `ksl_so_draft_${customer.customer_id}`;
+        const DRAFT_MAX_H  = 24; // warn if draft is older than this many hours
+
+        const allItems = Cache.items();
+
+        // Load price list + order history on mount
+        useEffect(() => {
+          PriceCache.load().then(() => setPricesReady(true));
+          // Restore draft if one exists for this customer
+          try {
+            const raw = localStorage.getItem(DRAFT_KEY);
+            if (raw) {
+              const d = JSON.parse(raw);
+              if (d.basket && d.basket.length > 0) {
+                const savedAt = d.savedAt ? new Date(d.savedAt) : null;
+                const ageHours = savedAt ? (Date.now() - savedAt.getTime()) / 3600000 : 0;
+                setBasket(d.basket);
+                if (d.shipDate) setShipDate(d.shipDate);
+                if (d.soRef) setSoRef(d.soRef);
+                if (d.soCustomNum) setSoCustomNum(d.soCustomNum);
+                if (d.useCustomNum) setUseCustomNum(d.useCustomNum);
+                if (d.extraCc) setExtraCc(d.extraCc);
+                setDraftAge(Math.floor(ageHours));
+                setPhase("build");
+              }
+            }
+          } catch {}
+          (async () => {
+            try {
+              const data = await Zoho.get("/salesorders", {
+                customer_id:  customer.customer_id,
+                per_page:     10,
+                sort_column:  "date",
+                sort_order:   "D",
+              });
+              setHistory(data.salesorders || []);
+            } catch(e) {
+              setHistErr(e.message);
+              setHistory([]);
+            }
+          })();
+        }, [customer.customer_id]);
+
+        // Autosave draft to localStorage (survives browser close) with timestamp
+        useEffect(() => {
+          if (phase !== "build") return;
+          if (basket.length === 0) { localStorage.removeItem(DRAFT_KEY); return; }
+          try {
+            localStorage.setItem(DRAFT_KEY, JSON.stringify({
+              basket, shipDate, soRef, soCustomNum, useCustomNum,
+              savedAt: new Date().toISOString(),
+            }));
+            setDraftSaved(true);
+            setDraftAge(null); // dismiss stale warning once user starts editing
+            const t = setTimeout(() => setDraftSaved(false), 2000);
+            return () => clearTimeout(t);
+          } catch {}
+        }, [basket, shipDate, soRef, soCustomNum, useCustomNum, phase]);
+
+        // Fetch line items for a specific SO when user expands it
+        const [soDetails, setSoDetails] = useState({}); // {so_id: {line_items:[...]}}
+        async function expandSO(soId) {
+          if (expandedSO === soId) { setExpandedSO(null); return; }
+          setExpandedSO(soId);
+          if (soDetails[soId]) return;
+          try {
+            const d = await Zoho.get(`/salesorders/${soId}`, {});
+            setSoDetails(prev => ({ ...prev, [soId]: d.salesorder || {} }));
+          } catch {}
+        }
+
+        // Price lookup: customer pricelist → default pricelist → catalogue rate
+        function priceFor(itemId, sku) {
+          const custRate = PriceCache.rateFor(customer.customer_id, itemId);
+          if (custRate > 0) return custRate;
+          const defRate = PriceCache.defaultRate(itemId);
+          if (defRate > 0) return defRate;
+          // Last resort: catalogue rate field
+          const item = allItems.find(i => (i.item_id || i.sku) === itemId || i.sku === sku);
+          return parseFloat(item?.rate || 0) || 0;
+        }
+
+        const results = query.trim().length < 2 ? [] :
+          allItems.filter(it => {
+            const q = query.trim().toLowerCase();
+            return it.sku.toLowerCase().includes(q) || it.name.toLowerCase().includes(q);
+          }).slice(0, 12);
+
+        function addItem(it) {
+          if (basket.find(b => b.sku === it.sku)) return;
+          const s = Cache.stk(it.sku);
+          const rate = priceFor(it.item_id || it.sku, it.sku);
+          setBasket(prev => [...prev, {
+            item_id: it.item_id || it.sku,
+            sku:  it.sku,
+            name: it.name,
+            abc:  it.abc_class || "C",
+            stk:  s?.combined ?? null,
+            rate,
+            qty:  1,
+          }]);
+          setQuery("");
+        }
+        function removeItem(sku) { setBasket(b => b.filter(x => x.sku !== sku)); }
+        function setQty(sku, v) {
+          // Store raw string so the input isn't overwritten while user is mid-type
+          setQtyDraft(d => ({ ...d, [sku]: v }));
+        }
+        function commitQty(sku) {
+          // On blur: only commit if the user typed something non-empty; if blank, restore
+          // previous basket qty so the field snaps back cleanly without clamping mid-type
+          setQtyDraft(d => {
+            const raw = d[sku];
+            if (raw === undefined) return d;
+            const n = { ...d }; delete n[sku];
+            if (raw.trim() !== "") {
+              // User finished typing — clamp and save
+              const parsed = Math.max(1, parseInt(raw) || 1);
+              setBasket(b => b.map(x => x.sku === sku ? { ...x, qty: parsed } : x));
+            }
+            // If raw is "" the draft is simply cleared, input reverts to basket qty
+            return n;
+          });
+        }
+
+        const now = new Date();
+        const repFirstName = rep.rep_name.split(" ")[0];
+        const stamp = `Order placed by ${rep.rep_name} on ${fmt(today())} at ${String(now.getHours()).padStart(2,"0")}:${String(now.getMinutes()).padStart(2,"0")}`;
+        const sortedBasket = [...basket].sort((a, b) => a.sku.localeCompare(b.sku));
+        const orderTotal = sortedBasket.reduce((s, b) => s + b.rate * b.qty, 0);
+
+        // ── Professional email template ────────────────────────────
+        function buildEmailHtml(soNumber) {
+          const itemRows = sortedBasket.map((b, i) => {
+            const lineVal = b.rate * b.qty;
+            const bg = i % 2 === 0 ? "#f7f9fc" : "#ffffff";
+            const statusColor = b.stk === 0 ? "#C00000" : b.stk !== null && b.stk < 3 ? "#C55A11" : "#375623";
+            const statusLabel = b.stk === 0 ? "Out of Stock" : b.stk !== null && b.stk < 3 ? "Low Stock" : "In Stock";
+            return `<tr style="background:${bg}">
+<td style="padding:9px 12px;border-bottom:1px solid #e8ecf0;font-size:12px;color:#333;font-weight:500">${b.sku}</td>
+<td style="padding:9px 12px;border-bottom:1px solid #e8ecf0;font-size:12px;color:#444">${b.name}</td>
+<td style="padding:9px 12px;border-bottom:1px solid #e8ecf0;font-size:12px;text-align:center;color:#333;font-weight:600">${b.qty}</td>
+<td style="padding:9px 12px;border-bottom:1px solid #e8ecf0;font-size:12px;text-align:right;color:#333">${b.rate > 0 ? "KES " + b.rate.toLocaleString() : "-"}</td>
+<td style="padding:9px 12px;border-bottom:1px solid #e8ecf0;font-size:12px;text-align:right;color:#1F3864;font-weight:700">${lineVal > 0 ? "KES " + lineVal.toLocaleString() : "-"}</td>
+<td style="padding:9px 12px;border-bottom:1px solid #e8ecf0;font-size:11px;text-align:center"><span style="background:${statusColor}22;color:${statusColor};border-radius:3px;padding:2px 7px;font-weight:600">${statusLabel}</span></td>
+</tr>`;
+          }).join("");
+
+          return `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/></head>
+<body style="margin:0;padding:0;background:#f0f2f5;font-family:Arial,Helvetica,sans-serif;color:#333">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#7B0000">
+  <tr><td style="padding:5px 24px;text-align:center">
+    <span style="color:#fff;font-size:10px;letter-spacing:1px">KINGDOM SOURCING LIMITED — INTERNAL USE ONLY</span>
+  </td></tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0"><tr><td style="padding:24px 16px">
+<table width="620" cellpadding="0" cellspacing="0" style="max-width:620px;margin:0 auto;background:#fff;border-radius:6px;border:1px solid #dce1e7;box-shadow:0 2px 8px rgba(0,0,0,0.08)">
+  <!-- Header -->
+  <tr><td style="background:#1F3864;border-radius:6px 6px 0 0;padding:22px 28px">
+    <table width="100%" cellpadding="0" cellspacing="0"><tr>
+      <td><div style="color:#fff;font-size:17px;font-weight:bold">Sales Order Confirmation</div>
+          <div style="color:#b0c4de;font-size:12px;margin-top:3px">Kingdom Sourcing Limited — Field Sales</div></td>
+      <td style="text-align:right;vertical-align:top">
+        <div style="color:#7EC8E3;font-size:20px;font-weight:bold">${soNumber}</div>
+        <div style="color:#b0c4de;font-size:11px;margin-top:2px">${fmt(today())}</div>
+      </td>
+    </tr></table>
+  </td></tr>
+  <!-- Body -->
+  <tr><td style="padding:22px 28px">
+    <!-- Subject context banner -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="background:#EEF2F9;border:1px solid #dce1e7;border-radius:4px;margin-bottom:20px">
+      <tr><td style="padding:12px 16px;font-size:13px;color:#1F3864">
+        <strong>${repFirstName} from KSL</strong> has placed a new order for <strong>${customer.customer_name}</strong>.
+        ${shipDate ? `Requested shipment by <strong>${fmt(shipDate)}</strong>.` : "Shipment date to be confirmed."}
+      </td></tr>
+    </table>
+    <!-- Order details grid -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="background:#f7f9fc;border:1px solid #dce1e7;border-radius:4px;margin-bottom:20px">
+      <tr><td style="padding:10px 16px;border-bottom:1px solid #dce1e7">
+        <span style="color:#1F3864;font-weight:bold;font-size:11px;letter-spacing:0.5px">ORDER DETAILS</span>
+      </td></tr>
+      <tr><td style="padding:12px 16px">
+        <table width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td style="width:50%;padding:4px 0;vertical-align:top">
+              <span style="color:#888;font-size:11px">Customer</span><br/>
+              <span style="font-size:13px;font-weight:bold">${customer.customer_name}</span>
+            </td>
+            <td style="width:50%;padding:4px 0;vertical-align:top">
+              <span style="color:#888;font-size:11px">Sales Rep</span><br/>
+              <span style="font-size:13px;font-weight:bold">${rep.rep_name}</span>
+            </td>
+          </tr>
+          <tr><td colspan="2" style="height:8px"></td></tr>
+          <tr>
+            <td style="padding:4px 0;vertical-align:top">
+              <span style="color:#888;font-size:11px">Order Date</span><br/>
+              <span style="font-size:13px">${fmt(today())}</span>
+            </td>
+            <td style="padding:4px 0;vertical-align:top">
+              <span style="color:#888;font-size:11px">Requested Shipment</span><br/>
+              <span style="font-size:13px;font-weight:bold;color:#2E75B6">${shipDate ? fmt(shipDate) : "TBC"}</span>
+            </td>
+          </tr>
+          ${soRef ? `<tr><td colspan="2" style="height:8px"></td></tr><tr><td colspan="2" style="padding:4px 0;vertical-align:top"><span style="color:#888;font-size:11px">Reference</span><br/><span style="font-size:13px">${soRef}</span></td></tr>` : ""}
+        </table>
+      </td></tr>
+    </table>
+    <!-- Summary KPIs -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:20px">
+      <tr>
+        <td style="width:33%;padding:10px;text-align:center;background:#EEF2F9;border:1px solid #dce1e7;border-radius:4px 0 0 4px">
+          <div style="font-size:22px;font-weight:bold;color:#1F3864">${basket.length}</div>
+          <div style="font-size:10px;color:#666;margin-top:2px">SKUs Ordered</div>
+        </td>
+        <td style="width:33%;padding:10px;text-align:center;background:#E2EFDA;border:1px solid #dce1e7">
+          <div style="font-size:22px;font-weight:bold;color:#375623">${sortedBasket.reduce((s,b)=>s+b.qty,0)}</div>
+          <div style="font-size:10px;color:#555;margin-top:2px">Total Units</div>
+        </td>
+        <td style="width:34%;padding:10px;text-align:center;background:#1F3864;border:1px solid #1F3864;border-radius:0 4px 4px 0">
+          <div style="font-size:20px;font-weight:bold;color:#7EC8E3">KES ${orderTotal > 0 ? orderTotal.toLocaleString() : "—"}</div>
+          <div style="font-size:10px;color:#b0c4de;margin-top:2px">Order Value</div>
+        </td>
+      </tr>
+    </table>
+    <!-- Line items -->
+    <p style="margin:0 0 8px;color:#1F3864;font-weight:bold;font-size:11px;letter-spacing:0.5px">LINE ITEMS</p>
+    <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:12px">
+      <thead>
+        <tr style="background:#1F3864">
+          <th style="padding:9px 12px;border:1px solid #3a5282;color:#fff;text-align:left">SKU</th>
+          <th style="padding:9px 12px;border:1px solid #3a5282;color:#fff;text-align:left">Description</th>
+          <th style="padding:9px 12px;border:1px solid #3a5282;color:#fff;text-align:center">Qty</th>
+          <th style="padding:9px 12px;border:1px solid #3a5282;color:#fff;text-align:right">Unit Price</th>
+          <th style="padding:9px 12px;border:1px solid #3a5282;color:#fff;text-align:right">Line Total</th>
+          <th style="padding:9px 12px;border:1px solid #3a5282;color:#fff;text-align:center">Stock</th>
+        </tr>
+      </thead>
+      <tbody>${itemRows}</tbody>
+      ${orderTotal > 0 ? `<tfoot><tr><td colspan="4" style="padding:10px 12px;text-align:right;color:#666;font-size:12px;border-top:2px solid #1F3864">Order Total</td><td colspan="2" style="padding:10px 12px;text-align:right;color:#1F3864;font-weight:bold;font-size:15px;border-top:2px solid #1F3864">KES ${orderTotal.toLocaleString()}</td></tr></tfoot>` : ""}
+    </table>
+  </td></tr>
+  <!-- Footer -->
+  <tr><td style="background:#f7f9fc;border-top:1px solid #dce1e7;border-radius:0 0 6px 6px;padding:14px 28px">
+    <table width="100%" cellpadding="0" cellspacing="0"><tr>
+      <td style="font-size:11px;color:#999">Generated by KSL Field Sales Tool. ${stamp}</td>
+      <td style="text-align:right;font-size:11px;color:#999">Do not forward outside KSL.</td>
+    </tr></table>
+  </td></tr>
+</table>
+</td></tr></table>
+</body></html>`;
+        }
+
+        async function submit() {
+          if (basket.length === 0) { setErr("Add at least one item."); return; }
+          setErr("");
+          setPhase("submitting");
+          // Build SO number: custom > auto
+          const finalSoNum = useCustomNum && soCustomNum.trim()
+            ? soCustomNum.trim()
+            : null;
+          const refNum = soRef || `SO-${repFirstName.toUpperCase()}-${today().replace(/-/g,"")}`;
+          try {
+            const num = await Zoho.createSO({
+              customerId:   customer.customer_id,
+              customerName: customer.customer_name,
+              repName:      rep.rep_name,
+              lineItems:    sortedBasket,
+              note:         stamp,
+              refNum,
+              shipDate,
+              soNumber:     finalSoNum,
+            });
+            setSoNum(num);
+            localStorage.removeItem(DRAFT_KEY);
+            try {
+              const recips = SORecipients.get();
+              const subject = `${repFirstName} from KSL — New Order for ${customer.customer_name} (${num})`;
+              await Zoho.mailWithCC({
+                to:      recips[0],
+                cc:      recips.slice(1).join(","),
+                subject,
+                html:    buildEmailHtml(num),
+              });
+            } catch(me) { console.warn("SO email failed:", me.message); }
+            // Refresh history after submit
+            try {
+              const data = await Zoho.get("/salesorders", { customer_id: customer.customer_id, per_page: 10, sort_column: "date", sort_order: "D" });
+              setHistory(data.salesorders || []);
+            } catch {}
+            setPhase("done");
+          } catch(e) { setErr(e.message); setPhase("build"); }
+        }
+
+        if (phase === "done") return h("div", { className: "page" },
+          h("div", { className: "card so-success" },
+            h("div", { className: "so-success-icon" }, "✓"),
+            h("div", { className: "so-success-title" }, "Sales Order Created"),
+            h("div", { className: "so-success-sub" }, `SO: ${soNum}`),
+            h("div", { style: { color: "var(--g1)", fontSize: 12, marginBottom: 6 } }, stamp),
+            shipDate && h("div", { style: { color: "var(--gold)", fontSize: 12, marginBottom: 20 } }, `Shipment: ${fmt(shipDate)}`),
+            h("div", { className: "btn-row", style: { justifyContent: "center" } },
+              h("button", { className: "btn btn-dark", onClick: () => { setBasket([]); setPhase("history"); setSoNum(""); setSoRef(""); setSoCustomNum(""); setShipDate(""); setUseCustomNum(false); } }, "New order"),
+              h("button", { className: "btn btn-outline", onClick: onDone }, "Back to customer"),
+            ),
+          ),
+        );
+
+        const stkClass = (b) => b.stk === null ? "" : b.stk === 0 ? "stk-out" : b.stk < 3 ? "stk-low" : "stk-ok";
+
+        // ── HISTORY VIEW ─────────────────────────────────────────────
+        if (phase === "history") return h("div", { className: "page" },
+          h("div", { className: "card card-gold" },
+            h("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center" } },
+              h("div", { className: "card-title" }, `${customer.customer_name} — Orders`),
+              h("button", {
+                className: "btn btn-gold",
+                style: { display: "flex", alignItems: "center", gap: 6, padding: "8px 16px" },
+                onClick: () => setPhase("build"),
+              },
+                h("span", { style: { fontSize: 18, lineHeight: 1, marginTop: -1 } }, "+"),
+                "New Order"
+              ),
+            ),
+          ),
+          // Draft resume banner — shown whenever a saved draft exists for this customer
+          (() => {
+            try {
+              const raw = localStorage.getItem(DRAFT_KEY);
+              if (!raw) return null;
+              const d = JSON.parse(raw);
+              if (!d.basket || d.basket.length === 0) return null;
+              const savedAt = d.savedAt ? new Date(d.savedAt) : null;
+              const ageHours = savedAt ? Math.floor((Date.now() - savedAt.getTime()) / 3600000) : null;
+              const ageLabel = ageHours === null ? "" :
+                ageHours < 1 ? "just now" :
+                ageHours < 24 ? `${ageHours}h ago` :
+                `${Math.floor(ageHours / 24)}d ago`;
+              const totalVal = d.basket.reduce((s, b) => s + (b.rate || 0) * (b.qty || 1), 0);
+              return h("div", { className: "so-draft-banner" },
+                h("div", { className: "so-draft-banner-left" },
+                  h("div", { className: "so-draft-banner-title" },
+                    `📝 Draft saved${ageLabel ? ` — ${ageLabel}` : ""}`),
+                  h("div", { className: "so-draft-banner-sub" },
+                    `${d.basket.length} item${d.basket.length !== 1 ? "s" : ""}` +
+                    (totalVal > 0 ? ` · KES ${totalVal.toLocaleString()}` : "") +
+                    (d.shipDate ? ` · Ship ${fmt(d.shipDate)}` : "")
+                  ),
+                ),
+                h("div", { className: "so-draft-banner-actions" },
+                  h("button", {
+                    className: "btn btn-gold",
+                    style: { fontSize: 12, padding: "7px 14px" },
+                    onClick: () => setPhase("build"),
+                  }, "Resume"),
+                  h("button", {
+                    className: "btn btn-outline",
+                    style: { fontSize: 12, padding: "7px 10px", color: "var(--g2)" },
+                    onClick: () => {
+                      localStorage.removeItem(DRAFT_KEY);
+                      setBasket([]); setShipDate(""); setSoRef("");
+                      setSoCustomNum(""); setUseCustomNum(false); setDraftAge(null);
+                    }
+                  }, "Discard"),
+                ),
+              );
+            } catch { return null; }
+          })(),
+          histErr && h("div", { className: "err-box", style: { marginBottom: 10 } }, histErr),
+          history === null && h("div", { style: { padding: "30px 0", textAlign: "center" } },
+            h(Spin, { msg: "Loading order history..." })
+          ),
+          history !== null && history.length === 0 && h("div", { className: "card" },
+            h("div", { style: { color: "var(--g1)", textAlign: "center", padding: "28px 0", fontSize: 14 } }, "No orders found for this customer.")
+          ),
+          history !== null && history.length > 0 && history.map(so =>
+            h("div", { key: so.salesorder_id, className: "card so-history-card",
+              onClick: () => expandSO(so.salesorder_id),
+              style: { cursor: "pointer" } },
+              h("div", { className: "so-history-header" },
+                h("div", { className: "so-history-left" },
+                  h("div", { className: "so-history-sonum" }, so.salesorder_number),
+                  h("div", { className: "so-history-date" },
+                    `${fmt(so.date)}`,
+                    so.shipment_date && h("span", { style: { color: "var(--gold)", marginLeft: 8 } }, `Ship: ${fmt(so.shipment_date)}`),
+                  ),
+                ),
+                h("div", { className: "so-history-right" },
+                  so.total && h("div", { className: "so-history-value" }, `KES ${Number(so.total).toLocaleString()}`),
+                  h("span", { className: `chip chip-${so.status === "confirmed" ? "green" : so.status === "draft" ? "grey" : "gold"}` }, so.status || "draft"),
+                  h("span", { className: "so-history-chevron", style: { transform: expandedSO === so.salesorder_id ? "rotate(180deg)" : "none" } }, "›"),
+                ),
+              ),
+              expandedSO === so.salesorder_id && h("div", { className: "so-history-detail",
+                onClick: e => e.stopPropagation() },
+                !soDetails[so.salesorder_id]
+                  ? h("div", { style: { textAlign: "center", padding: "12px 0", color: "var(--g1)", fontSize: 12 } }, "Loading...")
+                  : soDetails[so.salesorder_id].line_items?.length > 0
+                    ? h("table", { style: { width: "100%", borderCollapse: "collapse", fontSize: 11 } },
+                        h("thead", null,
+                          h("tr", null,
+                            ["SKU","Item","Qty","Rate","Total"].map(th =>
+                              h("th", { key: th, style: { padding: "5px 8px", color: "var(--gold)", textAlign: th === "Qty" || th === "Rate" || th === "Total" ? "right" : "left", borderBottom: "1px solid var(--g3)", fontWeight: 600 } }, th)
+                            )
+                          )
+                        ),
+                        h("tbody", null,
+                          soDetails[so.salesorder_id].line_items.map((li, i) =>
+                            h("tr", { key: i, style: { background: i % 2 === 0 ? "var(--black-2)" : "var(--black-3)" } },
+                              h("td", { style: { padding: "5px 8px", color: "var(--g1)", fontFamily: "monospace" } }, li.sku || "—"),
+                              h("td", { style: { padding: "5px 8px", color: "var(--white)", maxWidth: 140, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" } }, li.name),
+                              h("td", { style: { padding: "5px 8px", textAlign: "right", color: "var(--white)", fontWeight: 600 } }, li.quantity),
+                              h("td", { style: { padding: "5px 8px", textAlign: "right", color: "var(--g1)" } }, li.rate ? `KES ${Number(li.rate).toLocaleString()}` : "—"),
+                              h("td", { style: { padding: "5px 8px", textAlign: "right", color: "var(--gold)", fontWeight: 600 } }, li.item_total ? `KES ${Number(li.item_total).toLocaleString()}` : "—"),
+                            )
+                          )
+                        )
+                      )
+                    : h("div", { style: { color: "var(--g1)", fontSize: 11, padding: "8px 0" } }, "No line items.")
+              ),
+            )
+          ),
+        );
+
+        // ── BUILD ORDER VIEW ──────────────────────────────────────────
+        return h("div", { className: "page" },
+          // Back to history
+          h("div", { style: { display: "flex", alignItems: "center", gap: 8, marginBottom: 8 } },
+            h("button", { className: "btn-ghost", style: { padding: "4px 0", fontSize: 13 }, onClick: () => { localStorage.removeItem(DRAFT_KEY); setPhase("history"); setBasket([]); setErr(""); } }, "← Order History"),
+          ),
+          // Stale draft warning (shown when draft is older than 24h)
+          draftAge !== null && draftAge >= DRAFT_MAX_H && h("div", { className: "so-draft-warning" },
+            h("div", { className: "so-draft-warning-text" },
+              `⚠ Draft restored from ${draftAge >= 48
+                ? `${Math.floor(draftAge / 24)} days ago`
+                : `${draftAge}h ago`}. Double-check quantities before submitting.`
+            ),
+            h("button", {
+              className: "so-draft-discard",
+              onClick: () => {
+                localStorage.removeItem(DRAFT_KEY);
+                setBasket([]); setShipDate(""); setSoRef(""); setSoCustomNum("");
+                setUseCustomNum(false); setDraftAge(null);
+              }
+            }, "Discard"),
+          ),
+          // Sticky header: compact meta fields + search bar
+          h("div", { className: "so-sticky-header" },
+            h("div", { className: "card" },
+              h("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 } },
+                h("div", { style: { display: "flex", alignItems: "center", gap: 0 } },
+                  h("span", { className: "card-title", style: { marginBottom: 0 } }, "New Order"),
+                  basket.length > 0 && h("span", { className: `so-autosave-badge${draftSaved ? " saved" : ""}` },
+                    h("span", { className: "so-autosave-dot" }),
+                    draftSaved ? "Draft saved" : `${basket.length} item${basket.length !== 1 ? "s" : ""}`,
+                  ),
+                ),
+                h("span", { style: { fontSize: 11, color: "var(--g2)" } }, customer.customer_name),
+              ),
+              // Compact meta row: date | ref | custom SO toggle
+              h("div", { className: "so-meta-row" },
+                h("div", null,
+                  h("label", { style: { fontSize: 11 } }, "Ship Date"),
+                  h("input", { type: "date", value: shipDate, min: today(), onChange: e => setShipDate(e.target.value) }),
+                ),
+                h("div", null,
+                  h("label", { style: { fontSize: 11 } }, "Reference"),
+                  h("input", { type: "text", placeholder: "Auto-generated if blank", value: soRef, onChange: e => setSoRef(e.target.value) }),
+                ),
+                h("div", { style: { display: "flex", flexDirection: "column", gap: 4 } },
+                  h("label", { style: { display: "flex", alignItems: "center", gap: 5, cursor: "pointer", fontSize: 11, color: "var(--g1)", whiteSpace: "nowrap" } },
+                    h("input", { type: "checkbox", checked: useCustomNum, onChange: e => setUseCustomNum(e.target.checked), style: { accentColor: "var(--gold)" } }),
+                    "Custom SO#"
+                  ),
+                  useCustomNum && h("input", { type: "text", placeholder: "e.g. SO-00042", value: soCustomNum, onChange: e => setSoCustomNum(e.target.value), style: { fontSize: 12, padding: "6px 8px" } }),
+                ),
+              ),
+              // Search bar
+              h("div", { style: { marginTop: 10 } },
+                h("div", { className: "search-wrap", style: { marginBottom: 0 } },
+                  h("span", { className: "search-icon" }, "⌕"),
+                  h("input", { type: "text", placeholder: "SKU or item name...", value: query,
+                    onChange: e => { setQuery(e.target.value); setErr(""); },
+                    autoFocus: true }),
+                ),
+                results.length > 0 && h("div", { className: "so-search-results" },
+                  results.map(it => {
+                    const s = Cache.stk(it.sku);
+                    const inBasket = !!basket.find(b => b.sku === it.sku);
+                    const rate = priceFor(it.item_id || it.sku, it.sku);
+                    return h("div", { key: it.sku, className: "so-result-row",
+                      onClick: () => !inBasket && addItem(it),
+                      style: { opacity: inBasket ? 0.45 : 1, cursor: inBasket ? "default" : "pointer" } },
+                      h("div", { className: "so-res-left" },
+                        h("div", { className: "so-res-name" }, it.name),
+                        h("div", { className: "so-res-sku" }, it.sku,
+                          rate > 0 && h("span", { style: { marginLeft: 8, color: "var(--gold)", fontSize: 11 } }, `KES ${rate.toLocaleString()}`),
+                          rate === 0 && h("span", { style: { marginLeft: 8, color: "var(--red)", fontSize: 11 } }, "No price set"),
+                        ),
+                      ),
+                      h("div", { className: "so-res-right" },
+                        h("span", { className: `badge abc-${it.abc_class||"C"}` }, it.abc_class||"C"),
+                        s !== null && h("span", { className: `badge ${s.combined===0?"stk-out":s.combined<3?"stk-low":"stk-ok"}` }, s.combined===0?"Out":s.combined),
+                        inBasket && h("span", { className: "chip chip-gold" }, "Added"),
+                      ),
+                    );
+                  }),
+                ),
+              ),
+            ),
+          ),
+          // Basket — newest item on top (reversed), scrollable
+          basket.length > 0 && h("div", { className: "card", style: { marginTop: 8 } },
+            h("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 } },
+              h("div", { className: "card-title", style: { marginBottom: 0 } }, `Basket (${basket.length} item${basket.length!==1?"s":""})`),
+              orderTotal > 0 && h("span", { style: { fontSize: 15, fontWeight: 700, color: "var(--gold)" } }, `KES ${orderTotal.toLocaleString()}`),
+            ),
+            h("div", { className: "so-basket-scroll" },
+              [...sortedBasket].reverse().map(b => {
+                const lineVal = b.rate * b.qty;
+                const freeStock = b.stk !== null
+                  ? (b.stk.free_stock !== undefined ? b.stk.free_stock : b.stk.combined ?? b.stk)
+                  : null;
+                const rawStk = typeof b.stk === "object" && b.stk !== null ? b.stk.combined : b.stk;
+                return h("div", { key: b.sku, className: "so-basket-card" },
+                  // Left: name + meta
+                  h("div", { className: "so-basket-card-info" },
+                    h("div", { className: "so-basket-card-name" }, b.name),
+                    h("div", { className: "so-basket-card-meta" },
+                      h("span", { className: "so-basket-card-sku" }, b.sku),
+                      h("span", { className: `badge abc-${b.abc}` }, b.abc),
+                      rawStk !== null && rawStk !== undefined && h("span", {
+                        className: `badge ${rawStk === 0 ? "stk-out" : rawStk < 3 ? "stk-low" : "stk-ok"}`
+                      }, rawStk === 0 ? "Out of stock" : `Free: ${freeStock ?? rawStk}`),
+                      b.rate === 0 && h("span", { style: { color: "var(--red)", fontSize: 11 } }, "No price"),
+                    ),
+                  ),
+                  // Middle: line value
+                  h("div", null,
+                    h("div", { className: "so-basket-card-line" },
+                      lineVal > 0 ? `KES ${lineVal.toLocaleString()}` : "—"
+                    ),
+                    h("div", { className: "so-basket-card-line-sub" },
+                      b.rate > 0 ? `@ ${b.rate.toLocaleString()}` : ""
+                    ),
+                  ),
+                  // Right: qty + remove
+                  h("div", { className: "so-basket-qty-wrap" },
+                    h("span", { className: "so-basket-qty-label" }, "Qty"),
+                    h("input", { type: "number", min: "1", className: "so-basket-qty",
+                      value: qtyDraft[b.sku] !== undefined ? qtyDraft[b.sku] : b.qty,
+                      onChange: e => setQty(b.sku, e.target.value),
+                      onBlur: () => commitQty(b.sku) }),
+                    h("button", { className: "so-basket-remove", onClick: () => removeItem(b.sku),
+                      style: { marginTop: 2 } }, "×"),
+                  ),
+                );
+              }),
+            ),
+            h("div", { className: "so-stamp" }, stamp),
+          ),
+          err && h("div", { className: "err-box", style: { marginBottom: 10 } }, err),
+          phase === "submitting" && h(Spin, { msg: "Creating Sales Order..." }),
+          basket.length > 0 && phase !== "submitting" && h("div", { className: "btn-row" },
+            h("button", { className: "btn btn-gold btn-full", onClick: submit }, "Submit Sales Order"),
+            h("button", { className: "btn btn-outline", onClick: () => { localStorage.removeItem(DRAFT_KEY); setPhase("history"); setBasket([]); setErr(""); } }, "Cancel"),
+          ),
+          basket.length === 0 && phase !== "submitting" && h("div", {
+            style: { color: "var(--g2)", fontSize: 13, textAlign: "center", padding: "20px 0" } },
+            "Search for items above to build your order.",
+          ),
+        );
+      }
+
+      function WeeklyOrdersView({ rep, onClose }) {
+        const [orders, setOrders] = useState(null);
+        const [err, setErr] = useState("");
+        useEffect(() => {
+          (async () => {
+            try {
+              const weekStart = (() => {
+                const d = new Date(); d.setDate(d.getDate() - d.getDay() + 1); return d.toISOString().slice(0,10);
+              })();
+              const data = await Zoho.get("/salesorders", {
+                date_start: weekStart,
+                per_page: 200,
+                sort_column: "date",
+                sort_order: "D",
+              });
+              // Filter to this rep's orders by reference_number prefix
+              const prefix = rep.rep_name.split(" ")[0].toUpperCase();
+              const all = (data.salesorders || []).filter(so =>
+                so.reference_number?.startsWith(`SO-${prefix}-`)
+              );
+              setOrders(all);
+            } catch(e) { setErr(e.message); }
+          })();
+        }, []);
+
+        return h("div", { className: "page" },
+          h("div", { className: "card card-gold" },
+            h("div", { className: "card-title" }, "This Week's Orders"),
+            err && h("div", { className: "err-box" }, err),
+            orders === null && !err && h(Spin, { msg: "Loading orders..." }),
+            orders && orders.length === 0 && h("div", { style: { color: "var(--g1)", fontSize: 13, textAlign: "center", padding: "20px 0" } }, "No orders placed this week."),
+            orders && orders.length > 0 && h("div", { style: { overflowX: "auto" } },
+              h("table", { style: { width: "100%", borderCollapse: "collapse", fontSize: 12 } },
+                h("thead", null, h("tr", null,
+                  ["Date","Customer","SO #","Reference","Value","Status"].map(th =>
+                    h("th", { key: th, style: { padding: "7px 8px", color: "var(--gold)", textAlign: "left", borderBottom: "1px solid var(--g3)", whiteSpace: "nowrap" } }, th)
+                  )
+                )),
+                h("tbody", null, orders.map((so, i) =>
+                  h("tr", { key: so.salesorder_id, style: { background: i % 2 === 0 ? "var(--black-2)" : "var(--black-3)" } },
+                    h("td", { style: { padding: "7px 8px", color: "var(--white)" } }, fmt(so.date)),
+                    h("td", { style: { padding: "7px 8px", color: "var(--white)", maxWidth: 140, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" } }, so.customer_name),
+                    h("td", { style: { padding: "7px 8px", color: "var(--gold)" } }, so.salesorder_number),
+                    h("td", { style: { padding: "7px 8px", color: "var(--g1)" } }, so.reference_number),
+                    h("td", { style: { padding: "7px 8px", color: "var(--white)", textAlign: "right" } }, so.total ? `KES ${Number(so.total).toLocaleString()}` : "-"),
+                    h("td", { style: { padding: "7px 8px" } }, h("span", { className: "chip" }, so.status || "draft")),
+                  )
+                )),
+              ),
+            ),
+          ),
+          h("div", { className: "btn-row" },
+            h("button", { className: "btn btn-outline", onClick: onClose }, "Back"),
+          ),
+        );
+      }
+
+      // ─────────────────────────────────────────────────────────────
+      //  RECIPIENTS EDITOR
+      // ─────────────────────────────────────────────────────────────
+      function RecipientsEditor({ onClose }) {
+        const [list, setList] = useState(SORecipients.get());
+        const [input, setInput] = useState("");
+        const [saved, setSaved] = useState(false);
+        function add() {
+          const v = input.trim().toLowerCase();
+          if (!v || !v.includes("@") || list.includes(v)) return;
+          setList([...list, v]); setInput(""); setSaved(false);
+        }
+        function remove(e) { setList(list.filter(x => x !== e)); setSaved(false); }
+        function save() { SORecipients.set(list); setSaved(true); }
+        return h("div", { className: "page" },
+          h("div", { className: "card card-gold" },
+            h("div", { className: "card-title" }, "SO Email Recipients"),
+            h("div", { style: { fontSize: 12, color: "var(--g1)", marginBottom: 12 } },
+              "First address is TO. All others are CC."),
+            list.map((e, i) => h("div", { key: e, style: { display: "flex", alignItems: "center", gap: 8, marginBottom: 7 } },
+              h("span", { className: "chip", style: { flex: 1 } }, i === 0 ? `TO: ${e}` : `CC: ${e}`),
+              list.length > 1 && h("button", { className: "so-basket-remove", onClick: () => remove(e) }, "x"),
+            )),
+            h("div", { style: { display: "flex", gap: 8, marginTop: 10 } },
+              h("input", { type: "text", placeholder: "Add email address...", value: input, onChange: e => setInput(e.target.value),
+                onKeyDown: e => e.key === "Enter" && add(), style: { flex: 1 } }),
+              h("button", { className: "btn btn-dark", onClick: add }, "Add"),
+            ),
+          ),
+          saved && h("div", { className: "so-stamp", style: { marginBottom: 10 } }, "Recipients saved."),
+          h("div", { className: "btn-row" },
+            h("button", { className: "btn btn-gold", onClick: save }, "Save"),
+            h("button", { className: "btn btn-outline", onClick: onClose }, "Back"),
+          ),
+        );
+      }
+
+      function App() {
+        const [phase, setPhase] = useState("loading");
+        const [err, setErr] = useState("");
+        const [rep, setRep] = useState(null);
+        const [cust, setCust] = useState(null);
+        const [velMap, setVelMap] = useState({});
+        const [mode, setMode] = useState("A");
+        const [soDate, setSoDate] = useState(null);
+        const [runRates, setRunRates] = useState({});
+        const [overlay, setOverlay] = useState(""); // "" | "weekly" | "recipients"
+
+        useEffect(() => {
+          (async () => {
+            try {
+              const { token, orgId, refreshedAt, mailAccountId } = await Cache.loadAll();
+              Zoho.init(token, orgId, refreshedAt, mailAccountId);
+              setVelMap(Cache.velMap());
+              setPhase("login");
+            } catch (e) {
+              setErr(e.message);
+              setPhase("error");
+            }
+          })();
+        }, []);
+
+        async function selectCust(c) {
+          setCust(c);
+          setMode("A");
+          setRunRates({});
+          setPhase("loading");
+          // Always fetch a fresh token before starting a visit — this guarantees
+          // the token is never expired when the rep starts making Zoho calls
+          try {
+            const tr = await fetch(`./data/app/token.json?_=${Date.now()}`);
+            if (tr.ok) {
+              const td = await tr.json();
+              if (td.access_token)
+                Zoho.init(td.access_token, td.org_id, td.refreshed_at, td.mail_account_id);
+            }
+          } catch {}
+          try {
+            const so = await Zoho.lastSO(c.customer_id);
+            setSoDate(so);
+            VLog.set(c.customer_id, today());
+          } catch {}
+          setPhase("visit");
+        }
+        function visitDone() {
+          setCust(null);
+          setPhase("customers");
+        }
+
+        const title =
+          phase === "visit" && cust
+            ? cust.customer_name
+            : phase === "customers" && rep
+              ? `${rep.rep_name.split(" ")[0]}'s accounts`
+              : CFG.COMPANY;
+
+        // activeSKUs = SKUs the customer actually ordered, from the ReorderView fetch.
+        // This is the correct set to exclude from pitch - not velMap keys (which are all 751).
+        const activeSKUs = Object.keys(runRates);
+
+        return h(
+          "div",
+          { id: "root" },
+          h(InstallBanner, null),
+          h(
+            "div",
+            { className: "tb" },
+            h(LogoImg, { size: 30 }),
+            h(
+              "div",
+              { className: "tb-center" },
+              h("div", { className: "tb-title" }, title),
+              rep &&
+                phase !== "login" &&
+                h("div", { className: "tb-sub" }, rep.rep_name),
+            ),
+            phase === "visit" &&
+              h(
+                "button",
+                { className: "btn-ghost", onClick: visitDone },
+                "Back",
+              ),
+            phase === "customers" &&
+              h(
+                "button",
+                {
+                  className: "btn-ghost",
+                  onClick: () => {
+                    setRep(null);
+                    setPhase("login");
+                  },
+                },
+                "Sign out",
+              ),
+          ),
+          // Overlays
+          overlay === "weekly" && rep && h(WeeklyOrdersView, { rep, onClose: () => setOverlay("") }),
+          overlay === "recipients" && h(RecipientsEditor, { onClose: () => setOverlay("") }),
+          overlay === "" && phase === "loading" && h(Spin, { msg: "Loading data..." }),
+          phase === "error" &&
+            h(
+              "div",
+              { className: "page" },
+              h("div", { className: "err-box" }, err),
+            ),
+          phase === "login" &&
+            h(LoginView, {
+              onLogin: (r) => {
+                setRep(r);
+                setPhase("customers");
+              },
+            }),
+          overlay === "" && phase === "customers" &&
+            h("div", null,
+              h("div", { className: "page", style: { paddingBottom: 0 } },
+                h("div", { style: { display: "flex", gap: 8, marginBottom: 10 } },
+                  h("button", { className: "btn btn-outline", style: { flex: 1, fontSize: 12 }, onClick: () => setOverlay("weekly") }, "This Week's Orders"),
+                  h("button", { className: "btn btn-outline", style: { flex: 1, fontSize: 12 }, onClick: () => setOverlay("recipients") }, "Edit Recipients"),
+                ),
+              ),
+              h(CustomerListView, { rep, velMap, onSelect: selectCust }),
+            ),
+          phase === "visit" &&
+            cust &&
+            h(
+              "div",
+              null,
+              h(
+                "div",
+                { className: "page" },
+                h(
+                  "div",
+                  { className: "mode-tabs no-print" },
+                  h(
+                    "button",
+                    {
+                      className: `mode-tab${mode === "A" ? " on" : ""}`,
+                      onClick: () => setMode("A"),
+                    },
+                    "Reorder",
+                  ),
+                  h(
+                    "button",
+                    {
+                      className: `mode-tab${mode === "B" ? " on" : ""}`,
+                      onClick: () => setMode("B"),
+                    },
+                    "New Listings",
+                  ),
+                  h(
+                    "button",
+                    {
+                      className: `mode-tab${mode === "C" ? " on" : ""}`,
+                      onClick: () => setMode("C"),
+                    },
+                    "Sales Order",
+                  ),
+                ),
+              ),
+              mode === "A" &&
+                h(ReorderView, {
+                  rep,
+                  customer: cust,
+                  velMap,
+                  soDate,
+                  onDone: () => setMode("B"),
+                  onRunRates: setRunRates,
+                }),
+              mode === "B" &&
+                h(PitchView, {
+                  rep,
+                  customer: cust,
+                  velMap,
+                  activeSKUs,
+                  onDone: visitDone,
+                }),
+              mode === "C" &&
+                h(SalesOrderView, { rep, customer: cust, onDone: visitDone }),
+            ),
+        );
+      }
+
+      class ErrorBoundary extends React.Component {
+        constructor(p) {
+          super(p);
+          this.state = { err: null };
+        }
+        static getDerivedStateFromError(e) {
+          return { err: e };
+        }
+        render() {
+          if (this.state.err) {
+            return h(
+              "div",
+              { style: { padding: 24, fontFamily: "sans-serif" } },
+              h(
+                "div",
+                {
+                  style: {
+                    background: "#2a0f0f",
+                    color: "#e05252",
+                    border: "1px solid #e05252",
+                    borderRadius: 8,
+                    padding: 16,
+                    marginBottom: 12,
+                  },
+                },
+                h(
+                  "div",
+                  { style: { fontWeight: 600, marginBottom: 6 } },
+                  "Something went wrong",
+                ),
+                h(
+                  "div",
+                  { style: { fontSize: 12, opacity: 0.8 } },
+                  String(this.state.err.message || this.state.err),
+                ),
+              ),
+              h(
+                "button",
+                {
+                  style: {
+                    background: "#C9A84C",
+                    color: "#000",
+                    border: "none",
+                    padding: "10px 20px",
+                    borderRadius: 6,
+                    cursor: "pointer",
+                    fontWeight: 600,
+                  },
+                  onClick: () => this.setState({ err: null }),
+                },
+                "Try again",
+              ),
+            );
+          }
+          return this.props.children;
+        }
+      }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(
+        h(ErrorBoundary, null, h(App)),
+      );
+    </script>
+  </body>
+  <!-- try -->
+</html>
