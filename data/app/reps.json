@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "built_at": "2026-05-04T10:27:24.765222+00:00",
+    "built_at": "2026-05-04T11:11:31.302065+00:00",
     "total_reps": 14,
     "total_assignments": 219,
     "source": "data/config/reps_customers.csv"
@@ -133,12 +133,12 @@
           "customer_name": "CECILEE SHOP"
         },
         {
-          "customer_id": "3778898000123900305",
-          "customer_name": "CHINA VILLAGE LIMITED"
-        },
-        {
           "customer_id": "3778898000128062037",
           "customer_name": "CHINA VILLAGE LIMITED (JUJA CITY)"
+        },
+        {
+          "customer_id": "3778898000123900305",
+          "customer_name": "CHINA VILLAGE LIMITED (SIGNATURE MALL)"
         },
         {
           "customer_id": "3778898000118336596",
