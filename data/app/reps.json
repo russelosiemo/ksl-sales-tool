@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "built_at": "2026-05-04T08:17:47.515043+00:00",
+    "built_at": "2026-05-04T10:24:26.661864+00:00",
     "total_reps": 14,
-    "total_assignments": 218,
+    "total_assignments": 219,
     "source": "data/config/reps_customers.csv"
   },
   "reps": [
@@ -94,7 +94,7 @@
       "rep_id": "3778898000000212835",
       "rep_name": "JANETINE WANIU MAKUMI",
       "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
-      "customer_count": 99,
+      "customer_count": 100,
       "customers": [
         {
           "customer_id": "3778898000004753608",
@@ -135,6 +135,10 @@
         {
           "customer_id": "3778898000123900305",
           "customer_name": "CHINA VILLAGE LIMITED"
+        },
+        {
+          "customer_id": "3778898000128062037",
+          "customer_name": "CHINA VILLAGE LIMITED (JUJA CITY)"
         },
         {
           "customer_id": "3778898000118336596",
