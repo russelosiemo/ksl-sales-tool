@@ -1,24 +1,24 @@
 {
   "_meta": {
-    "built_at": "2026-04-30T09:31:24.224612+00:00",
+    "built_at": "2026-05-04T08:17:06.292713+00:00",
     "window_weeks": 8,
-    "total_skus": 346,
+    "total_skus": 345,
     "history_rows": 0,
-    "live_rows": 2454,
+    "live_rows": 2424,
     "abc_breakdown": {
       "A": 8,
       "B": 26,
-      "C": 312
+      "C": 311
     }
   },
   "velocity": [
     {
       "sku": "AG0015",
       "name": "SHOWER CAPS PRINTED 4PK",
-      "weekly_avg_qty": 76.9,
-      "weekly_avg_value": 22546.7,
-      "outlet_count": 9,
-      "weeks_with_data": 9,
+      "weekly_avg_qty": 90.6,
+      "weekly_avg_value": 26558.2,
+      "outlet_count": 8,
+      "weeks_with_data": 8,
       "sales_rank": 1,
       "abc_class": "A",
       "buffer_weeks": 1.0
@@ -26,10 +26,10 @@
     {
       "sku": "AT0004",
       "name": "DENTAL FLOSS PICK 50PK 3ASST",
-      "weekly_avg_qty": 304.8,
-      "weekly_avg_value": 50677.5,
+      "weekly_avg_qty": 366.3,
+      "weekly_avg_value": 60154.0,
       "outlet_count": 23,
-      "weeks_with_data": 4,
+      "weeks_with_data": 3,
       "sales_rank": 2,
       "abc_class": "A",
       "buffer_weeks": 1.0
@@ -37,10 +37,10 @@
     {
       "sku": "AT0008",
       "name": "TOOTHBRUSH KIDS 2PK 4ASST",
-      "weekly_avg_qty": 208.2,
-      "weekly_avg_value": 26158.3,
-      "outlet_count": 28,
-      "weeks_with_data": 6,
+      "weekly_avg_qty": 228.2,
+      "weekly_avg_value": 28349.2,
+      "outlet_count": 26,
+      "weeks_with_data": 5,
       "sales_rank": 3,
       "abc_class": "A",
       "buffer_weeks": 1.0
@@ -48,22 +48,11 @@
     {
       "sku": "AG0222",
       "name": "BATH BALL NYLON 3PK 2ASST",
-      "weekly_avg_qty": 63.7,
-      "weekly_avg_value": 22499.7,
-      "outlet_count": 14,
-      "weeks_with_data": 6,
+      "weekly_avg_qty": 69.2,
+      "weekly_avg_value": 24314.0,
+      "outlet_count": 13,
+      "weeks_with_data": 5,
       "sales_rank": 4,
-      "abc_class": "A",
-      "buffer_weeks": 1.0
-    },
-    {
-      "sku": "AP0001",
-      "name": "COTTON COSMETIC PADS 80PK",
-      "weekly_avg_qty": 70.6,
-      "weekly_avg_value": 14286.4,
-      "outlet_count": 23,
-      "weeks_with_data": 8,
-      "sales_rank": 5,
       "abc_class": "A",
       "buffer_weeks": 1.0
     },
@@ -74,18 +63,7 @@
       "weekly_avg_value": 18994.0,
       "outlet_count": 8,
       "weeks_with_data": 6,
-      "sales_rank": 6,
-      "abc_class": "A",
-      "buffer_weeks": 1.0
-    },
-    {
-      "sku": "AG0385",
-      "name": "MEN RAZOR DISPOSABLE 4PK",
-      "weekly_avg_qty": 57.4,
-      "weekly_avg_value": 16154.9,
-      "outlet_count": 24,
-      "weeks_with_data": 7,
-      "sales_rank": 7,
+      "sales_rank": 5,
       "abc_class": "A",
       "buffer_weeks": 1.0
     },
@@ -96,18 +74,51 @@
       "weekly_avg_value": 18799.0,
       "outlet_count": 31,
       "weeks_with_data": 6,
-      "sales_rank": 8,
+      "sales_rank": 6,
+      "abc_class": "A",
+      "buffer_weeks": 1.0
+    },
+    {
+      "sku": "AP0001",
+      "name": "COTTON COSMETIC PADS 80PK",
+      "weekly_avg_qty": 78.1,
+      "weekly_avg_value": 15748.7,
+      "outlet_count": 21,
+      "weeks_with_data": 7,
+      "sales_rank": 7,
       "abc_class": "A",
       "buffer_weeks": 1.0
     },
     {
       "sku": "AWB01-03",
       "name": "AWB Baby Diapers Medium (48 Pcs) 450mm 320mm 6-11kg27",
-      "weekly_avg_qty": 17.0,
-      "weekly_avg_value": 26250.0,
-      "outlet_count": 8,
-      "weeks_with_data": 4,
+      "weekly_avg_qty": 14.0,
+      "weekly_avg_value": 21652.8,
+      "outlet_count": 9,
+      "weeks_with_data": 5,
+      "sales_rank": 8,
+      "abc_class": "A",
+      "buffer_weeks": 1.0
+    },
+    {
+      "sku": "AWB01-04",
+      "name": "AWB Baby Diapers Large (44 Pcs) 500mm 320mm 7-14kg33",
+      "weekly_avg_qty": 9.8,
+      "weekly_avg_value": 15697.3,
+      "outlet_count": 9,
+      "weeks_with_data": 6,
       "sales_rank": 9,
+      "abc_class": "B",
+      "buffer_weeks": 0.75
+    },
+    {
+      "sku": "AG0385",
+      "name": "MEN RAZOR DISPOSABLE 4PK",
+      "weekly_avg_qty": 55.0,
+      "weekly_avg_value": 15231.3,
+      "outlet_count": 19,
+      "weeks_with_data": 6,
+      "sales_rank": 10,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
@@ -118,7 +129,7 @@
       "weekly_avg_value": 17926.8,
       "outlet_count": 6,
       "weeks_with_data": 5,
-      "sales_rank": 10,
+      "sales_rank": 11,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
@@ -129,7 +140,7 @@
       "weekly_avg_value": 22087.5,
       "outlet_count": 2,
       "weeks_with_data": 4,
-      "sales_rank": 11,
+      "sales_rank": 12,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
@@ -140,18 +151,18 @@
       "weekly_avg_value": 28500.0,
       "outlet_count": 1,
       "weeks_with_data": 3,
-      "sales_rank": 12,
+      "sales_rank": 13,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
     {
-      "sku": "AWB01-04",
-      "name": "AWB Baby Diapers Large (44 Pcs) 500mm 320mm 7-14kg33",
-      "weekly_avg_qty": 8.8,
-      "weekly_avg_value": 14025.3,
-      "outlet_count": 7,
-      "weeks_with_data": 6,
-      "sales_rank": 13,
+      "sku": "MA0011",
+      "name": "ANTI SLIP FOAM MAT 65X180CM",
+      "weekly_avg_qty": 16.8,
+      "weekly_avg_value": 20399.0,
+      "outlet_count": 5,
+      "weeks_with_data": 4,
+      "sales_rank": 14,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
@@ -162,18 +173,18 @@
       "weekly_avg_value": 19825.0,
       "outlet_count": 24,
       "weeks_with_data": 4,
-      "sales_rank": 14,
+      "sales_rank": 15,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
     {
-      "sku": "MA0011",
-      "name": "ANTI SLIP FOAM MAT 65X180CM",
-      "weekly_avg_qty": 15.0,
-      "weekly_avg_value": 18327.0,
-      "outlet_count": 5,
-      "weeks_with_data": 4,
-      "sales_rank": 15,
+      "sku": "BL0573",
+      "name": "PEG HANGER ST/STEEL 20 PEGS",
+      "weekly_avg_qty": 12.2,
+      "weekly_avg_value": 12437.2,
+      "outlet_count": 8,
+      "weeks_with_data": 6,
+      "sales_rank": 16,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
@@ -184,17 +195,6 @@
       "weekly_avg_value": 8901.0,
       "outlet_count": 9,
       "weeks_with_data": 8,
-      "sales_rank": 16,
-      "abc_class": "B",
-      "buffer_weeks": 0.75
-    },
-    {
-      "sku": "BL0573",
-      "name": "PEG HANGER ST/STEEL 20 PEGS",
-      "weekly_avg_qty": 11.0,
-      "weekly_avg_value": 11260.0,
-      "outlet_count": 8,
-      "weeks_with_data": 6,
       "sales_rank": 17,
       "abc_class": "B",
       "buffer_weeks": 0.75
@@ -202,8 +202,8 @@
     {
       "sku": "BC0161",
       "name": "CLEANING CLOTH MICROFIBRE 2PK",
-      "weekly_avg_qty": 35.2,
-      "weekly_avg_value": 8433.0,
+      "weekly_avg_qty": 36.8,
+      "weekly_avg_value": 8787.0,
       "outlet_count": 10,
       "weeks_with_data": 8,
       "sales_rank": 18,
@@ -213,11 +213,22 @@
     {
       "sku": "AWB01-02",
       "name": "AWB Baby Diapers Small (52 Pcs) 450mm 320mm 4-9kg22",
-      "weekly_avg_qty": 9.0,
-      "weekly_avg_value": 13051.2,
-      "outlet_count": 7,
+      "weekly_avg_qty": 9.2,
+      "weekly_avg_value": 13352.8,
+      "outlet_count": 8,
       "weeks_with_data": 5,
       "sales_rank": 19,
+      "abc_class": "B",
+      "buffer_weeks": 0.75
+    },
+    {
+      "sku": "YT0080",
+      "name": "DISPOSABLE SHOT CUPS 60ML 16PK",
+      "weekly_avg_qty": 60.0,
+      "weekly_avg_value": 10963.0,
+      "outlet_count": 17,
+      "weeks_with_data": 6,
+      "sales_rank": 20,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
@@ -228,7 +239,18 @@
       "weekly_avg_value": 15280.5,
       "outlet_count": 8,
       "weeks_with_data": 4,
-      "sales_rank": 20,
+      "sales_rank": 21,
+      "abc_class": "B",
+      "buffer_weeks": 0.75
+    },
+    {
+      "sku": "AWB01-05",
+      "name": "AWB Baby Diapers Extra Large (6*40pcs) XL 530mm 320mm 13kg-30.27",
+      "weekly_avg_qty": 9.0,
+      "weekly_avg_value": 12072.0,
+      "outlet_count": 9,
+      "weeks_with_data": 5,
+      "sales_rank": 22,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
@@ -239,7 +261,7 @@
       "weekly_avg_value": 29736.0,
       "outlet_count": 10,
       "weeks_with_data": 2,
-      "sales_rank": 21,
+      "sales_rank": 23,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
@@ -250,7 +272,7 @@
       "weekly_avg_value": 19816.0,
       "outlet_count": 5,
       "weeks_with_data": 3,
-      "sales_rank": 22,
+      "sales_rank": 24,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
@@ -261,18 +283,7 @@
       "weekly_avg_value": 11780.8,
       "outlet_count": 5,
       "weeks_with_data": 5,
-      "sales_rank": 23,
-      "abc_class": "B",
-      "buffer_weeks": 0.75
-    },
-    {
-      "sku": "YT0080",
-      "name": "DISPOSABLE SHOT CUPS 60ML 16PK",
-      "weekly_avg_qty": 53.0,
-      "weekly_avg_value": 9780.0,
-      "outlet_count": 17,
-      "weeks_with_data": 6,
-      "sales_rank": 24,
+      "sales_rank": 25,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
@@ -283,51 +294,29 @@
       "weekly_avg_value": 28704.0,
       "outlet_count": 7,
       "weeks_with_data": 2,
-      "sales_rank": 25,
+      "sales_rank": 26,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
     {
       "sku": "AH1360",
       "name": "HAIR ELASTIC PLAIN & BOW 18PK",
-      "weekly_avg_qty": 49.0,
-      "weekly_avg_value": 11407.0,
-      "outlet_count": 44,
-      "weeks_with_data": 5,
-      "sales_rank": 26,
-      "abc_class": "B",
-      "buffer_weeks": 0.75
-    },
-    {
-      "sku": "AH0079",
-      "name": "BUTTERFLY HAIR CLIPS 3PK 4ASST",
-      "weekly_avg_qty": 49.8,
-      "weekly_avg_value": 14103.8,
-      "outlet_count": 40,
+      "weekly_avg_qty": 58.2,
+      "weekly_avg_value": 13550.8,
+      "outlet_count": 43,
       "weeks_with_data": 4,
       "sales_rank": 27,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
     {
-      "sku": "AG0002",
-      "name": "EXFOLIATING GLOVES 1PR 4ASST",
-      "weekly_avg_qty": 102.0,
-      "weekly_avg_value": 26424.0,
+      "sku": "AG3686",
+      "name": "EYEBROW SHAPER 2PK",
+      "weekly_avg_qty": 20.0,
+      "weekly_avg_value": 8640.0,
       "outlet_count": 6,
-      "weeks_with_data": 2,
+      "weeks_with_data": 6,
       "sales_rank": 28,
-      "abc_class": "B",
-      "buffer_weeks": 0.75
-    },
-    {
-      "sku": "AG3635",
-      "name": "PREMIUM CUTICLE NIPPER",
-      "weekly_avg_qty": 18.8,
-      "weekly_avg_value": 13159.5,
-      "outlet_count": 7,
-      "weeks_with_data": 4,
-      "sales_rank": 29,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
@@ -338,6 +327,17 @@
       "weekly_avg_value": 12945.0,
       "outlet_count": 6,
       "weeks_with_data": 4,
+      "sales_rank": 29,
+      "abc_class": "B",
+      "buffer_weeks": 0.75
+    },
+    {
+      "sku": "AG3635",
+      "name": "PREMIUM CUTICLE NIPPER",
+      "weekly_avg_qty": 24.0,
+      "weekly_avg_value": 16804.0,
+      "outlet_count": 6,
+      "weeks_with_data": 3,
       "sales_rank": 30,
       "abc_class": "B",
       "buffer_weeks": 0.75
@@ -365,24 +365,13 @@
       "buffer_weeks": 0.75
     },
     {
-      "sku": "AWB01-05",
-      "name": "AWB Baby Diapers Extra Large (6*40pcs) XL 530mm 320mm 13kg-30.27",
-      "weekly_avg_qty": 7.4,
-      "weekly_avg_value": 9992.0,
-      "outlet_count": 8,
-      "weeks_with_data": 5,
-      "sales_rank": 33,
-      "abc_class": "B",
-      "buffer_weeks": 0.75
-    },
-    {
-      "sku": "AG3686",
-      "name": "EYEBROW SHAPER 2PK",
-      "weekly_avg_qty": 18.5,
-      "weekly_avg_value": 8011.5,
+      "sku": "AWB12-03",
+      "name": "AWB Baby Pants Medium (48 Pcs)  500mm 400mm 6-11kg27.8",
+      "weekly_avg_qty": 5.8,
+      "weekly_avg_value": 11991.0,
       "outlet_count": 6,
-      "weeks_with_data": 6,
-      "sales_rank": 34,
+      "weeks_with_data": 4,
+      "sales_rank": 33,
       "abc_class": "B",
       "buffer_weeks": 0.75
     },
@@ -393,9 +382,9 @@
       "weekly_avg_value": 9568.8,
       "outlet_count": 5,
       "weeks_with_data": 5,
-      "sales_rank": 35,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
+      "sales_rank": 34,
+      "abc_class": "B",
+      "buffer_weeks": 0.75
     },
     {
       "sku": "AG3636",
@@ -404,18 +393,18 @@
       "weekly_avg_value": 9547.2,
       "outlet_count": 6,
       "weeks_with_data": 5,
-      "sales_rank": 36,
+      "sales_rank": 35,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
     {
-      "sku": "GM0009",
-      "name": "MIRROR W/BONUS COMPACT 3ASST",
-      "weekly_avg_qty": 22.9,
-      "weekly_avg_value": 6368.0,
-      "outlet_count": 12,
-      "weeks_with_data": 7,
-      "sales_rank": 37,
+      "sku": "AH0079",
+      "name": "BUTTERFLY HAIR CLIPS 3PK 4ASST",
+      "weekly_avg_qty": 53.3,
+      "weekly_avg_value": 14849.0,
+      "outlet_count": 36,
+      "weeks_with_data": 3,
+      "sales_rank": 36,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -426,7 +415,7 @@
       "weekly_avg_value": 7389.0,
       "outlet_count": 8,
       "weeks_with_data": 6,
-      "sales_rank": 38,
+      "sales_rank": 37,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -437,7 +426,7 @@
       "weekly_avg_value": 22020.0,
       "outlet_count": 13,
       "weeks_with_data": 2,
-      "sales_rank": 39,
+      "sales_rank": 38,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -448,7 +437,29 @@
       "weekly_avg_value": 8528.0,
       "outlet_count": 6,
       "weeks_with_data": 5,
+      "sales_rank": 39,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "AH0025",
+      "name": "HAIR COMB 6PC SET 2ASST",
+      "weekly_avg_qty": 29.4,
+      "weekly_avg_value": 6073.1,
+      "outlet_count": 8,
+      "weeks_with_data": 7,
       "sales_rank": 40,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "AWB01-1",
+      "name": "AWB Baby Diapers New Born (22 Pcs) 360mm 280mm ≤5kg21",
+      "weekly_avg_qty": 15.2,
+      "weekly_avg_value": 10304.0,
+      "outlet_count": 7,
+      "weeks_with_data": 4,
+      "sales_rank": 41,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -459,18 +470,29 @@
       "weekly_avg_value": 8204.4,
       "outlet_count": 8,
       "weeks_with_data": 5,
-      "sales_rank": 41,
+      "sales_rank": 42,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
     {
-      "sku": "AH0025",
-      "name": "HAIR COMB 6PC SET 2ASST",
-      "weekly_avg_qty": 27.7,
-      "weekly_avg_value": 5720.0,
-      "outlet_count": 8,
-      "weeks_with_data": 7,
-      "sales_rank": 42,
+      "sku": "KD0799",
+      "name": "BAMBOO FIBRE TRAVEL MUG 400ML",
+      "weekly_avg_qty": 23.3,
+      "weekly_avg_value": 13626.7,
+      "outlet_count": 3,
+      "weeks_with_data": 3,
+      "sales_rank": 43,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "GM0009",
+      "name": "MIRROR W/BONUS COMPACT 3ASST",
+      "weekly_avg_qty": 24.7,
+      "weekly_avg_value": 6797.3,
+      "outlet_count": 11,
+      "weeks_with_data": 6,
+      "sales_rank": 44,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -481,40 +503,40 @@
       "weekly_avg_value": 7980.0,
       "outlet_count": 6,
       "weeks_with_data": 5,
-      "sales_rank": 43,
+      "sales_rank": 45,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
     {
-      "sku": "AWB12-03",
-      "name": "AWB Baby Pants Medium (48 Pcs)  500mm 400mm 6-11kg27.8",
-      "weekly_avg_qty": 6.3,
-      "weekly_avg_value": 13172.0,
-      "outlet_count": 5,
-      "weeks_with_data": 3,
-      "sales_rank": 44,
+      "sku": "RG0292",
+      "name": "TRAVEL MUG DOUBLE WALLED 473ML",
+      "weekly_avg_qty": 10.8,
+      "weekly_avg_value": 7581.6,
+      "outlet_count": 7,
+      "weeks_with_data": 5,
+      "sales_rank": 46,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
     {
       "sku": "AG0011",
       "name": "NAIL CLIPPER STAINLESS STEEL",
-      "weekly_avg_qty": 63.8,
-      "weekly_avg_value": 9811.2,
-      "outlet_count": 36,
-      "weeks_with_data": 4,
-      "sales_rank": 45,
+      "weekly_avg_qty": 81.0,
+      "weekly_avg_value": 12421.7,
+      "outlet_count": 35,
+      "weeks_with_data": 3,
+      "sales_rank": 47,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
     {
       "sku": "AG0005",
       "name": "NAIL CLIPPERS ST.STEEL 3PC SET",
-      "weekly_avg_qty": 27.5,
-      "weekly_avg_value": 6280.8,
-      "outlet_count": 9,
-      "weeks_with_data": 6,
-      "sales_rank": 46,
+      "weekly_avg_qty": 32.6,
+      "weekly_avg_value": 7421.4,
+      "outlet_count": 8,
+      "weeks_with_data": 5,
+      "sales_rank": 48,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -525,7 +547,18 @@
       "weekly_avg_value": 12286.7,
       "outlet_count": 18,
       "weeks_with_data": 3,
-      "sales_rank": 47,
+      "sales_rank": 49,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "AH1775",
+      "name": "HEADBAND W/GLITTER THREAD 5PK",
+      "weekly_avg_qty": 24.2,
+      "weekly_avg_value": 6114.7,
+      "outlet_count": 31,
+      "weeks_with_data": 6,
+      "sales_rank": 50,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -536,7 +569,7 @@
       "weekly_avg_value": 7311.6,
       "outlet_count": 3,
       "weeks_with_data": 5,
-      "sales_rank": 48,
+      "sales_rank": 51,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -547,7 +580,7 @@
       "weekly_avg_value": 17580.0,
       "outlet_count": 9,
       "weeks_with_data": 2,
-      "sales_rank": 49,
+      "sales_rank": 52,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -558,39 +591,6 @@
       "weekly_avg_value": 5774.8,
       "outlet_count": 40,
       "weeks_with_data": 6,
-      "sales_rank": 50,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "AWB01-1",
-      "name": "AWB Baby Diapers New Born (22 Pcs) 360mm 280mm ≤5kg21",
-      "weekly_avg_qty": 10.2,
-      "weekly_avg_value": 6835.2,
-      "outlet_count": 7,
-      "weeks_with_data": 5,
-      "sales_rank": 51,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "AH1775",
-      "name": "HEADBAND W/GLITTER THREAD 5PK",
-      "weekly_avg_qty": 22.2,
-      "weekly_avg_value": 5622.7,
-      "outlet_count": 30,
-      "weeks_with_data": 6,
-      "sales_rank": 52,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "RG0292",
-      "name": "TRAVEL MUG DOUBLE WALLED 473ML",
-      "weekly_avg_qty": 12.0,
-      "weekly_avg_value": 8424.0,
-      "outlet_count": 7,
-      "weeks_with_data": 4,
       "sales_rank": 53,
       "abc_class": "C",
       "buffer_weeks": 0.5
@@ -640,12 +640,12 @@
       "buffer_weeks": 0.5
     },
     {
-      "sku": "AG3638",
-      "name": "PREMIUM HAIR THINNING SCISSORS",
-      "weekly_avg_qty": 13.2,
-      "weekly_avg_value": 7306.8,
-      "outlet_count": 8,
-      "weeks_with_data": 4,
+      "sku": "AWB84-01",
+      "name": "AWB Papaya Water Wipes (12 *84 Pcs)",
+      "weekly_avg_qty": 7.8,
+      "weekly_avg_value": 4906.7,
+      "outlet_count": 5,
+      "weeks_with_data": 6,
       "sales_rank": 58,
       "abc_class": "C",
       "buffer_weeks": 0.5
@@ -673,24 +673,13 @@
       "buffer_weeks": 0.5
     },
     {
-      "sku": "AWB84-01",
-      "name": "AWB Papaya Water Wipes (12 *84 Pcs)",
-      "weekly_avg_qty": 8.8,
-      "weekly_avg_value": 5720.0,
-      "outlet_count": 4,
-      "weeks_with_data": 5,
-      "sales_rank": 61,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
       "sku": "AH4595",
       "name": "HAIR COMB 2 PIECE",
       "weekly_avg_qty": 21.5,
       "weekly_avg_value": 7035.0,
       "outlet_count": 7,
       "weeks_with_data": 4,
-      "sales_rank": 62,
+      "sales_rank": 61,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -701,18 +690,7 @@
       "weekly_avg_value": 14045.5,
       "outlet_count": 38,
       "weeks_with_data": 2,
-      "sales_rank": 63,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "KD0799",
-      "name": "BAMBOO FIBRE TRAVEL MUG 400ML",
-      "weekly_avg_qty": 24.0,
-      "weekly_avg_value": 14016.0,
-      "outlet_count": 2,
-      "weeks_with_data": 2,
-      "sales_rank": 64,
+      "sales_rank": 62,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -723,7 +701,7 @@
       "weekly_avg_value": 3330.1,
       "outlet_count": 17,
       "weeks_with_data": 8,
-      "sales_rank": 65,
+      "sales_rank": 63,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -734,7 +712,7 @@
       "weekly_avg_value": 5249.4,
       "outlet_count": 28,
       "weeks_with_data": 5,
-      "sales_rank": 66,
+      "sales_rank": 64,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -745,7 +723,7 @@
       "weekly_avg_value": 4366.0,
       "outlet_count": 5,
       "weeks_with_data": 6,
-      "sales_rank": 67,
+      "sales_rank": 65,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -756,7 +734,7 @@
       "weekly_avg_value": 4160.0,
       "outlet_count": 10,
       "weeks_with_data": 6,
-      "sales_rank": 68,
+      "sales_rank": 66,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -767,18 +745,29 @@
       "weekly_avg_value": 8279.0,
       "outlet_count": 7,
       "weeks_with_data": 3,
-      "sales_rank": 69,
+      "sales_rank": 67,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
     {
-      "sku": "AG0384",
-      "name": "LADIES RAZOR DISPOSABLE 4PK",
-      "weekly_avg_qty": 41.5,
-      "weekly_avg_value": 11813.0,
-      "outlet_count": 7,
-      "weeks_with_data": 2,
-      "sales_rank": 70,
+      "sku": "BL0375",
+      "name": "CLIP HANGER METAL 5PK",
+      "weekly_avg_qty": 10.0,
+      "weekly_avg_value": 4100.0,
+      "outlet_count": 6,
+      "weeks_with_data": 6,
+      "sales_rank": 68,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "OT0308",
+      "name": "GARDEN GLOVES PADDED LEATHER",
+      "weekly_avg_qty": 7.0,
+      "weekly_avg_value": 5921.0,
+      "outlet_count": 3,
+      "weeks_with_data": 4,
+      "sales_rank": 69,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -789,7 +778,7 @@
       "weekly_avg_value": 23465.0,
       "outlet_count": 29,
       "weeks_with_data": 1,
-      "sales_rank": 71,
+      "sales_rank": 70,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -800,7 +789,7 @@
       "weekly_avg_value": 11691.5,
       "outlet_count": 22,
       "weeks_with_data": 2,
-      "sales_rank": 72,
+      "sales_rank": 71,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -811,7 +800,7 @@
       "weekly_avg_value": 11684.0,
       "outlet_count": 4,
       "weeks_with_data": 2,
-      "sales_rank": 73,
+      "sales_rank": 72,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -822,18 +811,7 @@
       "weekly_avg_value": 23040.0,
       "outlet_count": 10,
       "weeks_with_data": 1,
-      "sales_rank": 74,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "DH0452",
-      "name": "OIL BURNER PORCELAIN WHITE 2AS",
-      "weekly_avg_qty": 6.0,
-      "weekly_avg_value": 4590.0,
-      "outlet_count": 5,
-      "weeks_with_data": 5,
-      "sales_rank": 75,
+      "sales_rank": 73,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -844,7 +822,7 @@
       "weekly_avg_value": 7488.0,
       "outlet_count": 6,
       "weeks_with_data": 3,
-      "sales_rank": 76,
+      "sales_rank": 74,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -855,18 +833,18 @@
       "weekly_avg_value": 4475.6,
       "outlet_count": 6,
       "weeks_with_data": 5,
-      "sales_rank": 77,
+      "sales_rank": 75,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
     {
-      "sku": "BL0375",
-      "name": "CLIP HANGER METAL 5PK",
-      "weekly_avg_qty": 9.0,
-      "weekly_avg_value": 3690.0,
+      "sku": "AG3634",
+      "name": "PREMIUM TWEEZER SLANTED",
+      "weekly_avg_qty": 16.8,
+      "weekly_avg_value": 4423.2,
       "outlet_count": 6,
-      "weeks_with_data": 6,
-      "sales_rank": 78,
+      "weeks_with_data": 5,
+      "sales_rank": 76,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -877,18 +855,18 @@
       "weekly_avg_value": 11046.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 79,
+      "sales_rank": 77,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
     {
-      "sku": "AG0275",
-      "name": "MEN RAZOR DISPOSABLE 6PK",
-      "weekly_avg_qty": 42.0,
-      "weekly_avg_value": 10764.0,
-      "outlet_count": 6,
-      "weeks_with_data": 2,
-      "sales_rank": 80,
+      "sku": "AG3638",
+      "name": "PREMIUM HAIR THINNING SCISSORS",
+      "weekly_avg_qty": 13.7,
+      "weekly_avg_value": 7294.3,
+      "outlet_count": 8,
+      "weeks_with_data": 3,
+      "sales_rank": 78,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -899,7 +877,7 @@
       "weekly_avg_value": 10563.0,
       "outlet_count": 17,
       "weeks_with_data": 2,
-      "sales_rank": 81,
+      "sales_rank": 79,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -910,7 +888,7 @@
       "weekly_avg_value": 5210.0,
       "outlet_count": 13,
       "weeks_with_data": 4,
-      "sales_rank": 82,
+      "sales_rank": 80,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -921,29 +899,18 @@
       "weekly_avg_value": 10401.0,
       "outlet_count": 4,
       "weeks_with_data": 2,
-      "sales_rank": 83,
+      "sales_rank": 81,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
     {
       "sku": "AH0311",
       "name": "HAIR BRUSH METALLIC FIN. 5ASST",
-      "weekly_avg_qty": 26.3,
-      "weekly_avg_value": 6838.0,
-      "outlet_count": 30,
-      "weeks_with_data": 3,
-      "sales_rank": 84,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "AG3634",
-      "name": "PREMIUM TWEEZER SLANTED",
-      "weekly_avg_qty": 12.5,
-      "weekly_avg_value": 3307.5,
-      "outlet_count": 6,
-      "weeks_with_data": 6,
-      "sales_rank": 85,
+      "weekly_avg_qty": 38.0,
+      "weekly_avg_value": 9897.0,
+      "outlet_count": 29,
+      "weeks_with_data": 2,
+      "sales_rank": 82,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -954,7 +921,7 @@
       "weekly_avg_value": 4833.8,
       "outlet_count": 24,
       "weeks_with_data": 4,
-      "sales_rank": 86,
+      "sales_rank": 83,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -965,18 +932,7 @@
       "weekly_avg_value": 4796.0,
       "outlet_count": 5,
       "weeks_with_data": 4,
-      "sales_rank": 87,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "OT0308",
-      "name": "GARDEN GLOVES PADDED LEATHER",
-      "weekly_avg_qty": 7.3,
-      "weekly_avg_value": 6240.7,
-      "outlet_count": 3,
-      "weeks_with_data": 3,
-      "sales_rank": 88,
+      "sales_rank": 84,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -987,7 +943,18 @@
       "weekly_avg_value": 9207.0,
       "outlet_count": 7,
       "weeks_with_data": 2,
-      "sales_rank": 89,
+      "sales_rank": 85,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "DH0452",
+      "name": "OIL BURNER PORCELAIN WHITE 2AS",
+      "weekly_avg_qty": 6.0,
+      "weekly_avg_value": 4590.0,
+      "outlet_count": 4,
+      "weeks_with_data": 4,
+      "sales_rank": 86,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -998,7 +965,7 @@
       "weekly_avg_value": 18356.0,
       "outlet_count": 20,
       "weeks_with_data": 1,
-      "sales_rank": 90,
+      "sales_rank": 87,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1009,7 +976,7 @@
       "weekly_avg_value": 9074.5,
       "outlet_count": 32,
       "weeks_with_data": 2,
-      "sales_rank": 91,
+      "sales_rank": 88,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1020,7 +987,7 @@
       "weekly_avg_value": 5975.0,
       "outlet_count": 7,
       "weeks_with_data": 3,
-      "sales_rank": 92,
+      "sales_rank": 89,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1031,18 +998,18 @@
       "weekly_avg_value": 3559.6,
       "outlet_count": 6,
       "weeks_with_data": 5,
-      "sales_rank": 93,
+      "sales_rank": 90,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
     {
-      "sku": "AG0013",
-      "name": "TWEEZERS SLANT ST.STEEL",
-      "weekly_avg_qty": 20.1,
-      "weekly_avg_value": 2523.4,
-      "outlet_count": 10,
-      "weeks_with_data": 7,
-      "sales_rank": 94,
+      "sku": "BC0013",
+      "name": "WIPES ALL PURPOSE 38x40cm 10PK",
+      "weekly_avg_qty": 12.8,
+      "weekly_avg_value": 2218.5,
+      "outlet_count": 7,
+      "weeks_with_data": 8,
+      "sales_rank": 91,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1053,18 +1020,7 @@
       "weekly_avg_value": 3525.6,
       "outlet_count": 4,
       "weeks_with_data": 5,
-      "sales_rank": 95,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "AG0003",
-      "name": "MANICURE 5PC SET 3ASST",
-      "weekly_avg_qty": 36.0,
-      "weekly_avg_value": 8802.0,
-      "outlet_count": 7,
-      "weeks_with_data": 2,
-      "sales_rank": 96,
+      "sales_rank": 92,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1075,7 +1031,7 @@
       "weekly_avg_value": 17381.0,
       "outlet_count": 2,
       "weeks_with_data": 1,
-      "sales_rank": 97,
+      "sales_rank": 93,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1086,18 +1042,29 @@
       "weekly_avg_value": 4326.8,
       "outlet_count": 13,
       "weeks_with_data": 4,
-      "sales_rank": 98,
+      "sales_rank": 94,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
     {
-      "sku": "AG0068",
-      "name": "EXFOLIATING SHOWER CLOTH 4ASST",
-      "weekly_avg_qty": 15.0,
-      "weekly_avg_value": 5640.0,
-      "outlet_count": 4,
-      "weeks_with_data": 3,
-      "sales_rank": 99,
+      "sku": "AG0013",
+      "name": "TWEEZERS SLANT ST.STEEL",
+      "weekly_avg_qty": 23.0,
+      "weekly_avg_value": 2872.0,
+      "outlet_count": 9,
+      "weeks_with_data": 6,
+      "sales_rank": 95,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "AG2085",
+      "name": "COSMETIC BLENDING SPONGE",
+      "weekly_avg_qty": 12.0,
+      "weekly_avg_value": 3444.0,
+      "outlet_count": 5,
+      "weeks_with_data": 5,
+      "sales_rank": 96,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1108,18 +1075,7 @@
       "weekly_avg_value": 5592.0,
       "outlet_count": 3,
       "weeks_with_data": 3,
-      "sales_rank": 100,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "BC0013",
-      "name": "WIPES ALL PURPOSE 38x40cm 10PK",
-      "weekly_avg_qty": 13.7,
-      "weekly_avg_value": 2386.3,
-      "outlet_count": 7,
-      "weeks_with_data": 7,
-      "sales_rank": 101,
+      "sales_rank": 97,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1130,7 +1086,7 @@
       "weekly_avg_value": 16652.0,
       "outlet_count": 20,
       "weeks_with_data": 1,
-      "sales_rank": 102,
+      "sales_rank": 98,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1141,7 +1097,18 @@
       "weekly_avg_value": 4059.0,
       "outlet_count": 6,
       "weeks_with_data": 4,
-      "sales_rank": 103,
+      "sales_rank": 99,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "AG0384",
+      "name": "LADIES RAZOR DISPOSABLE 4PK",
+      "weekly_avg_qty": 59.0,
+      "weekly_avg_value": 16210.0,
+      "outlet_count": 5,
+      "weeks_with_data": 1,
+      "sales_rank": 100,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1152,7 +1119,18 @@
       "weekly_avg_value": 3981.2,
       "outlet_count": 5,
       "weeks_with_data": 4,
-      "sales_rank": 104,
+      "sales_rank": 101,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "AG0068",
+      "name": "EXFOLIATING SHOWER CLOTH 4ASST",
+      "weekly_avg_qty": 21.0,
+      "weekly_avg_value": 7896.0,
+      "outlet_count": 3,
+      "weeks_with_data": 2,
+      "sales_rank": 102,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1163,7 +1141,7 @@
       "weekly_avg_value": 7848.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 105,
+      "sales_rank": 103,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1174,7 +1152,7 @@
       "weekly_avg_value": 3891.0,
       "outlet_count": 14,
       "weeks_with_data": 4,
-      "sales_rank": 106,
+      "sales_rank": 104,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1185,7 +1163,7 @@
       "weekly_avg_value": 3063.0,
       "outlet_count": 7,
       "weeks_with_data": 5,
-      "sales_rank": 107,
+      "sales_rank": 105,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1196,7 +1174,7 @@
       "weekly_avg_value": 3776.0,
       "outlet_count": 7,
       "weeks_with_data": 4,
-      "sales_rank": 108,
+      "sales_rank": 106,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1207,7 +1185,7 @@
       "weekly_avg_value": 4968.0,
       "outlet_count": 3,
       "weeks_with_data": 3,
-      "sales_rank": 109,
+      "sales_rank": 107,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1218,7 +1196,7 @@
       "weekly_avg_value": 7296.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 110,
+      "sales_rank": 108,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1229,7 +1207,7 @@
       "weekly_avg_value": 2422.0,
       "outlet_count": 5,
       "weeks_with_data": 6,
-      "sales_rank": 111,
+      "sales_rank": 109,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1240,7 +1218,7 @@
       "weekly_avg_value": 7152.0,
       "outlet_count": 4,
       "weeks_with_data": 2,
-      "sales_rank": 112,
+      "sales_rank": 110,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1251,7 +1229,7 @@
       "weekly_avg_value": 4715.0,
       "outlet_count": 29,
       "weeks_with_data": 3,
-      "sales_rank": 113,
+      "sales_rank": 111,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1262,7 +1240,7 @@
       "weekly_avg_value": 14080.0,
       "outlet_count": 9,
       "weeks_with_data": 1,
-      "sales_rank": 114,
+      "sales_rank": 112,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1273,18 +1251,18 @@
       "weekly_avg_value": 7030.0,
       "outlet_count": 8,
       "weeks_with_data": 2,
-      "sales_rank": 115,
+      "sales_rank": 113,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
     {
-      "sku": "AG2085",
-      "name": "COSMETIC BLENDING SPONGE",
-      "weekly_avg_qty": 12.0,
-      "weekly_avg_value": 3444.0,
-      "outlet_count": 4,
-      "weeks_with_data": 4,
-      "sales_rank": 116,
+      "sku": "AG0003",
+      "name": "MANICURE 5PC SET 3ASST",
+      "weekly_avg_qty": 57.0,
+      "weekly_avg_value": 13689.0,
+      "outlet_count": 5,
+      "weeks_with_data": 1,
+      "sales_rank": 114,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1295,7 +1273,7 @@
       "weekly_avg_value": 3386.8,
       "outlet_count": 6,
       "weeks_with_data": 4,
-      "sales_rank": 117,
+      "sales_rank": 115,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1306,7 +1284,7 @@
       "weekly_avg_value": 3378.5,
       "outlet_count": 2,
       "weeks_with_data": 4,
-      "sales_rank": 118,
+      "sales_rank": 116,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1317,7 +1295,7 @@
       "weekly_avg_value": 2696.0,
       "outlet_count": 11,
       "weeks_with_data": 5,
-      "sales_rank": 119,
+      "sales_rank": 117,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1328,7 +1306,18 @@
       "weekly_avg_value": 4474.3,
       "outlet_count": 3,
       "weeks_with_data": 3,
-      "sales_rank": 120,
+      "sales_rank": 118,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "AWB84-02",
+      "name": "AWB Avocado Water Wipes (12 *84 Pcs)",
+      "weekly_avg_qty": 5.5,
+      "weekly_avg_value": 3321.2,
+      "outlet_count": 4,
+      "weeks_with_data": 4,
+      "sales_rank": 119,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1339,7 +1328,7 @@
       "weekly_avg_value": 13008.0,
       "outlet_count": 8,
       "weeks_with_data": 1,
-      "sales_rank": 121,
+      "sales_rank": 120,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1350,7 +1339,7 @@
       "weekly_avg_value": 6414.5,
       "outlet_count": 30,
       "weeks_with_data": 2,
-      "sales_rank": 122,
+      "sales_rank": 121,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1361,29 +1350,7 @@
       "weekly_avg_value": 4248.0,
       "outlet_count": 13,
       "weeks_with_data": 3,
-      "sales_rank": 123,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "AWB84-02",
-      "name": "AWB Avocado Water Wipes (12 *84 Pcs)",
-      "weekly_avg_qty": 6.3,
-      "weekly_avg_value": 4148.3,
-      "outlet_count": 3,
-      "weeks_with_data": 3,
-      "sales_rank": 124,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "AG0014",
-      "name": "TWEEZERS STRAIGHT ST.STEEL",
-      "weekly_avg_qty": 30.0,
-      "weekly_avg_value": 3947.3,
-      "outlet_count": 37,
-      "weeks_with_data": 3,
-      "sales_rank": 125,
+      "sales_rank": 122,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1394,7 +1361,7 @@
       "weekly_avg_value": 2936.0,
       "outlet_count": 3,
       "weeks_with_data": 4,
-      "sales_rank": 126,
+      "sales_rank": 123,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1405,7 +1372,29 @@
       "weekly_avg_value": 5850.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 127,
+      "sales_rank": 124,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "AG0275",
+      "name": "MEN RAZOR DISPOSABLE 6PK",
+      "weekly_avg_qty": 48.0,
+      "weekly_avg_value": 11520.0,
+      "outlet_count": 4,
+      "weeks_with_data": 1,
+      "sales_rank": 125,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "AG0014",
+      "name": "TWEEZERS STRAIGHT ST.STEEL",
+      "weekly_avg_qty": 43.5,
+      "weekly_avg_value": 5705.0,
+      "outlet_count": 36,
+      "weeks_with_data": 2,
+      "sales_rank": 126,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1416,7 +1405,7 @@
       "weekly_avg_value": 2824.5,
       "outlet_count": 6,
       "weeks_with_data": 4,
-      "sales_rank": 128,
+      "sales_rank": 127,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1427,7 +1416,7 @@
       "weekly_avg_value": 3742.0,
       "outlet_count": 3,
       "weeks_with_data": 3,
-      "sales_rank": 129,
+      "sales_rank": 128,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1438,7 +1427,7 @@
       "weekly_avg_value": 3549.0,
       "outlet_count": 6,
       "weeks_with_data": 3,
-      "sales_rank": 130,
+      "sales_rank": 129,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1449,7 +1438,7 @@
       "weekly_avg_value": 2618.5,
       "outlet_count": 2,
       "weeks_with_data": 4,
-      "sales_rank": 131,
+      "sales_rank": 130,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1460,7 +1449,7 @@
       "weekly_avg_value": 5175.0,
       "outlet_count": 15,
       "weeks_with_data": 2,
-      "sales_rank": 132,
+      "sales_rank": 131,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1471,7 +1460,7 @@
       "weekly_avg_value": 9984.0,
       "outlet_count": 8,
       "weeks_with_data": 1,
-      "sales_rank": 133,
+      "sales_rank": 132,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1482,7 +1471,7 @@
       "weekly_avg_value": 1956.0,
       "outlet_count": 5,
       "weeks_with_data": 5,
-      "sales_rank": 134,
+      "sales_rank": 133,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1493,18 +1482,7 @@
       "weekly_avg_value": 9724.0,
       "outlet_count": 23,
       "weeks_with_data": 1,
-      "sales_rank": 135,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "AH1776",
-      "name": "HAIR ELASTIC GLIT W/CLIPS 18PK",
-      "weekly_avg_qty": 26.5,
-      "weekly_avg_value": 4842.5,
-      "outlet_count": 5,
-      "weeks_with_data": 2,
-      "sales_rank": 136,
+      "sales_rank": 134,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1515,7 +1493,7 @@
       "weekly_avg_value": 3228.0,
       "outlet_count": 3,
       "weeks_with_data": 3,
-      "sales_rank": 137,
+      "sales_rank": 135,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1526,7 +1504,18 @@
       "weekly_avg_value": 2362.5,
       "outlet_count": 5,
       "weeks_with_data": 4,
-      "sales_rank": 138,
+      "sales_rank": 136,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "OB0268",
+      "name": "BBQ 2 IN 1 SPATULA TONGS 23cm",
+      "weekly_avg_qty": 5.2,
+      "weekly_avg_value": 1568.3,
+      "outlet_count": 6,
+      "weeks_with_data": 6,
+      "sales_rank": 137,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1537,7 +1526,7 @@
       "weekly_avg_value": 4704.0,
       "outlet_count": 4,
       "weeks_with_data": 2,
-      "sales_rank": 139,
+      "sales_rank": 138,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1548,7 +1537,7 @@
       "weekly_avg_value": 9408.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 140,
+      "sales_rank": 139,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1559,7 +1548,7 @@
       "weekly_avg_value": 4680.0,
       "outlet_count": 3,
       "weeks_with_data": 2,
-      "sales_rank": 141,
+      "sales_rank": 140,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1570,7 +1559,7 @@
       "weekly_avg_value": 9214.0,
       "outlet_count": 10,
       "weeks_with_data": 1,
-      "sales_rank": 142,
+      "sales_rank": 141,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1581,7 +1570,7 @@
       "weekly_avg_value": 4602.5,
       "outlet_count": 13,
       "weeks_with_data": 2,
-      "sales_rank": 143,
+      "sales_rank": 142,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1592,7 +1581,7 @@
       "weekly_avg_value": 9140.0,
       "outlet_count": 13,
       "weeks_with_data": 1,
-      "sales_rank": 144,
+      "sales_rank": 143,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1603,7 +1592,7 @@
       "weekly_avg_value": 4560.0,
       "outlet_count": 1,
       "weeks_with_data": 2,
-      "sales_rank": 145,
+      "sales_rank": 144,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1614,7 +1603,7 @@
       "weekly_avg_value": 3039.7,
       "outlet_count": 1,
       "weeks_with_data": 3,
-      "sales_rank": 146,
+      "sales_rank": 145,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1625,6 +1614,17 @@
       "weekly_avg_value": 2974.3,
       "outlet_count": 20,
       "weeks_with_data": 3,
+      "sales_rank": 146,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "AH1776",
+      "name": "HAIR ELASTIC GLIT W/CLIPS 18PK",
+      "weekly_avg_qty": 48.0,
+      "weekly_avg_value": 8640.0,
+      "outlet_count": 4,
+      "weeks_with_data": 1,
       "sales_rank": 147,
       "abc_class": "C",
       "buffer_weeks": 0.5
@@ -1751,24 +1751,13 @@
       "buffer_weeks": 0.5
     },
     {
-      "sku": "OB0268",
-      "name": "BBQ 2 IN 1 SPATULA TONGS 23cm",
-      "weekly_avg_qty": 5.0,
-      "weekly_avg_value": 1519.6,
-      "outlet_count": 5,
-      "weeks_with_data": 5,
-      "sales_rank": 159,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
       "sku": "PA2173",
       "name": "PET MINI TENNIS BALLS 4PC",
       "weekly_avg_qty": 14.0,
       "weekly_avg_value": 3794.0,
       "outlet_count": 8,
       "weeks_with_data": 2,
-      "sales_rank": 160,
+      "sales_rank": 159,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1779,7 +1768,7 @@
       "weekly_avg_value": 2500.0,
       "outlet_count": 6,
       "weeks_with_data": 3,
-      "sales_rank": 161,
+      "sales_rank": 160,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1790,18 +1779,18 @@
       "weekly_avg_value": 7308.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 162,
+      "sales_rank": 161,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
     {
       "sku": "AWB20-TW01",
       "name": "AWB Baby Toilet Wipes",
-      "weekly_avg_qty": 11.0,
-      "weekly_avg_value": 1210.0,
-      "outlet_count": 6,
-      "weeks_with_data": 6,
-      "sales_rank": 163,
+      "weekly_avg_qty": 12.6,
+      "weekly_avg_value": 1386.0,
+      "outlet_count": 5,
+      "weeks_with_data": 5,
+      "sales_rank": 162,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1812,7 +1801,7 @@
       "weekly_avg_value": 3402.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 164,
+      "sales_rank": 163,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1823,7 +1812,7 @@
       "weekly_avg_value": 6640.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 165,
+      "sales_rank": 164,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1834,7 +1823,7 @@
       "weekly_avg_value": 2175.0,
       "outlet_count": 6,
       "weeks_with_data": 3,
-      "sales_rank": 166,
+      "sales_rank": 165,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1845,7 +1834,7 @@
       "weekly_avg_value": 3234.0,
       "outlet_count": 3,
       "weeks_with_data": 2,
-      "sales_rank": 167,
+      "sales_rank": 166,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1855,6 +1844,17 @@
       "weekly_avg_qty": 18.0,
       "weekly_avg_value": 3205.5,
       "outlet_count": 16,
+      "weeks_with_data": 2,
+      "sales_rank": 167,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "KC0025",
+      "name": "FOIL TRAY W/LIDS 11x20cm 6PK",
+      "weekly_avg_qty": 9.0,
+      "weekly_avg_value": 3165.0,
+      "outlet_count": 3,
       "weeks_with_data": 2,
       "sales_rank": 168,
       "abc_class": "C",
@@ -1927,13 +1927,24 @@
       "buffer_weeks": 0.5
     },
     {
+      "sku": "AWB84-03",
+      "name": "AWB Aloe Vera Water Wipes (12 *84Pcs)",
+      "weekly_avg_qty": 3.0,
+      "weekly_avg_value": 1505.0,
+      "outlet_count": 4,
+      "weeks_with_data": 4,
+      "sales_rank": 175,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
       "sku": "OB0185",
       "name": "BBQ SPATULA HEAVY DUTY 4 IN 1",
       "weekly_avg_qty": 3.5,
       "weekly_avg_value": 3007.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 175,
+      "sales_rank": 176,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1944,7 +1955,7 @@
       "weekly_avg_value": 1441.0,
       "outlet_count": 2,
       "weeks_with_data": 4,
-      "sales_rank": 176,
+      "sales_rank": 177,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1955,7 +1966,7 @@
       "weekly_avg_value": 5691.0,
       "outlet_count": 11,
       "weeks_with_data": 1,
-      "sales_rank": 177,
+      "sales_rank": 178,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1966,7 +1977,7 @@
       "weekly_avg_value": 2820.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 178,
+      "sales_rank": 179,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1977,7 +1988,7 @@
       "weekly_avg_value": 2816.0,
       "outlet_count": 12,
       "weeks_with_data": 2,
-      "sales_rank": 179,
+      "sales_rank": 180,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1988,7 +1999,7 @@
       "weekly_avg_value": 5568.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 180,
+      "sales_rank": 181,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -1999,7 +2010,7 @@
       "weekly_avg_value": 5451.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 181,
+      "sales_rank": 182,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2010,17 +2021,6 @@
       "weekly_avg_value": 5436.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 182,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "AWB80-03",
-      "name": "AWB Baby Wet Wipes (24*80Pcs) TEA TREE",
-      "weekly_avg_qty": 5.8,
-      "weekly_avg_value": 1322.5,
-      "outlet_count": 4,
-      "weeks_with_data": 4,
       "sales_rank": 183,
       "abc_class": "C",
       "buffer_weeks": 0.5
@@ -2070,11 +2070,11 @@
       "buffer_weeks": 0.5
     },
     {
-      "sku": "AWB84-03",
-      "name": "AWB Aloe Vera Water Wipes (12 *84Pcs)",
-      "weekly_avg_qty": 2.7,
-      "weekly_avg_value": 1633.3,
-      "outlet_count": 3,
+      "sku": "AWB80-03",
+      "name": "AWB Baby Wet Wipes (24*80Pcs) TEA TREE",
+      "weekly_avg_qty": 7.3,
+      "weekly_avg_value": 1686.7,
+      "outlet_count": 4,
       "weeks_with_data": 3,
       "sales_rank": 188,
       "abc_class": "C",
@@ -2136,13 +2136,24 @@
       "buffer_weeks": 0.5
     },
     {
+      "sku": "OA1252",
+      "name": "GARDEN PINWHEEL 14X37CM",
+      "weekly_avg_qty": 9.0,
+      "weekly_avg_value": 2286.0,
+      "outlet_count": 3,
+      "weeks_with_data": 2,
+      "sales_rank": 194,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
       "sku": "KA0010",
       "name": "PARING KNIVES 3PC SET",
       "weekly_avg_qty": 9.0,
       "weekly_avg_value": 2286.0,
       "outlet_count": 3,
       "weeks_with_data": 2,
-      "sales_rank": 194,
+      "sales_rank": 195,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2153,7 +2164,7 @@
       "weekly_avg_value": 4551.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 195,
+      "sales_rank": 196,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2164,7 +2175,7 @@
       "weekly_avg_value": 4510.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 196,
+      "sales_rank": 197,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2175,7 +2186,7 @@
       "weekly_avg_value": 2232.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 197,
+      "sales_rank": 198,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2186,7 +2197,7 @@
       "weekly_avg_value": 2187.0,
       "outlet_count": 3,
       "weeks_with_data": 2,
-      "sales_rank": 198,
+      "sales_rank": 199,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2197,17 +2208,6 @@
       "weekly_avg_value": 4354.0,
       "outlet_count": 8,
       "weeks_with_data": 1,
-      "sales_rank": 199,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "KC0025",
-      "name": "FOIL TRAY W/LIDS 11x20cm 6PK",
-      "weekly_avg_qty": 6.0,
-      "weekly_avg_value": 2163.0,
-      "outlet_count": 2,
-      "weeks_with_data": 2,
       "sales_rank": 200,
       "abc_class": "C",
       "buffer_weeks": 0.5
@@ -2235,24 +2235,13 @@
       "buffer_weeks": 0.5
     },
     {
-      "sku": "AH0085",
-      "name": "HAIR ELASTIC 100PK 3ASST",
-      "weekly_avg_qty": 7.0,
-      "weekly_avg_value": 2051.0,
-      "outlet_count": 2,
-      "weeks_with_data": 2,
-      "sales_rank": 203,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
       "sku": "PG0792",
       "name": "PET LEAD W/CARABINER 1.6M 2ASS",
       "weekly_avg_qty": 4.0,
       "weekly_avg_value": 4004.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 204,
+      "sales_rank": 203,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2263,7 +2252,7 @@
       "weekly_avg_value": 3900.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 205,
+      "sales_rank": 204,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2274,7 +2263,7 @@
       "weekly_avg_value": 3800.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 206,
+      "sales_rank": 205,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2285,7 +2274,7 @@
       "weekly_avg_value": 1206.0,
       "outlet_count": 2,
       "weeks_with_data": 3,
-      "sales_rank": 207,
+      "sales_rank": 206,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2296,7 +2285,7 @@
       "weekly_avg_value": 1144.7,
       "outlet_count": 3,
       "weeks_with_data": 3,
-      "sales_rank": 208,
+      "sales_rank": 207,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2307,7 +2296,7 @@
       "weekly_avg_value": 3309.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 209,
+      "sales_rank": 208,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2318,7 +2307,7 @@
       "weekly_avg_value": 3288.0,
       "outlet_count": 5,
       "weeks_with_data": 1,
-      "sales_rank": 210,
+      "sales_rank": 209,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2329,7 +2318,7 @@
       "weekly_avg_value": 1627.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 211,
+      "sales_rank": 210,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2340,7 +2329,7 @@
       "weekly_avg_value": 3228.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 212,
+      "sales_rank": 211,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2351,7 +2340,7 @@
       "weekly_avg_value": 3228.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 213,
+      "sales_rank": 212,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2362,7 +2351,7 @@
       "weekly_avg_value": 3172.0,
       "outlet_count": 6,
       "weeks_with_data": 1,
-      "sales_rank": 214,
+      "sales_rank": 213,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2373,7 +2362,7 @@
       "weekly_avg_value": 1050.0,
       "outlet_count": 1,
       "weeks_with_data": 3,
-      "sales_rank": 215,
+      "sales_rank": 214,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2384,18 +2373,7 @@
       "weekly_avg_value": 1528.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 216,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "OA1252",
-      "name": "GARDEN PINWHEEL 14X37CM",
-      "weekly_avg_qty": 12.0,
-      "weekly_avg_value": 3048.0,
-      "outlet_count": 2,
-      "weeks_with_data": 1,
-      "sales_rank": 217,
+      "sales_rank": 215,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2406,7 +2384,7 @@
       "weekly_avg_value": 3040.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 218,
+      "sales_rank": 216,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2417,7 +2395,7 @@
       "weekly_avg_value": 3009.0,
       "outlet_count": 3,
       "weeks_with_data": 1,
-      "sales_rank": 219,
+      "sales_rank": 217,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2428,18 +2406,7 @@
       "weekly_avg_value": 996.7,
       "outlet_count": 3,
       "weeks_with_data": 3,
-      "sales_rank": 220,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "AG0223",
-      "name": "BATH BRUSH W/HANDLE 38cm 4ASST",
-      "weekly_avg_qty": 7.0,
-      "weekly_avg_value": 1491.0,
-      "outlet_count": 2,
-      "weeks_with_data": 2,
-      "sales_rank": 221,
+      "sales_rank": 218,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2450,7 +2417,7 @@
       "weekly_avg_value": 2952.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 222,
+      "sales_rank": 219,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2461,7 +2428,7 @@
       "weekly_avg_value": 2943.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 223,
+      "sales_rank": 220,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2472,7 +2439,7 @@
       "weekly_avg_value": 2916.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 224,
+      "sales_rank": 221,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2483,7 +2450,7 @@
       "weekly_avg_value": 2892.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 225,
+      "sales_rank": 222,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2494,18 +2461,7 @@
       "weekly_avg_value": 957.0,
       "outlet_count": 3,
       "weeks_with_data": 3,
-      "sales_rank": 226,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "AG3885",
-      "name": "PEDICURE FOOT CARE 4 IN 1",
-      "weekly_avg_qty": 4.5,
-      "weekly_avg_value": 1426.5,
-      "outlet_count": 2,
-      "weeks_with_data": 2,
-      "sales_rank": 227,
+      "sales_rank": 223,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2516,7 +2472,7 @@
       "weekly_avg_value": 2706.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 228,
+      "sales_rank": 224,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2527,7 +2483,7 @@
       "weekly_avg_value": 1339.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 229,
+      "sales_rank": 225,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2538,7 +2494,7 @@
       "weekly_avg_value": 2632.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 230,
+      "sales_rank": 226,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2549,7 +2505,7 @@
       "weekly_avg_value": 2623.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 231,
+      "sales_rank": 227,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2560,7 +2516,18 @@
       "weekly_avg_value": 2560.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 232,
+      "sales_rank": 228,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "AG0002",
+      "name": "EXFOLIATING GLOVES 1PR 4ASST",
+      "weekly_avg_qty": 11.0,
+      "weekly_avg_value": 2475.0,
+      "outlet_count": 1,
+      "weeks_with_data": 1,
+      "sales_rank": 229,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2571,7 +2538,7 @@
       "weekly_avg_value": 2436.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 233,
+      "sales_rank": 230,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2582,7 +2549,7 @@
       "weekly_avg_value": 2232.0,
       "outlet_count": 5,
       "weeks_with_data": 1,
-      "sales_rank": 234,
+      "sales_rank": 231,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2593,18 +2560,7 @@
       "weekly_avg_value": 2213.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 235,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "AH4968",
-      "name": "HAIR CLUTCH CLAW 2ASST 3PK",
-      "weekly_avg_qty": 2.5,
-      "weekly_avg_value": 1100.0,
-      "outlet_count": 2,
-      "weeks_with_data": 2,
-      "sales_rank": 236,
+      "sales_rank": 232,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2615,7 +2571,7 @@
       "weekly_avg_value": 1076.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 237,
+      "sales_rank": 233,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2626,7 +2582,7 @@
       "weekly_avg_value": 2064.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 238,
+      "sales_rank": 234,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2637,7 +2593,7 @@
       "weekly_avg_value": 1950.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 239,
+      "sales_rank": 235,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2648,7 +2604,18 @@
       "weekly_avg_value": 974.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 240,
+      "sales_rank": 236,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "AG3885",
+      "name": "PEDICURE FOOT CARE 4 IN 1",
+      "weekly_avg_qty": 6.0,
+      "weekly_avg_value": 1902.0,
+      "outlet_count": 1,
+      "weeks_with_data": 1,
+      "sales_rank": 237,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2659,7 +2626,7 @@
       "weekly_avg_value": 1856.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 241,
+      "sales_rank": 238,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2670,7 +2637,7 @@
       "weekly_avg_value": 1848.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 242,
+      "sales_rank": 239,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2681,7 +2648,7 @@
       "weekly_avg_value": 868.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 243,
+      "sales_rank": 240,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2692,7 +2659,7 @@
       "weekly_avg_value": 1676.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 244,
+      "sales_rank": 241,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2703,7 +2670,7 @@
       "weekly_avg_value": 1608.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 245,
+      "sales_rank": 242,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2714,7 +2681,7 @@
       "weekly_avg_value": 1572.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 246,
+      "sales_rank": 243,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2725,7 +2692,7 @@
       "weekly_avg_value": 1544.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 247,
+      "sales_rank": 244,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2736,7 +2703,7 @@
       "weekly_avg_value": 1482.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 248,
+      "sales_rank": 245,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2747,7 +2714,7 @@
       "weekly_avg_value": 1440.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 249,
+      "sales_rank": 246,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2758,7 +2725,7 @@
       "weekly_avg_value": 1434.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 250,
+      "sales_rank": 247,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2769,7 +2736,7 @@
       "weekly_avg_value": 1426.0,
       "outlet_count": 2,
       "weeks_with_data": 1,
-      "sales_rank": 251,
+      "sales_rank": 248,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2780,7 +2747,7 @@
       "weekly_avg_value": 1409.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 252,
+      "sales_rank": 249,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2791,7 +2758,7 @@
       "weekly_avg_value": 1398.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 253,
+      "sales_rank": 250,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2802,7 +2769,7 @@
       "weekly_avg_value": 1336.0,
       "outlet_count": 2,
       "weeks_with_data": 1,
-      "sales_rank": 254,
+      "sales_rank": 251,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2813,7 +2780,7 @@
       "weekly_avg_value": 1288.0,
       "outlet_count": 8,
       "weeks_with_data": 1,
-      "sales_rank": 255,
+      "sales_rank": 252,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2824,7 +2791,7 @@
       "weekly_avg_value": 1236.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 256,
+      "sales_rank": 253,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2835,7 +2802,7 @@
       "weekly_avg_value": 1212.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 257,
+      "sales_rank": 254,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2846,7 +2813,7 @@
       "weekly_avg_value": 1204.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 258,
+      "sales_rank": 255,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2857,7 +2824,7 @@
       "weekly_avg_value": 577.5,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 259,
+      "sales_rank": 256,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2868,7 +2835,7 @@
       "weekly_avg_value": 383.3,
       "outlet_count": 3,
       "weeks_with_data": 3,
-      "sales_rank": 260,
+      "sales_rank": 257,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2879,7 +2846,7 @@
       "weekly_avg_value": 1140.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 261,
+      "sales_rank": 258,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2890,7 +2857,7 @@
       "weekly_avg_value": 366.7,
       "outlet_count": 3,
       "weeks_with_data": 3,
-      "sales_rank": 262,
+      "sales_rank": 259,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2901,7 +2868,7 @@
       "weekly_avg_value": 1090.9,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 263,
+      "sales_rank": 260,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2912,7 +2879,7 @@
       "weekly_avg_value": 1058.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 264,
+      "sales_rank": 261,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2923,7 +2890,7 @@
       "weekly_avg_value": 1041.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 265,
+      "sales_rank": 262,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2934,7 +2901,7 @@
       "weekly_avg_value": 1012.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 266,
+      "sales_rank": 263,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2945,7 +2912,7 @@
       "weekly_avg_value": 1008.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 267,
+      "sales_rank": 264,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2956,7 +2923,7 @@
       "weekly_avg_value": 988.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 268,
+      "sales_rank": 265,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2967,7 +2934,7 @@
       "weekly_avg_value": 963.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 269,
+      "sales_rank": 266,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2978,7 +2945,7 @@
       "weekly_avg_value": 922.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 270,
+      "sales_rank": 267,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -2989,7 +2956,18 @@
       "weekly_avg_value": 917.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 271,
+      "sales_rank": 268,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "AH4968",
+      "name": "HAIR CLUTCH CLAW 2ASST 3PK",
+      "weekly_avg_qty": 2.0,
+      "weekly_avg_value": 880.0,
+      "outlet_count": 1,
+      "weeks_with_data": 1,
+      "sales_rank": 269,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3000,7 +2978,7 @@
       "weekly_avg_value": 876.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 272,
+      "sales_rank": 270,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3011,7 +2989,7 @@
       "weekly_avg_value": 872.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 273,
+      "sales_rank": 271,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3022,7 +3000,7 @@
       "weekly_avg_value": 870.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 274,
+      "sales_rank": 272,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3033,7 +3011,7 @@
       "weekly_avg_value": 838.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 275,
+      "sales_rank": 273,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3044,7 +3022,7 @@
       "weekly_avg_value": 813.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 276,
+      "sales_rank": 274,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3055,7 +3033,7 @@
       "weekly_avg_value": 810.0,
       "outlet_count": 2,
       "weeks_with_data": 1,
-      "sales_rank": 277,
+      "sales_rank": 275,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3066,7 +3044,7 @@
       "weekly_avg_value": 807.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 278,
+      "sales_rank": 276,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3077,7 +3055,7 @@
       "weekly_avg_value": 793.0,
       "outlet_count": 2,
       "weeks_with_data": 1,
-      "sales_rank": 279,
+      "sales_rank": 277,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3088,18 +3066,18 @@
       "weekly_avg_value": 792.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 280,
+      "sales_rank": 278,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
     {
       "sku": "AWB20-05",
       "name": "AIWIBI Baby Swimming Pants XL",
-      "weekly_avg_qty": 12.2,
-      "weekly_avg_value": 130.0,
-      "outlet_count": 7,
-      "weeks_with_data": 6,
-      "sales_rank": 281,
+      "weekly_avg_qty": 14.2,
+      "weekly_avg_value": 156.0,
+      "outlet_count": 6,
+      "weeks_with_data": 5,
+      "sales_rank": 279,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3110,7 +3088,7 @@
       "weekly_avg_value": 754.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 282,
+      "sales_rank": 280,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3121,7 +3099,7 @@
       "weekly_avg_value": 751.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 283,
+      "sales_rank": 281,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3132,7 +3110,7 @@
       "weekly_avg_value": 741.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 284,
+      "sales_rank": 282,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3143,7 +3121,7 @@
       "weekly_avg_value": 735.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 285,
+      "sales_rank": 283,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3154,7 +3132,7 @@
       "weekly_avg_value": 722.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 286,
+      "sales_rank": 284,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3165,7 +3143,7 @@
       "weekly_avg_value": 345.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 287,
+      "sales_rank": 285,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3176,7 +3154,7 @@
       "weekly_avg_value": 668.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 288,
+      "sales_rank": 286,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3187,7 +3165,7 @@
       "weekly_avg_value": 652.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 289,
+      "sales_rank": 287,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3198,7 +3176,18 @@
       "weekly_avg_value": 598.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 290,
+      "sales_rank": 288,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "AH0085",
+      "name": "HAIR ELASTIC 100PK 3ASST",
+      "weekly_avg_qty": 2.0,
+      "weekly_avg_value": 586.0,
+      "outlet_count": 1,
+      "weeks_with_data": 1,
+      "sales_rank": 289,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3209,7 +3198,7 @@
       "weekly_avg_value": 576.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 291,
+      "sales_rank": 290,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3220,7 +3209,7 @@
       "weekly_avg_value": 566.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 292,
+      "sales_rank": 291,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3231,7 +3220,7 @@
       "weekly_avg_value": 520.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 293,
+      "sales_rank": 292,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3242,7 +3231,7 @@
       "weekly_avg_value": 250.0,
       "outlet_count": 2,
       "weeks_with_data": 2,
-      "sales_rank": 294,
+      "sales_rank": 293,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3253,7 +3242,7 @@
       "weekly_avg_value": 460.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 295,
+      "sales_rank": 294,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3264,7 +3253,7 @@
       "weekly_avg_value": 439.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 296,
+      "sales_rank": 295,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3275,7 +3264,7 @@
       "weekly_avg_value": 438.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
-      "sales_rank": 297,
+      "sales_rank": 296,
       "abc_class": "C",
       "buffer_weeks": 0.5
     },
@@ -3284,6 +3273,17 @@
       "name": "TEALIGHT CITRONELLA 14g 12PK",
       "weekly_avg_qty": 1.0,
       "weekly_avg_value": 434.0,
+      "outlet_count": 1,
+      "weeks_with_data": 1,
+      "sales_rank": 297,
+      "abc_class": "C",
+      "buffer_weeks": 0.5
+    },
+    {
+      "sku": "AG0223",
+      "name": "BATH BRUSH W/HANDLE 38cm 4ASST",
+      "weekly_avg_qty": 2.0,
+      "weekly_avg_value": 426.0,
       "outlet_count": 1,
       "weeks_with_data": 1,
       "sales_rank": 298,
@@ -3513,10 +3513,10 @@
     {
       "sku": "AWB20-04",
       "name": "AIWIBI Baby Swimming Pants Large",
-      "weekly_avg_qty": 11.0,
+      "weekly_avg_qty": 12.8,
       "weekly_avg_value": 0.0,
-      "outlet_count": 6,
-      "weeks_with_data": 6,
+      "outlet_count": 5,
+      "weeks_with_data": 5,
       "sales_rank": 319,
       "abc_class": "C",
       "buffer_weeks": 0.5
@@ -3804,17 +3804,6 @@
       "outlet_count": 1,
       "weeks_with_data": 1,
       "sales_rank": 345,
-      "abc_class": "C",
-      "buffer_weeks": 0.5
-    },
-    {
-      "sku": "AWN63-5",
-      "name": "AIWINA Adult Diapers Extra Large (6*10Pcs)",
-      "weekly_avg_qty": 1.0,
-      "weekly_avg_value": 0.0,
-      "outlet_count": 1,
-      "weeks_with_data": 1,
-      "sales_rank": 346,
       "abc_class": "C",
       "buffer_weeks": 0.5
     }

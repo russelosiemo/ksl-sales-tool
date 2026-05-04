@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "built_at": "2026-04-30T09:24:22.900570+00:00",
+    "built_at": "2026-05-04T08:08:58.247345+00:00",
     "total_items": 765,
     "skipped": 68,
     "source": "Zoho Inventory /items"
@@ -55,11 +55,11 @@
       "sku": "90393",
       "name": "CHUPA CHUPS FRESHENER CHERRY",
       "category": "inventory",
-      "unit": "",
+      "unit": "pcs",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000115025800/image?organization_id=800177077",
       "abc_class": "C",
       "status": "active",
-      "rate": 261.72
+      "rate": 295.0
     },
     {
       "item_id": "3778898000115025821",
@@ -143,11 +143,11 @@
       "sku": "90910",
       "name": "CHUPA CHUPS AIR FRESHENER SCEN",
       "category": "inventory",
-      "unit": "",
+      "unit": "pcs",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000115025968/image?organization_id=800177077",
       "abc_class": "C",
       "status": "active",
-      "rate": 278.48
+      "rate": 295.0
     },
     {
       "item_id": "3778898000000124352",
@@ -156,7 +156,7 @@
       "category": "inventory",
       "unit": "PAIR",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000000124352/image?organization_id=800177077",
-      "abc_class": "B",
+      "abc_class": "C",
       "status": "active",
       "rate": 246.0
     },
@@ -475,7 +475,7 @@
       "category": "inventory",
       "unit": "PACK",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000000124645/image?organization_id=800177077",
-      "abc_class": "A",
+      "abc_class": "B",
       "status": "active",
       "rate": 316.0
     },
@@ -893,7 +893,7 @@
       "category": "inventory",
       "unit": "PACK",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000000124910/image?organization_id=800177077",
-      "abc_class": "B",
+      "abc_class": "C",
       "status": "active",
       "rate": 300.0
     },
@@ -1784,7 +1784,7 @@
       "category": "inventory",
       "unit": "pcs",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000005523911/image?organization_id=800177077",
-      "abc_class": "B",
+      "abc_class": "A",
       "status": "active",
       "rate": 1632.0
     },
@@ -1883,7 +1883,7 @@
       "category": "inventory",
       "unit": "pcs",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000005523950/image?organization_id=800177077",
-      "abc_class": "C",
+      "abc_class": "B",
       "status": "active",
       "rate": 2112.0
     },
@@ -5260,7 +5260,7 @@
       "category": "inventory",
       "unit": "PC",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000000126703/image?organization_id=800177077",
-      "abc_class": "C",
+      "abc_class": "B",
       "status": "active",
       "rate": 261.0
     },
