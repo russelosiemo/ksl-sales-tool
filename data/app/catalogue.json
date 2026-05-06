@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "built_at": "2026-05-04T11:03:53.144232+00:00",
-    "total_items": 765,
+    "built_at": "2026-05-06T16:31:39.430098+00:00",
+    "total_items": 769,
     "skipped": 68,
     "source": "Zoho Inventory /items"
   },
@@ -376,7 +376,7 @@
       "category": "inventory",
       "unit": "PACK",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000000124579/image?organization_id=800177077",
-      "abc_class": "A",
+      "abc_class": "B",
       "status": "active",
       "rate": 427.0
     },
@@ -651,7 +651,7 @@
       "category": "inventory",
       "unit": "PC",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000000124794/image?organization_id=800177077",
-      "abc_class": "B",
+      "abc_class": "C",
       "status": "active",
       "rate": 854.0
     },
@@ -1036,7 +1036,7 @@
       "category": "inventory",
       "unit": "PACK",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000000125009/image?organization_id=800177077",
-      "abc_class": "B",
+      "abc_class": "C",
       "status": "active",
       "rate": 274.0
     },
@@ -1481,6 +1481,17 @@
       "rate": 0.0
     },
     {
+      "item_id": "3778898000128083067",
+      "sku": "API072",
+      "name": "AWB Middle Koalla doll",
+      "category": "inventory",
+      "unit": "PC",
+      "image_url": "",
+      "abc_class": "C",
+      "status": "active",
+      "rate": 0.0
+    },
+    {
       "item_id": "3778898000000125365",
       "sku": "AT0003",
       "name": "DENTAL FLOSS MINT 50m",
@@ -1767,6 +1778,17 @@
       "rate": 0.0
     },
     {
+      "item_id": "3778898000128083056",
+      "sku": "AWB01-014",
+      "name": "AIWIBI Baby Pull Up Pants XL (2Pcs)",
+      "category": "inventory",
+      "unit": "PC",
+      "image_url": "",
+      "abc_class": "C",
+      "status": "active",
+      "rate": 46.0
+    },
+    {
       "item_id": "3778898000005523898",
       "sku": "AWB01-02",
       "name": "AWB Baby Diapers Small (52 Pcs) 450mm 320mm 4-9kg22",
@@ -1795,7 +1817,7 @@
       "category": "inventory",
       "unit": "pcs",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000005523924/image?organization_id=800177077",
-      "abc_class": "B",
+      "abc_class": "A",
       "status": "active",
       "rate": 1672.0
     },
@@ -1817,7 +1839,7 @@
       "category": "inventory",
       "unit": "pcs",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000005523885/image?organization_id=800177077",
-      "abc_class": "C",
+      "abc_class": "B",
       "status": "active",
       "rate": 704.0
     },
@@ -1866,6 +1888,17 @@
       "rate": 46.0
     },
     {
+      "item_id": "3778898000128083045",
+      "sku": "AWB12-013",
+      "name": "AIWIBI Baby Pull Up Pants Large (2Pcs)",
+      "category": "inventory",
+      "unit": "PCS",
+      "image_url": "",
+      "abc_class": "C",
+      "status": "active",
+      "rate": 46.0
+    },
+    {
       "item_id": "3778898000117507047",
       "sku": "AWB12-015",
       "name": "AIWIBI Baby Diapers (XXL)Extra large(2 Pcs)",
@@ -1894,7 +1927,7 @@
       "category": "inventory",
       "unit": "PC",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000086615474/image?organization_id=800177077",
-      "abc_class": "C",
+      "abc_class": "B",
       "status": "active",
       "rate": 1640.0
     },
@@ -2013,7 +2046,7 @@
       "sku": "AWB20-TW01",
       "name": "AWB Baby Toilet Wipes",
       "category": "inventory",
-      "unit": "",
+      "unit": "PC",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000085983024/image?organization_id=800177077",
       "abc_class": "C",
       "status": "active",
@@ -2040,6 +2073,17 @@
       "abc_class": "C",
       "status": "active",
       "rate": 350.0
+    },
+    {
+      "item_id": "3778898000128083034",
+      "sku": "AWB70-TW01",
+      "name": "AIWIBI Baby Toilet Wipes (24*70Pcs)",
+      "category": "inventory",
+      "unit": "PC",
+      "image_url": "",
+      "abc_class": "C",
+      "status": "active",
+      "rate": 152.0
     },
     {
       "item_id": "3778898000087174056",
@@ -5282,7 +5326,7 @@
       "category": "inventory",
       "unit": "PK",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000000126725/image?organization_id=800177077",
-      "abc_class": "B",
+      "abc_class": "C",
       "status": "active",
       "rate": 347.0
     },
