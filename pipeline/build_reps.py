@@ -63,7 +63,9 @@ def run():
     rows = []
     with open(INPUT_PATH, newline="", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f)
-        missing = REQUIRED_COLS - set(reader.fieldnames or [])
+        # Strip whitespace from column headers to catch Excel-introduced spaces
+        reader.fieldnames = [h.strip() for h in (reader.fieldnames or [])]
+        missing = REQUIRED_COLS - set(reader.fieldnames)
         if missing:
             print(f"[REPS] ERROR: CSV missing columns: {missing}")
             sys.exit(1)
@@ -73,28 +75,47 @@ def run():
     print(f"[REPS] {len(rows)} rows loaded from CSV")
 
     # Group customers per rep
-    rep_meta   = {}   # rep_id -> {rep_name, pin_hash}
-    rep_custs  = defaultdict(list)  # rep_id -> [{customer_id, customer_name}]
-    seen_custs = defaultdict(set)   # rep_id -> set of customer_ids (dedup)
+    rep_meta      = {}              # rep_id -> {rep_name, pin_hash}
+    rep_custs     = defaultdict(list)  # rep_id -> [{customer_id, customer_name}]
+    seen_custs    = defaultdict(set)   # rep_id -> set of customer_ids (dedup)
+    skipped_rows  = 0
+    no_pin_reps   = set()          # rep_ids skipped due to missing PIN
 
-    for row in rows:
-        rep_id   = row["rep_id"].strip()
-        rep_name = row["rep_name"].strip()
-        pin      = row["pin"].strip()
-        cust_id  = row["zoho_customer_id"].strip()
-        cust_name= row["customer_name"].strip()
+    for i, row in enumerate(rows, start=2):  # start=2 because row 1 is the header
+        rep_id    = row["rep_id"].strip()
+        rep_name  = row["rep_name"].strip()
+        pin       = row["pin"].strip()
+        cust_id   = row["zoho_customer_id"].strip()
+        cust_name = row["customer_name"].strip()
 
+        # FIX: Log every skipped row so missing customers are visible in CI logs
         if not rep_id or not cust_id:
+            print(
+                f"[REPS] WARNING: Row {i} skipped — "
+                f"rep_id='{rep_id}' cust_id='{cust_id}' "
+                f"rep_name='{rep_name}' cust_name='{cust_name}'"
+            )
+            skipped_rows += 1
             continue
 
         if rep_id not in rep_meta:
             if not pin:
-                print(f"[REPS] WARNING: rep {rep_id} ({rep_name}) has no PIN - skipping")
+                print(f"[REPS] WARNING: Row {i} — rep {rep_id} ({rep_name}) "
+                      "has no PIN; all their customers will be skipped")
+                no_pin_reps.add(rep_id)
+                skipped_rows += 1
                 continue
             rep_meta[rep_id] = {
                 "rep_name": rep_name,
                 "pin_hash": _hash_pin(pin),
             }
+
+        # If this rep was already marked as no-PIN, skip their subsequent rows too
+        if rep_id in no_pin_reps:
+            print(f"[REPS] WARNING: Row {i} skipped — rep {rep_id} ({rep_name}) "
+                  f"has no PIN (customer '{cust_name}' will not appear)")
+            skipped_rows += 1
+            continue
 
         if cust_id not in seen_custs[rep_id]:
             rep_custs[rep_id].append({
@@ -102,6 +123,12 @@ def run():
                 "customer_name": cust_name,
             })
             seen_custs[rep_id].add(cust_id)
+        else:
+            print(f"[REPS] INFO: Row {i} — duplicate customer_id '{cust_id}' "
+                  f"for rep {rep_name}, skipping")
+
+    if skipped_rows:
+        print(f"[REPS] {skipped_rows} row(s) skipped total (see warnings above)")
 
     # Build output list sorted by rep_name
     reps_list = []
@@ -109,19 +136,19 @@ def run():
                                 key=lambda x: rep_meta[x[0]]["rep_name"]):
         customers = sorted(rep_custs[rep_id], key=lambda c: c["customer_name"])
         reps_list.append({
-            "rep_id":       rep_id,
-            "rep_name":     meta["rep_name"],
-            "pin_hash":     meta["pin_hash"],
+            "rep_id":         rep_id,
+            "rep_name":       meta["rep_name"],
+            "pin_hash":       meta["pin_hash"],
             "customer_count": len(customers),
-            "customers":    customers,
+            "customers":      customers,
         })
 
     output = {
         "_meta": {
-            "built_at":   datetime.now(timezone.utc).isoformat(),
-            "total_reps": len(reps_list),
+            "built_at":          datetime.now(timezone.utc).isoformat(),
+            "total_reps":        len(reps_list),
             "total_assignments": sum(r["customer_count"] for r in reps_list),
-            "source":     "data/config/reps_customers.csv",
+            "source":            "data/config/reps_customers.csv",
         },
         "reps": reps_list,
     }
