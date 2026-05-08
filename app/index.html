@@ -1506,6 +1506,17 @@
           // Refresh if: never refreshed (age=0), or older than 50 minutes
           if (_refreshedAt === 0 || age > 50 * 60 * 1000) {
             await _refreshToken();
+            // After fetching the latest token.json, check if it is still expired.
+            // This happens when GitHub Actions has been delayed and the deployed
+            // token.json itself is stale. Surface a clear message instead of a
+            // confusing 401 from a Zoho endpoint.
+            const newAge = Date.now() - _refreshedAt;
+            if (_refreshedAt > 0 && newAge > 58 * 60 * 1000) {
+              throw new Error(
+                "Your session token has expired. " +
+                "Please wait 1-2 minutes for an automatic refresh, then reload the app."
+              );
+            }
           }
         }
 
