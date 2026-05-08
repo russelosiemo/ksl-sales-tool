@@ -9,7 +9,7 @@ on:
     # ── Token-only refresh: every 45 min, 04:00–22:00 UTC Mon–Sun ──────────
     # Covers 07:00–01:00 Nairobi time (EAT = UTC+3), 7 days a week.
     # Tokens expire at 60 min; 45-min cadence leaves a 15-min safety buffer.
-    - cron: "0,45 4-22 * * *"
+    - cron: "0,30 4-22 * * *"
 
     # ── Stock watch: tiered to match actual business activity ───────────────
     # Morning invoicing window: 08:00, 09:00, 10:00 EAT (05:00-07:00 UTC)
@@ -136,7 +136,7 @@ jobs:
     timeout-minutes: 10
     if: >
       (github.event_name == 'schedule' &&
-       github.event.schedule == '0,45 4-22 * * *') ||
+       github.event.schedule == '0,30 4-22 * * *') ||
       (github.event_name == 'workflow_dispatch' &&
        github.event.inputs.job == 'token-only')
 
