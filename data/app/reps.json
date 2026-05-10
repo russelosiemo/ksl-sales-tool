@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "built_at": "2026-05-09T06:21:02.056564+00:00",
-    "total_reps": 14,
-    "total_assignments": 219,
+    "built_at": "2026-05-10T14:54:36.428463+00:00",
+    "total_reps": 15,
+    "total_assignments": 220,
     "source": "data/config/reps_customers.csv"
   },
   "reps": [
@@ -495,6 +495,18 @@
         {
           "customer_id": "3778898000024559272",
           "customer_name": "Zucchini Green Growers"
+        }
+      ]
+    },
+    {
+      "rep_id": "3778898000128206197",
+      "rep_name": "JIMIA ALI",
+      "pin_hash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "customer_count": 1,
+      "customers": [
+        {
+          "customer_id": "3778898000128206198",
+          "customer_name": "GENERAL TRADE-JIMIA"
         }
       ]
     },

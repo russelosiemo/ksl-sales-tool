@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "built_at": "2026-05-06T16:31:39.430098+00:00",
+    "built_at": "2026-05-10T14:46:11.849092+00:00",
     "total_items": 769,
     "skipped": 68,
     "source": "Zoho Inventory /items"
@@ -607,7 +607,7 @@
       "category": "inventory",
       "unit": "PC",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000000124750/image?organization_id=800177077",
-      "abc_class": "B",
+      "abc_class": "C",
       "status": "active",
       "rate": 742.0
     },
@@ -1036,7 +1036,7 @@
       "category": "inventory",
       "unit": "PACK",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000000125009/image?organization_id=800177077",
-      "abc_class": "C",
+      "abc_class": "B",
       "status": "active",
       "rate": 274.0
     },
@@ -1498,7 +1498,7 @@
       "category": "inventory",
       "unit": "PCS",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000000125365/image?organization_id=800177077",
-      "abc_class": "A",
+      "abc_class": "B",
       "status": "active",
       "rate": 137.0
     },
@@ -1509,7 +1509,7 @@
       "category": "inventory",
       "unit": "SET",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000000125376/image?organization_id=800177077",
-      "abc_class": "A",
+      "abc_class": "B",
       "status": "active",
       "rate": 208.0
     },
@@ -1795,7 +1795,7 @@
       "category": "inventory",
       "unit": "pcs",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000005523898/image?organization_id=800177077",
-      "abc_class": "B",
+      "abc_class": "A",
       "status": "active",
       "rate": 1508.0
     },
@@ -1927,7 +1927,7 @@
       "category": "inventory",
       "unit": "PC",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000086615474/image?organization_id=800177077",
-      "abc_class": "B",
+      "abc_class": "C",
       "status": "active",
       "rate": 1640.0
     },
@@ -2796,7 +2796,7 @@
       "category": "inventory",
       "unit": "PACK",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000000125520/image?organization_id=800177077",
-      "abc_class": "C",
+      "abc_class": "B",
       "status": "active",
       "rate": 785.0
     },
@@ -3698,7 +3698,7 @@
       "category": "inventory",
       "unit": "SET",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000000375215/image?organization_id=800177077",
-      "abc_class": "B",
+      "abc_class": "A",
       "status": "active",
       "rate": 467.0
     },
@@ -5304,7 +5304,7 @@
       "category": "inventory",
       "unit": "PC",
       "image_url": "https://www.zohoapis.com/inventory/v1/items/3778898000000126703/image?organization_id=800177077",
-      "abc_class": "B",
+      "abc_class": "C",
       "status": "active",
       "rate": 261.0
     },
